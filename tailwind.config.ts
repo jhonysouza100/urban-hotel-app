@@ -20,6 +20,8 @@ const config: Config = {
         'max2': 'repeat(2, max-content)',
         'max3': 'repeat(3, max-content)',
         'max4': 'repeat(4, max-content)',
+        'a': 'repeat(2, 350px)',
+        'b': ""
       },
       colors: {
         "primary": "rgb(23, 204, 87)",
@@ -27,7 +29,8 @@ const config: Config = {
         "body": "hsl(0, 0%, 95%)",
         "container": "hsl(0, 0%, 10%)",
         "light": "hsl(0, 0%, 70%)",
-        "dark": "hsl(24, 3%, 28%)"
+        "dark": "hsl(24, 3%, 28%)",
+        "transparent": "hsla(0, 0%, 100%, .2)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

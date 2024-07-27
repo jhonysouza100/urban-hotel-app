@@ -1,34 +1,33 @@
-"use client"
-import { useEffect } from "react";
-import { store } from "@/context";
+"use-client"
 
 export default function Suscription() {
-  
-  // const { count, username } = store();
-
-  const count = store((state) => state.count);
-  const username = store((state) => state.username);
-
-  const state = store((state) => ({
-    nombre: state.username,
-    countador: state.count,
-  }))
-
-  // const increment = store(state => state.increment);
-  const {increment, getPosts, posts, clearStore, multiply} = store();
-
-  useEffect(() => {
-    getPosts();
-  }, []);
-
   return (
-    <div>
-      Suscription {username} : {count}
-      <button className="bg-blue-500 rounded-md m-2 p-2" onClick={() => increment(10)}>Increment</button>
-      <button className="bg-red-500 rounded-md m-2 p-2" onClick={() => clearStore()}>Clear Store</button>
-      <button className="bg-green-500 rounded-md m-2 p-2" onClick={() => multiply()}>Multiply</button>
-      <hr />
-      {JSON.stringify(posts)}
-    </div>
-  )
+    <section className="join section bg-container">
+      <div className="join-container section-container grid gap-6 gap-y-12 pb-6 justify-center md:grid-cols-a md:items-center lg:gap-x-32 lg:pt-4 lg:pb-20">
+        <div className="join-data text-center">
+          <h2 className="section-title md:text-start">
+            Your Journey <br /> Starts Here
+          </h2>
+          <p className="join-description text-start mb-8 xl:mb-12">
+            Get up to date with the latest travel and information from us.
+          </p>
+          <form action="" className="join-form grid gap-y-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              id=""
+              className="join-input py-5 px-4 bg-neutral-900"
+            />
+            <button className="join-submit button cursor-pointer">
+              Subscribe Our Newsletter <i className="ri-arrow-right-line"></i>
+            </button>
+          </form>
+        </div>
+        <div className="join-image relative justify-self-center overflow-hidden -order-1">
+          <img src="http://127.0.0.1:5501/assets/img/join-island.jpg" className="join-img w-[300px] xl:w-[460px] transition-transform duration-500 hover:scale-125" />
+          <div className="shadow"></div>
+        </div>
+      </div>
+    </section>
+  );
 }

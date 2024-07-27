@@ -3,7 +3,7 @@ import Suscription from "@/components/Suscription";
 export default function Home() {
   
   return (
-    <main className="section-container">
+    <main className="">
       <Suscription />
     </main>
   );

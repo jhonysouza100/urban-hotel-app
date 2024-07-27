@@ -50,7 +50,7 @@ export default async function Footer() {
         
       </div>
 
-      <a href={""} target="_blank" className="footer-copyright text-xs xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."}</a>
+      <span className="footer-copyright text-xs xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."} By <a href={LINK.developer} target="_blank"><b>Jhony Souza</b></a></span>
       
     </footer>
   )
