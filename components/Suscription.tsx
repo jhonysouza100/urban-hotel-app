@@ -1,4 +1,4 @@
-"use-client"
+import { RiArrowRightLine } from "@remixicon/react";
 
 export default function Suscription() {
   return (
@@ -15,15 +15,15 @@ export default function Suscription() {
             <input
               type="email"
               placeholder="Enter your email"
-              id=""
+              id="1"
               className="join-input py-5 px-4 bg-neutral-900"
             />
             <button className="join-submit button cursor-pointer">
-              Subscribe Our Newsletter <i className="ri-arrow-right-line"></i>
+              Subscribe Our Newsletter <RiArrowRightLine />
             </button>
           </form>
         </div>
-        <div className="join-image relative justify-self-center overflow-hidden -order-1">
+        <div className="join-image relative justify-self-center overflow-hidden md:-order-1">
           <img src="http://127.0.0.1:5501/assets/img/join-island.jpg" className="join-img w-[300px] xl:w-[460px] transition-transform duration-500 hover:scale-125" />
           <div className="shadow"></div>
         </div>
