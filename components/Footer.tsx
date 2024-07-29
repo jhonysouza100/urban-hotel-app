@@ -18,8 +18,8 @@ export default async function Footer() {
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footertitle1}</h3>
             <div className="footer-social flex gap-x-6 xl:gap-x-8">
-              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="footer-icon" /></a>
-              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="footer-icon" /></a>
+              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="footer-icon" /></a>
+              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="footer-icon" /></a>
             </div>
           </div>
           <div className="footer-data">
@@ -50,7 +50,7 @@ export default async function Footer() {
         
       </div>
 
-      <span className="footer-copyright text-xs xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."} By <a href={LINK.developer} target="_blank"><b>Jhony Souza</b></a></span>
+      <span className="footer-copyright text-xs xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."} By <a className="cursor-pointer" href={LINK.developer} target="_blank"><b>Jhony Souza</b></a></span>
       
     </footer>
   )

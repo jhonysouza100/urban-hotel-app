@@ -21,7 +21,7 @@ const config: Config = {
         'max3': 'repeat(3, max-content)',
         'max4': 'repeat(4, max-content)',
         'a': 'repeat(2, 350px)',
-        'b': ""
+        'b': "460px 340px"
       },
       colors: {
         "primary": "rgb(23, 204, 87)",
@@ -32,9 +32,16 @@ const config: Config = {
         "dark": "hsl(24, 3%, 28%)",
         "transparent": "hsla(0, 0%, 100%, .2)",
       },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      lineHeight: {
+        'extra-tight': '1.2',
+        'extra-loose': '2.5',
       },
     },
   },

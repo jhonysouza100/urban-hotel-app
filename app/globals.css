@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +18,7 @@
   }
 
   .section-title {
-    @apply text-center mb-6 text-2xl xl:text-4xl;
+    @apply font-montserrat text-center mb-6 text-2xl leading-tight xl:text-[2.5rem];
   }
 
   .footer-title {
@@ -25,7 +26,7 @@
   }
 
   .footer-info {
-    @apply grid grid-cols-max2 gap-2 text-light text-[.75rem] truncate xl:text-sm transition-all duration-500 hover:text-primary hover:translate-x-1;
+    @apply grid grid-cols-max2 gap-2 text-light text-[.75rem] truncate cursor-pointer xl:text-sm transition-all duration-500 hover:text-primary hover:translate-x-1;
   }
 
   .footer-icon {
@@ -33,12 +34,24 @@
   }
 
   .button {
-    @apply bg-transparent text-secondary py-5 px-6 font-semibold inline-flex items-center gap-x-2;
+    @apply bg-transparent text-secondary font-montserrat py-5 px-6 font-semibold inline-flex items-center gap-x-2 backdrop-blur-xl xl:gap-x-6;
   }
 
+  .button path {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+
+  .button:hover path {
+    @apply translate-x-1;
+  }
+  
   .shadow {
     @apply absolute top-0 left-0 w-full h-full;
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
+  }
+
+  .scale-image:hover img {
+    @apply scale-110;
   }
 
 }

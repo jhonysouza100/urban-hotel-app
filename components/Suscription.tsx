@@ -1,9 +1,10 @@
 import { RiArrowRightLine } from "@remixicon/react";
+import Image from "next/image";
 
 export default function Suscription() {
   return (
     <section className="join section bg-container">
-      <div className="join-container section-container grid gap-6 gap-y-12 pb-6 justify-center md:grid-cols-a md:items-center lg:gap-x-32 lg:pt-4 lg:pb-20">
+      <div className="join-container section-container grid gap-6 gap-y-12 pb-6 justify-center md:grid-cols-a md:items-center xl:pt-4 xl:pb-20 xl:gap-x-32 xl:grid-cols-b">
         <div className="join-data text-center">
           <h2 className="section-title md:text-start">
             Your Journey <br /> Starts Here
@@ -19,12 +20,12 @@ export default function Suscription() {
               className="join-input py-5 px-4 bg-neutral-900"
             />
             <button className="join-submit button cursor-pointer">
-              Subscribe Our Newsletter <RiArrowRightLine />
+              Subscribe Our Newsletter <RiArrowRightLine className="w-5 h-5 stroke-secondary" />
             </button>
           </form>
         </div>
-        <div className="join-image relative justify-self-center overflow-hidden md:-order-1">
-          <img src="http://127.0.0.1:5501/assets/img/join-island.jpg" className="join-img w-[300px] xl:w-[460px] transition-transform duration-500 hover:scale-125" />
+        <div className="join-image scale-image relative justify-self-center overflow-hidden md:-order-1">
+          <Image width={300} height={300} quality={100} src="/img/join-island.jpg" className="join-img xl:w-[460px] transition-transform duration-500" alt="Island image" />
           <div className="shadow"></div>
         </div>
       </div>
