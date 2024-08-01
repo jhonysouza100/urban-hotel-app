@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Iguazú Urban Hotel Express",
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="es">
       <body className={`${poppins.className} text-light tracking-wide select-none`}>
+        <ScrollAnimations />
         {children}
         <Footer />
       </body>

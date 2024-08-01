@@ -1,6 +1,6 @@
 import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import { getMediaLinks } from "@/hooks/useGetMediaLinks";
-import texts from "@/assets/texts";
+import texts from "@/public/texts";
 
 export default async function Footer() {
 
@@ -14,12 +14,12 @@ export default async function Footer() {
         
         <p className="footer-logo inline-block mb-2 text-light text-xl font-semibold lg:text-2xl">Iguazú Urban Hotel <span className="text-primary">Express</span></p>
 
-        <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-4 sm:gap-x-2 md:grid-cols-2 md:gap-16 lg:grid-cols-max4">
+        <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-4 sm:gap-x-2 md:grid-cols-2 md:gap-16 xl:grid-cols-max4">
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footertitle1}</h3>
             <div className="footer-social flex gap-x-6 xl:gap-x-8">
-              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="footer-icon" /></a>
-              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="footer-icon" /></a>
+              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
+              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
             </div>
           </div>
           <div className="footer-data">
@@ -50,7 +50,7 @@ export default async function Footer() {
         
       </div>
 
-      <span className="footer-copyright text-xs xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."} By <a className="cursor-pointer" href={LINK.developer} target="_blank"><b>Jhony Souza</b></a></span>
+      <span className="footer-copyright text-[0.7rem] xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved"} by <a className="cursor-pointer" href={LINK.developer} target="_blank">Jhony Souza</a></span>
       
     </footer>
   )

@@ -1,3 +1,5 @@
+import config from "@/config";
+
 interface MediaLinks {
   developer: string;
   instagram: string;
@@ -15,10 +17,19 @@ interface MediaLinks {
 
 export async function getMediaLinks(): Promise<MediaLinks> {
   try {
-    const response = await fetch(`${process.env.MEDIA_LINKS}`);
-    const data = await response.json();
+
+    const res = await fetch(`${config.BACKEND_MEDIA_LINKS}`);
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data: MediaLinks = await res.json();
+
     return data;
+
   } catch (error) {
-    return {} as any;
+    console.error("Error fetching media links:", error);
+    return [] as any;
   }
 }
