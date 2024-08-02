@@ -26,10 +26,9 @@ const config: Config = {
       colors: {
         "primary": "rgb(23, 204, 87)",
         "secondary": "hsl(0, 0%, 95%)",
-        "body": "hsl(0, 0%, 95%)",
         "container": "hsl(0, 0%, 10%)",
         "light": "hsl(0, 0%, 70%)",
-        "dark": "hsl(24, 3%, 28%)",
+        "dark": "hsl(24, 3%, 24%)",
         "transparent": "hsla(0, 0%, 100%, .2)",
       },
       fontFamily: {

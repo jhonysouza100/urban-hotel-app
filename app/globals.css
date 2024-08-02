@@ -53,13 +53,24 @@
   .scale-image:hover img {
     @apply scale-110;
   }
-
+  
 }
 
+.swiper-pagination {
+  margin-block: 12px !important;
+}
 .swiper-pagination-bullet {
-  height: 12px;
-  width: 12px;
-  /* background-color: hsl(0, 0%, 100%); */
+  width: 12px !important;
+  height: 12px !important;
+  box-shadow: 0 0 2px rgba(255, 255, 255, .5) !important;
+  background-color: rgb(23, 204, 87) !important;
+}
+.swiper-pagination-bullet:hover {
+  transform: scale(1.2) !important;
+}
+
+.swiper-pagination-bullet-active {
+  
 }
 
 /* persosonalize scroll bar */

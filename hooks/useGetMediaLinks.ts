@@ -1,19 +1,5 @@
 import config from "@/config";
-
-interface MediaLinks {
-  developer: string;
-  instagram: string;
-  facebook: string;
-  whatsapp: string;
-  email: string;
-  maps: string;
-  cataratasarg: string;
-  cataratasbr: string; 
-  ingresobrasil: string;
-  aeropuertoig: string; 
-  lunallena: string; 
-  booking: string;
-}
+import MediaLinks from "@/interfaces/medialink.interface";
 
 export async function getMediaLinks(): Promise<MediaLinks> {
   try {

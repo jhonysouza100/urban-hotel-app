@@ -21,6 +21,7 @@
     "sharp": "^0.33.4",
     "sonner": "^1.4.41",
     "styled-components": "^6.1.12",
+    "swiper": "^11.1.9",
     "zod": "^3.23.8",
     "zustand": "^4.5.4"
   },

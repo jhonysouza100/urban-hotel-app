@@ -1,20 +1,5 @@
 import config from "@/config";
-
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  picture: string;
-}
-
-interface Reviews {
-  id: number;
-  title: string;
-  comment: string;
-  rating: number;
-  userId: number;
-  user: User;
-}
+import Reviews from "@/interfaces/review.interface";
 
 export async function getAllReviews(): Promise<Reviews[]> {
   try {

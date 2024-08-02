@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="es">
-      <body className={`${poppins.className} text-light tracking-wide select-none`}>
-        <ScrollAnimations />
+      <body className={`${poppins.className} text-light bg-secondary tracking-wide select-none`}>
+        {/* <ScrollAnimations /> */}
         {children}
         <Footer />
       </body>
