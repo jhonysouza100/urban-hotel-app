@@ -22,7 +22,7 @@ export default function Suscription() {
         </div>
         <div className="join-image scale-image relative justify-self-center overflow-hidden md:-order-1">
           <Image priority width={300} height={300} quality={100} src="/img/join-image.jpeg" className="join-img h-[300px] w-[300px] xl:w-[420px] xl:h-[460px] transition-transform duration-500" alt="Island image" />
-          <div className="shadow"></div>
+          <div className="shading"></div>
         </div>
       </div>
     </section>

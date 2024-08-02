@@ -45,7 +45,7 @@
     @apply translate-x-1;
   }
   
-  .shadow {
+  .shading {
     @apply absolute top-0 left-0 w-full h-full;
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
   }
