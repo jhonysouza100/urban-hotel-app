@@ -12,14 +12,14 @@ export default async function Footer() {
 
       <div className="footer-container section-container grid gap-6 gap-y-16">
         
-        <p className="footer-logo inline-block mb-2 text-light text-xl font-semibold lg:text-2xl">Iguazú Urban Hotel <span className="text-primary">Express</span></p>
+        <p className="footer-logo inline-block mb-2 text-light text-xl font-semibold lg:text-2xl">Iguazú Urban Hotel <span className="text-primary-1">Express</span></p>
 
         <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-4 sm:gap-x-2 md:grid-cols-2 md:gap-16 xl:grid-cols-max4">
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footertitle1}</h3>
             <div className="footer-social flex gap-x-6 xl:gap-x-8">
-              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
-              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
+              <a href={LINK.facebook} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary-1 hover:-translate-y-1" aria-label="Contact"><RiFacebookLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
+              <a href={LINK.instagram} target="_blank" className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary-1 hover:-translate-y-1" aria-label="Contact"><RiInstagramLine className="w-6 h-6 lg:w-7 lg:h-7" /></a>
             </div>
           </div>
           <div className="footer-data">

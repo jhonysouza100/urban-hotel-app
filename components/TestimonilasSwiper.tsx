@@ -8,16 +8,19 @@ import 'swiper/css';
 // import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Keyboard  } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Reviews from '@/interfaces/review.interface';
-import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogProps, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
+import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogProps, DialogContent, DialogContentText, Dialog, DialogActions, Stack } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
-import { RiMore2Fill } from '@remixicon/react';
+import { RiArrowDownSLine, RiMore2Fill } from '@remixicon/react';
 import { useEffect, useRef, useState } from 'react';
+import texts from "@/public/texts";
 
 interface TestimonialsSwiperProps {
   reviews: Reviews[];
 }
 
 export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
+
+  const {textclose1} = texts.ES;
 
   const [open, setOpen] = useState(false);
   const [selectedReview, setSelectedReview] = useState<Reviews | null>(null);
@@ -68,9 +71,9 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
           {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
           <Card>
             <CardHeader 
-              sx={{paddingBottom: 0}}
-              avatar={ <Avatar className='bg-primary' aria-label="recipe">{el.user.username.charAt(0)}</Avatar>}
-              action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiMore2Fill /></IconButton> }
+              className='pb-0'
+              avatar={ <Avatar className='bg-primary-1' aria-label="recipe">{el.user.username.charAt(0)}</Avatar>}
+              action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
               title={<span className='font-semibold'>{el.user.username}</span>}
               subheader={el.user.email}
             />
@@ -85,27 +88,29 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
     </Swiper>
 
     <Dialog open={open} onClose={handleClose} scroll={'paper'} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description">
-      <DialogTitle id="scroll-dialog-title">
-        {selectedReview && (<div className='flex justify-start items-center text-zinc-500'>
-          <Avatar className='bg-primary mr-4' aria-label="recipe">{selectedReview.user.username.charAt(0)}</Avatar>
-          <div className='flex flex-col'>
-            <Typography variant="subtitle1" className='font-semibold'>{selectedReview.user.username}</Typography>
-            <Typography variant="subtitle2">{selectedReview.user.email}</Typography>
-          </div>
-        </div>)}
+      {/* TITULO ===================================================================================== */}
+      <DialogTitle id="scroll-dialog-title" className=''>
+        {selectedReview && (
+          <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
+            <Avatar className='bg-primary-1' aria-label="recipe">{selectedReview.user.username.charAt(0)}</Avatar>
+            <span className='flex flex-col'>
+              <Typography className='font-medium' variant="body2" color="text.primary">{selectedReview.user.username}</Typography>
+              <Typography variant="subtitle2" color="text.secondary">{selectedReview.user.email}</Typography>
+            </span>
+            <span className='flex justify-start grow sm:justify-end'>
+              <Rating size='small' name="read-only" value={selectedReview.rating} readOnly />
+            </span>
+        </span>)}
       </DialogTitle>
+      {/* CONTENIDO ===================================================================================== */}
       <DialogContent dividers={true}>
         <DialogContentText id="scroll-dialog-description" ref={descriptionElementRef} tabIndex={-1}>
-          {selectedReview && (
-            <div>
-              <Rating size='small' name="read-only" value={selectedReview.rating} readOnly />
-              <Typography variant="body2">{selectedReview.comment}</Typography>
-            </div>
-          )}
+          {selectedReview && selectedReview.comment}
         </DialogContentText>
       </DialogContent>
+      {/* ACTIONS ===================================================================================== */}
       <DialogActions>
-        <Button onClick={handleClose}>Cerrar</Button>
+        <Button onClick={handleClose}>{textclose1}</Button>
       </DialogActions>
     </Dialog>
 

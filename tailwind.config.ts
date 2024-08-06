@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'sm': '321px',
+      'sm': '425px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
@@ -24,7 +24,9 @@ const config: Config = {
         'b': "460px 340px"
       },
       colors: {
-        "primary": "rgb(23, 204, 87)",
+        "primary-1": "hsl(84, 36%, 42%)",
+        "primary-2": "hsl(84, 35%, 31%)",
+        "primary-3": "hsl(83, 35%, 20%)",
         "secondary": "hsl(0, 0%, 95%)",
         "container": "hsl(0, 0%, 10%)",
         "light": "hsl(0, 0%, 70%)",

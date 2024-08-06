@@ -36,6 +36,7 @@ const texts = {
     servicetext1: [{t:"Habitaciones", d:"Dobles y Triples"}, {t:"Desayuno",d:"Incluido"}, {t:"Piscina",d:"y Solarium"}, {t:"Avenida principal",d:"a 200 mts"}],
     servicetext2: [{t:"WIFI", d:"Gratuito"}, {t:"Recepción",d:"24 hs"}, {t:"Terminal de Ómnibus",d:"a 300 mts"}, {t:"Hito 3 Fronteras",d:"a 1200 mts"}],
     testimonialtext1: "Lo que dicen nuestros clientes",
+    textclose1: "Cerrar",
     jointitle1: "Tu viaje",
     jointitle2: "comienza aquí",
     jointext1 : "Manténgase actualizado con nuestra última información y viajes.",
