@@ -15,7 +15,7 @@ export default async function Footer() {
         
         <p className="footer-logo inline-block mb-2 text-light text-xl font-semibold lg:text-2xl">Iguazú Urban Hotel <span className="text-primary-1">Express</span></p>
 
-        <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-4 sm:gap-x-2 md:grid-cols-2 md:gap-16 xl:grid-cols-max4">
+        <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-8 sm:gap-x-16 sm:grid-cols-max2 lg:gap-12 lg:grid-cols-max3">
 
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle1}</h3>
@@ -55,20 +55,20 @@ export default async function Footer() {
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle4}</h3>
             <ul className="footer-list grid gap-y-3">
+              <li className="footer-info"><a target="_blank" href={`${LINK.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
               <li className="footer-info"><a target="_blank" href={`${LINK.cataratasarg}`}>{TEXT.footerInfoParkArg}</a></li>
               <li className="footer-info"><a target="_blank" href={`${LINK.cataratasbr}`}>{TEXT.footerInfoParkBr}</a></li>
               <li className="footer-info"><a target="_blank" href={`${LINK.ingresobrasil}`}>{TEXT.footerInfoMigrationBr}</a></li>
-              <li className="footer-info"><a target="_blank" href={`${LINK.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
               <li className="footer-info"><a target="_blank" href={`${LINK.lunallena}`}>{TEXT.footerInFullMoon}</a></li>
             </ul>
           </div>
 
           <div className="footer-data">
-            <h3 className="footer-title">Support</h3>
+            <h3 className="footer-title">{TEXT.footerTitle5}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><Link href="/faq">{TEXT.footerInfoFaq}</Link></li>
-              <li className="footer-info"><Link href="/policy">{TEXT.footerInfoPolicy}</Link></li>
               <li className="footer-info"><a href={`${LINK.developer}`} target="_blank">{TEXT.footerInfoDeveloper}</a></li>
+              <li className="footer-info"><Link href="/policy">{TEXT.footerInfoPolicy}</Link></li>
             </ul>
           </div>
 

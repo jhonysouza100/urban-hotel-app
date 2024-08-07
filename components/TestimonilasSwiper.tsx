@@ -20,7 +20,7 @@ interface TestimonialsSwiperProps {
 
 export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
 
-  const {textclose1} = texts.ES;
+  const {textClose1} = texts.ES;
 
   const [open, setOpen] = useState(false);
   const [selectedReview, setSelectedReview] = useState<Reviews | null>(null);
@@ -110,7 +110,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
       </DialogContent>
       {/* ACTIONS ===================================================================================== */}
       <DialogActions>
-        <Button onClick={handleClose}>{textclose1}</Button>
+        <Button onClick={handleClose}>{textClose1}</Button>
       </DialogActions>
     </Dialog>
 
