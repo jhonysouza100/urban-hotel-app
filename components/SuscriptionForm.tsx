@@ -55,14 +55,14 @@ export default function suscripcionForm() {
     <>
 
       <form 
-        onSubmit={handleSubmit(arg => sendEmail(arg))}
         className="join-form relative grid gap-y-4"
+        onSubmit={handleSubmit(arg => sendEmail(arg))}
         aria-label="Formulario de suscripcion"
       >
         <input {...register("email")}
+          className="join-input py-5 px-4 bg-neutral-900"
           type="email"
           id="email"
-          className="join-input py-5 px-4 bg-neutral-900"
           placeholder={TEXT.joinPlaceholder1}
           aria-label="Formulario de suscripción"
         />
