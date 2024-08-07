@@ -40,7 +40,7 @@ export default function suscripcionForm() {
         throw new Error(errorData.message); // Lanzar un error con el mensaje recibido del servidor
       }
 
-      toast.success(`${TEXT.joinsuccess} ${data.email}`);
+      toast.success(`${TEXT.joinSuccess} ${data.email}`);
       
     } catch (error: any) {
       
@@ -63,14 +63,14 @@ export default function suscripcionForm() {
           type="email"
           id="email"
           className="join-input py-5 px-4 bg-neutral-900"
-          placeholder={TEXT.joinplaceholder1}
+          placeholder={TEXT.joinPlaceholder1}
           aria-label="Formulario de suscripción"
         />
 
         {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email.message}</label>}
 
         <button type="submit" className="join-submit button cursor-pointer" aria-label="Enviar">
-          {TEXT.joinbuttontext1}
+          {TEXT.joinButtonText1}
           <RiArrowRightLine className="w-5 h-5 stroke-secondary" />
         </button>
 

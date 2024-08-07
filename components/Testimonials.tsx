@@ -12,7 +12,7 @@ export default async function Testimonials() {
   return (
     <section className="section-container text-dark pt-10 pb-20">
       <div className="section-header text-center mb-12">
-        <h2 className="section-title text-dark">{TEXT.testimonialtext1}</h2>
+        <h2 className="section-title text-dark">{TEXT.testimonialText1}</h2>
       </div>
 
       <TestimonialsSwiper reviews={REVIEWS} />

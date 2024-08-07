@@ -11,10 +11,10 @@ export default function Suscription() {
       <div className="join-container section-container grid gap-6 gap-y-12 pb-6 justify-center md:grid-cols-a md:items-center xl:pt-4 xl:pb-20 xl:gap-x-32 xl:grid-cols-b">
         <div className="join-data text-center">
           <h2 className="section-title md:text-start">
-            {TEXT.jointitle1} <br /> {TEXT.jointitle2}
+            {TEXT.joinTitle1} <br /> {TEXT.joinTitle2}
           </h2>
           <p className="join-description text-start mb-8 xl:mb-12">
-            {TEXT.jointext1}
+            {TEXT.joinText1}
           </p>
 
           <SuscriptionForm />
