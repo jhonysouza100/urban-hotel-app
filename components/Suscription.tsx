@@ -22,7 +22,10 @@ export default function Suscription() {
 
           </div>
           <div className="join-image scale-image sm:-order-1 block w-full h-auto relative overflow-hidden aspect-[4/5]">
-            <Image width={1080} height={1314} src="/img/join-image.jpeg" className="join-img transition-transform duration-500 w-full h-full block top-0 left-0 object-cover" alt="Island image" />
+            <Image 
+             className="join-img transition-transform duration-500 w-full h-full block top-0 left-0 object-cover" alt="Island image"
+             width={1080} height={1314} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" layout="reponsive" src="/img/join-image.jpeg" 
+            />
             <div className="shading"></div>
           </div>
         </div>
