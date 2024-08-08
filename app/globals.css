@@ -9,6 +9,10 @@
     @apply text-white font-semibold;
   }
 
+  img {
+    @apply max-w-full block h-auto w-auto;
+  }
+
   .section {
     @apply pt-20 pb-4;
   }

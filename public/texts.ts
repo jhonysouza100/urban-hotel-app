@@ -49,7 +49,7 @@ const texts = {
     textClose1: "Cerrar",
     joinTitle1: "Tu viaje",
     joinTitle2: "comienza aquí",
-    joinText1: "Manténgase actualizado con nuestra última información y viajes.",
+    joinText1: "Manténgase actualizado con nuestra última información en viajes y promociones.",
     joinPlaceholder1: "Introduce tu correo electrónico",
     joinButtonText1: "Suscríbete a nuestro boletín",
     joinSuccess: "Gracias por tu suscripción:",
@@ -67,7 +67,8 @@ const texts = {
     footerInfoAirport: "Aeropuerto Iguazú",
     footerInFullMoon: "Paseo de luna llena en las Cataratas del Iguazú",
     footerInfoFaq: "FAQ",
-    footerInfoPolicy: "Política de privacidad",
+    footerTerms: "Términos y Condiciones",
+    footerInfoPolicy: "Política de Privacidad",
     footerInfoDeveloper: "Desarrollador"
   }
 };

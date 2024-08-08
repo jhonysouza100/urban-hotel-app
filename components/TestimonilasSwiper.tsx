@@ -60,7 +60,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
       spaceBetween={0}
       // pagination={{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }}
       breakpoints={{
-        425: {
+        500: {
           slidesPerView: 2,
           spaceBetween: 0
         },
