@@ -4,7 +4,6 @@ import Reviews from "@/interfaces/review.interface";
 export async function getAllReviews(): Promise<Reviews[]> {
   try {
     const res = await fetch(`${config.BACKEND_REVIEWS_URL}` as string);
-    console.log("Llmada a la API")
 
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);

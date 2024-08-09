@@ -61,13 +61,14 @@
 }
 
 .swiper-pagination {
-  /* margin-block: 12px !important; */
+  margin-block: 12px !important;
 }
 .swiper-pagination-bullet {
   /* width: 12px !important;
   height: 12px !important; */
   background-color: rgb(23, 204, 87) !important;
 }
+
 .swiper-pagination-bullet:hover {
   /* transform: scale(1.2) !important; */
 }

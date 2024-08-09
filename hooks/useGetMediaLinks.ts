@@ -12,7 +12,7 @@ export async function getMediaLinks(): Promise<MediaLinks> {
 
     const data: MediaLinks = await res.json();
 
-    return data;
+    return {...data, ...data};
 
   } catch (error) {
     console.error("Error fetching media links:", error);

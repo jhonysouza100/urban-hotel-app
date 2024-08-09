@@ -2,15 +2,11 @@
 
 // swiper imports
 import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
-// import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Keyboard  } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Reviews from '@/interfaces/review.interface';
-import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogProps, DialogContent, DialogContentText, Dialog, DialogActions, Stack } from '@mui/material';
+import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
-import { RiArrowDownSLine, RiMore2Fill } from '@remixicon/react';
+import { RiArrowDownSLine } from '@remixicon/react';
 import { useEffect, useRef, useState } from 'react';
 import texts from "@/public/texts";
 
@@ -33,7 +29,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  
   const descriptionElementRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (open) {
@@ -48,17 +44,13 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
   return (
     <>
     <Swiper className='swiper'
-      // modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Keyboard]}
-      // autoplay={{ delay: 3000, disableOnInteraction: false, }}
-      autoplay={{ disableOnInteraction: false }}
-      // speed={1500}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
       grabCursor={true}
       keyboard={{enabled: true,}}
       slidesPerView={'auto'}
       centeredSlides={false}
       spaceBetween={0}
-      // pagination={{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }}
       breakpoints={{
         500: {
           slidesPerView: 2,
@@ -70,14 +62,13 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
         <SwiperSlide key={crypto.randomUUID()} className="swiper-slide p-3 md:p-5">
           {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
           <Card>
-            <CardHeader 
-              className='pb-0'
-              avatar={ <Avatar className='bg-primary-1' aria-label="recipe">{el.user.username.charAt(0)}</Avatar>}
+            <CardHeader
+              avatar={ <Avatar className='!bg-primary-1' aria-label="recipe">{el.user.username.charAt(0)}</Avatar>}
               action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
               title={<span className='font-semibold'>{el.user.username}</span>}
               subheader={el.user.email}
             />
-            <CardContent className='space-y-2'>
+            <CardContent className='!pt-0'>
               <Rating size='small' name="read-only" value={el.rating} readOnly />
               <Typography className='line-clamp-5 min-h-24 max-h-24' variant="body2" color="text.secondary">{el.comment}</Typography>
             </CardContent>
