@@ -22,16 +22,16 @@ export default async function Footer() {
             <div className="footer-social flex gap-x-6 xl:gap-x-8">
               <a 
                 href={`${LINK.facebook}`} 
-                target="_blank" 
-                className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
-                aria-label="Facebook">
+                target="_blank" rel="noreferrer" 
+                className="footer-social-link text-light cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
+                aria-label="Abrir en Facebook">
                 <RiFacebookLine className="w-6 h-6 lg:w-7 lg:h-7" />
               </a>
               <a 
                 href={`${LINK.instagram}`}
-                target="_blank"
-                className="footer-social-link text-light cursor-pointer xl:text-2xl transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
-                aria-label="Contact">
+                target="_blank" rel="noreferrer"
+                className="footer-social-link text-light cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
+                aria-label="Abrir en Instagram">
                 <RiInstagramLine className="w-6 h-6 lg:w-7 lg:h-7" />
               </a>
             </div>
@@ -40,33 +40,33 @@ export default async function Footer() {
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle2}</h3>
             <ul className="footer-list grid gap-y-3">
-              <li className="footer-info"><RiMapPinLine className="footer-icon" /><a href={`${LINK.maps}`} target="_blank">{TEXT.footerInfoDirection}</a></li>
+              <li className="footer-info"><RiMapPinLine /><a href={`${LINK.maps}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDirection}</a></li>
             </ul>
           </div>
 
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle3}</h3>
             <ul className="footer-list grid gap-y-3">
-              <li className="footer-info"><RiPhoneLine className="footer-icon" /><a target="_blank" href={`${LINK.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
-              <li className="footer-info"><RiMailLine className="footer-icon" /><a target="_blank" href={`${LINK.email}`}> {TEXT.footerInfoEmail}</a></li>
+              <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${LINK.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
+              <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`${LINK.email}`}> {TEXT.footerInfoEmail}</a></li>
             </ul>
           </div>
 
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle4}</h3>
             <ul className="footer-list grid gap-y-3">
-              <li className="footer-info"><a target="_blank" href={`${LINK.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
-              <li className="footer-info"><a target="_blank" href={`${LINK.cataratasarg}`}>{TEXT.footerInfoParkArg}</a></li>
-              <li className="footer-info"><a target="_blank" href={`${LINK.cataratasbr}`}>{TEXT.footerInfoParkBr}</a></li>
-              <li className="footer-info"><a target="_blank" href={`${LINK.ingresobrasil}`}>{TEXT.footerInfoMigrationBr}</a></li>
-              <li className="footer-info"><a target="_blank" href={`${LINK.lunallena}`}>{TEXT.footerInFullMoon}</a></li>
+              <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
+              <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.cataratasarg}`}>{TEXT.footerInfoParkArg}</a></li>
+              <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.cataratasbr}`}>{TEXT.footerInfoParkBr}</a></li>
+              <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.ingresobrasil}`}>{TEXT.footerInfoMigrationBr}</a></li>
+              <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.lunallena}`}>{TEXT.footerInFullMoon}</a></li>
             </ul>
           </div>
 
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle5}</h3>
             <ul className="footer-list grid gap-y-3">
-              <li className="footer-info"><a href={`${LINK.developer}`} target="_blank">{TEXT.footerInfoDeveloper}</a></li>
+              <li className="footer-info"><a href={`${LINK.developer}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDeveloper}</a></li>
               <li className="footer-info"><Link href="/terms">{TEXT.footerTerms}</Link></li>
               <li className="footer-info"><Link href="/policy">{TEXT.footerInfoPolicy}</Link></li>
               <li className="footer-info"><Link href="/faq">{TEXT.footerInfoFaq}</Link></li>

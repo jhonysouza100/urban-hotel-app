@@ -21,9 +21,9 @@ export default function Suscription() {
             <SuscriptionForm />
 
           </div>
-          <div className="join-image scale-image sm:-order-1 block w-full h-auto relative overflow-hidden aspect-[4/5]">
+          <div className="join-image sm:-order-1 block w-full h-auto relative overflow-hidden aspect-[4/5]">
             <Image priority
-             className="join-img transition-transform duration-500 w-full h-full block top-0 left-0 object-cover" alt="Island image"
+             className="join-img transition-transform duration-500 w-full h-full block top-0 left-0 object-cover" alt="Imagen de la habitación"
              src="/img/join-image.jpeg" 
              width={1080} height={1314} 
              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

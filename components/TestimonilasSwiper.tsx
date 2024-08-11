@@ -63,14 +63,14 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
           {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
           <Card>
             <CardHeader
-              avatar={ <Avatar className='!bg-primary-1' aria-label="recipe">{el.user.username.charAt(0)}</Avatar>}
+              avatar={ <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{el.user.username.charAt(0)}</Avatar>}
               action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
               title={<span className='font-semibold'>{el.user.username}</span>}
               subheader={el.user.email}
             />
             <CardContent className='!pt-0'>
               <Rating size='small' name="read-only" value={el.rating} readOnly />
-              <Typography className='line-clamp-5 min-h-24 max-h-24' variant="body2" color="text.secondary">{el.comment}</Typography>
+              <Typography className='line-clamp-5 min-h-24 max-h-26' variant="body2" color="text.secondary">{el.comment}</Typography>
             </CardContent>
           </Card>
         </SwiperSlide>
@@ -80,10 +80,10 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
 
     <Dialog open={open} onClose={handleClose} scroll={'paper'} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description">
       {/* TITULO ===================================================================================== */}
-      <DialogTitle id="scroll-dialog-title" className=''>
+      <DialogTitle id="scroll-dialog-title">
         {selectedReview && (
           <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-            <Avatar className='bg-primary-1' aria-label="recipe">{selectedReview.user.username.charAt(0)}</Avatar>
+            <Avatar className='bg-primary-1' aria-label="Imagen de perfil del usuario">{selectedReview.user.username.charAt(0)}</Avatar>
             <span className='flex flex-col'>
               <Typography className='font-medium' variant="body2" color="text.primary">{selectedReview.user.username}</Typography>
               <Typography variant="subtitle2" color="text.secondary">{selectedReview.user.email}</Typography>
@@ -100,7 +100,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
         </DialogContentText>
       </DialogContent>
       {/* ACTIONS ===================================================================================== */}
-      <DialogActions>
+      <DialogActions className='!px-6'>
         <Button onClick={handleClose}>{textClose1}</Button>
       </DialogActions>
     </Dialog>
