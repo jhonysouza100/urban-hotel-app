@@ -8,8 +8,8 @@ const scrollAnimation = () => {
     const sr = ScrollReveal({
       origin: 'top',
       distance: '60px',
-      duration: 2500,
-      delay: 250,
+      duration: 1000,
+      delay: 200,
       reset: false,
     });
 
