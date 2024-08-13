@@ -15,7 +15,7 @@ export default async function Footer() {
         
         <p className="footer-logo inline-block mb-2 text-light text-xl font-semibold lg:text-2xl">Iguazú Urban Hotel <span className="text-primary-1">Express</span></p>
 
-        <div className="footer-content grid grid-cols-1 gap-4 sm:gap-8 sm:gap-y-8 sm:gap-x-16 sm:grid-cols-max2 lg:gap-12 lg:grid-cols-max3">
+        <div className="footer-content grid grid-cols-1 gap-8 sm:gap-y-8 sm:gap-x-16 sm:grid-cols-max2 lg:gap-x-20 lg:grid-cols-max3 xl:grid-cols-max4">
 
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle1}</h3>
@@ -36,23 +36,23 @@ export default async function Footer() {
               </a>
             </div>
           </div>
-
+          
           <div className="footer-data">
             <h3 className="footer-title">{TEXT.footerTitle2}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiMapPinLine /><a href={`${LINK.maps}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDirection}</a></li>
             </ul>
           </div>
-
-          <div className="footer-data">
+         
+          <div className="footer-data sm:col-start-2 xl:row-start-1 xl:col-start-3">
             <h3 className="footer-title">{TEXT.footerTitle3}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${LINK.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
               <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`${LINK.email}`}> {TEXT.footerInfoEmail}</a></li>
             </ul>
           </div>
-
-          <div className="footer-data">
+          
+          <div className="footer-data lg:row-start-1 lg:col-start-3 xl:row-start-2 xl:col-start-1 xl:col-span-2">
             <h3 className="footer-title">{TEXT.footerTitle4}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${LINK.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
@@ -63,7 +63,7 @@ export default async function Footer() {
             </ul>
           </div>
 
-          <div className="footer-data">
+          <div className="footer-data sm:row-start-2 xl:row-start-1 xl:col-start-4">
             <h3 className="footer-title">{TEXT.footerTitle5}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><a href={`${LINK.developer}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDeveloper}</a></li>
