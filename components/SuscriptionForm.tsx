@@ -60,7 +60,7 @@ export default function suscripcionForm() {
         aria-label="Formulario de suscripción"
       >
         <input {...register("email")}
-          className="join-input py-5 px-4 bg-neutral-950"
+          className="join-input py-5 px-4 bg-neutral-950 placeholder:text-light"
           type="email"
           id="email"
           placeholder={TEXT.joinPlaceholder1}

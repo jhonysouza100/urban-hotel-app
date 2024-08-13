@@ -20,8 +20,8 @@ const config: Config = {
         'max2': 'repeat(2, max-content)',
         'max3': 'repeat(3, max-content)',
         'max4': 'repeat(4, max-content)',
-        'a': 'repeat(2, 320px)',
-        'b': "380px 380px"
+        'a': 'repeat(2, 350px)',
+        'b': "460px 340px"
       },
       colors: {
         "primary-1": "hsl(84, 36%, 42%)",

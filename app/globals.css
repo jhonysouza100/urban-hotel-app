@@ -14,11 +14,11 @@
   }
 
   .section {
-    @apply pt-20 pb-4;
+    @apply pt-20 pb-4 xl:pt-28 xl:pb-8;
   }
 
   .section-container {
-    @apply container max-w-sm mx-auto sm:max-w-screen-xl px-6 sm:px-12 xl:px-20;
+    @apply container mx-auto sm:max-w-screen-xl px-6 xl:px-20;
   }
 
   .section-title {

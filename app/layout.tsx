@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="es">
       <body className={`${poppins.className} text-light bg-secondary tracking-wide select-none antialiased`}>
-        <ScrollAnimations />
+        {/* <ScrollAnimations /> */}
         {children}
         <Footer />
       </body>

@@ -83,9 +83,9 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
       <DialogTitle id="scroll-dialog-title">
         {selectedReview && (
           <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-            <Avatar className='bg-primary-1' aria-label="Imagen de perfil del usuario">{selectedReview.user.username.charAt(0)}</Avatar>
+            <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{selectedReview.user.username.charAt(0)}</Avatar>
             <span className='flex flex-col'>
-              <Typography className='font-medium' variant="body2" color="text.primary">{selectedReview.user.username}</Typography>
+              <Typography className='!font-medium' variant="body2" color="text.primary">{selectedReview.user.username}</Typography>
               <Typography variant="subtitle2" color="text.secondary">{selectedReview.user.email}</Typography>
             </span>
             <span className='flex justify-start grow sm:justify-end'>
