@@ -1,16 +1,16 @@
 import config from "@/config";
-import MediaLinks from "@/interfaces/medialink.interface";
+import MediaPaths from "@/interfaces/mediapath.interface";
 
-export async function getMediaLinks(): Promise<MediaLinks> {
+export async function getMediaPaths(): Promise<MediaPaths> {
   try {
 
-    const res = await fetch(`${config.BACKEND_MEDIA_LINKS}`);
+    const res = await fetch(`${config.BACKEND_MEDIA_PATHS}`);
 
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    const data: MediaLinks = await res.json();
+    const data: MediaPaths = await res.json();
 
     return {...data, ...data};
 

@@ -63,7 +63,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
           {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
           <Card>
             <CardHeader
-              avatar={ <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{el.user.username.charAt(0)}</Avatar>}
+              avatar={ <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{el.user.picture || el.user.username.charAt(0)}</Avatar>}
               action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
               title={<span className='font-semibold'>{el.user.username}</span>}
               subheader={el.user.email}
@@ -83,7 +83,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
       <DialogTitle id="scroll-dialog-title">
         {selectedReview && (
           <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-            <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{selectedReview.user.username.charAt(0)}</Avatar>
+            <Avatar className='!bg-primary-1' aria-label="Imagen de perfil del usuario">{selectedReview.user.picture || selectedReview.user.username.charAt(0)}</Avatar>
             <span className='flex flex-col'>
               <Typography className='!font-medium' variant="body2" color="text.primary">{selectedReview.user.username}</Typography>
               <Typography variant="subtitle2" color="text.secondary">{selectedReview.user.email}</Typography>

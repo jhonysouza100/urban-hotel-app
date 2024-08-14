@@ -1,4 +1,4 @@
-export default interface MediaLink {
+export default interface MediaPath {
   developer: string;
   instagram: string;
   facebook: string;

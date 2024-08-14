@@ -34,7 +34,7 @@
   }
 
   .button {
-    @apply bg-transparent text-secondary font-montserrat py-5 px-6 font-semibold inline-flex items-center gap-x-2 backdrop-blur-xl xl:gap-x-6;
+    @apply bg-transparent text-secondary font-montserrat py-5 px-6 font-semibold inline-flex items-center gap-x-2 backdrop-blur-xl xl:gap-x-6 cursor-pointer;
   }
 
   .button path {
@@ -50,14 +50,34 @@
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
   }
 
+  .ripple {
+    @apply absolute bg-white rounded-full pointer-events-none;
+    transform: translate(-50%, -50%);
+    animation: ripples 0.6s linear infinite;
+  }
+  
   .scale-image:hover img {
     @apply scale-110;
   }
+
 
   [class*="MuiTypography"] {
     @apply !font-poppins;
   }
   
+}
+
+@keyframes ripples {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
 }
 
 .swiper-pagination {

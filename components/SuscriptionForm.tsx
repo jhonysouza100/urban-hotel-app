@@ -6,6 +6,7 @@ import { RiArrowRightLine } from "@remixicon/react";
 import { Toaster, toast } from "sonner";
 import config from "@/config";
 import texts from "@/public/texts";
+import Button from "@/ui/Button";
 
 export default function suscripcionForm() {
 
@@ -69,10 +70,10 @@ export default function suscripcionForm() {
 
         {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email.message}</label>}
 
-        <button type="submit" className="join-submit button cursor-pointer" aria-label="Enviar formulario">
+        <Button type="submit" aria-label="Enviar formulario">
           {TEXT.joinButtonText1}
           <RiArrowRightLine className="w-5 h-5 stroke-secondary" />
-        </button>
+        </Button>
 
       </form>
 
