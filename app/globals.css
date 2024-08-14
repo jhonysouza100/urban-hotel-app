@@ -51,7 +51,7 @@
   }
 
   .ripple {
-    @apply absolute bg-white rounded-full pointer-events-none;
+    @apply absolute bg-transparent rounded-full pointer-events-none;
     transform: translate(-50%, -50%);
     animation: ripples 0.6s linear infinite;
   }
