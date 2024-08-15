@@ -27,10 +27,16 @@ const config: Config = {
         "primary-1": "hsl(84, 36%, 42%)",
         "primary-2": "hsl(84, 35%, 31%)",
         "primary-3": "hsl(83, 35%, 20%)",
-        "secondary": "hsl(0, 0%, 95%)",
+        "background": "hsl(0, 0%, 95%)",
+        "foreground": "hsl(222.2, 47.4%, 11.2%)",
         "container": "hsl(0, 0%, 10%)",
-        "light": "hsl(0, 0%, 70%)",
-        "dark": "hsl(24, 3%, 24%)",
+        "container-foreground": "hsl(0, 0%, 70%)",
+        "muted": "hsl(210, 40%, 96.1%)",
+        "muted-foreground": "hsl(215.4, 16.3%, 46.9%)",
+        "error": "hsl(0, 100%, 50%)",
+        "success": "hsl(120, 60%, 50%)",
+        "alert": "hsl(30, 100%, 50%)",
+        "info": "hsl(200, 80%, 50%)",
         "transparent": "hsla(0, 0%, 100%, .2)",
       },
       fontFamily: {
@@ -44,6 +50,15 @@ const config: Config = {
       lineHeight: {
         'extra-tight': '1.2',
         'extra-loose': '2.5',
+      },
+      keyframes: {
+        ripples: {
+          '0%': { width: '0', height: '0', opacity: '0.5' },
+          '100%': { width: '500px', height: '500px', opacity: '0'},
+        }
+      },
+      animation: {
+        ripples: 'ripples 0.6s linear infinite',
       },
     },
   },

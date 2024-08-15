@@ -18,7 +18,7 @@ export default async function Footer() {
           <Avatar className="footer-logo !w-16 !h-16" aria-label="Logo del hotel" sizes="medium" src="./img/logo.png" />
           <div className="footer-text grid gap-1 text-xl font-semibold lg:text-2xl">
             <p className="text-primary-1">Express</p>
-            <p className="footer-logo text-light">Iguazú Urban Hotel</p>
+            <p className="footer-logo text-container-foreground">Iguazú Urban Hotel</p>
           </div>
         </div>
 
@@ -30,14 +30,14 @@ export default async function Footer() {
               <a 
                 href={`${PATH.facebook}`} 
                 target="_blank" rel="noreferrer" 
-                className="footer-social-link text-light cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
+                className="footer-social-link text-container-foreground cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
                 aria-label="Abrir en Facebook">
                 <RiFacebookLine className="w-6 h-6 lg:w-7 lg:h-7" />
               </a>
               <a 
                 href={`${PATH.instagram}`}
                 target="_blank" rel="noreferrer"
-                className="footer-social-link text-light cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
+                className="footer-social-link text-container-foreground cursor-pointer transition-all duration-500 hover:text-primary-1 hover:-translate-y-1"
                 aria-label="Abrir en Instagram">
                 <RiInstagramLine className="w-6 h-6 lg:w-7 lg:h-7" />
               </a>
@@ -84,7 +84,7 @@ export default async function Footer() {
         
       </div>
 
-      <span className="footer-copyright text-[0.7rem] xl:text-sm text-light block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."}</span>
+      <span className="footer-copyright text-[0.7rem] xl:text-sm text-container-foreground block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."}</span>
       
     </footer>
   )

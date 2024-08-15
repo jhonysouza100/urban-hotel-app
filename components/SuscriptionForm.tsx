@@ -61,7 +61,7 @@ export default function suscripcionForm() {
         aria-label="Formulario de suscripción"
       >
         <input {...register("email")}
-          className="join-input py-5 px-4 bg-neutral-950 placeholder:text-light"
+          className="join-input py-5 px-4 bg-neutral-950 placeholder:text-muted-foreground"
           type="email"
           id="email"
           placeholder={TEXT.joinPlaceholder1}
@@ -72,7 +72,7 @@ export default function suscripcionForm() {
 
         <Button type="submit" aria-label="Enviar formulario">
           {TEXT.joinButtonText1}
-          <RiArrowRightLine className="w-5 h-5 stroke-secondary" />
+          <RiArrowRightLine className="w-5 h-5 stroke-background" />
         </Button>
 
       </form>
