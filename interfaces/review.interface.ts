@@ -2,9 +2,14 @@ import User from "./user.interface";
 
 export default interface Review {
   id: number;
-  title: string;
-  comment: string;
+  author: string;
+  picture: string;
+  nacionality: string;
+  text: string;
   rating: number;
+  timestamp: string;
+  platformLogo: string;
+  platformName: string;
   userId: number;
   user: User;
 }
