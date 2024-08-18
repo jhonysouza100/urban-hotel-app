@@ -15,7 +15,7 @@ export async function getMediaPaths(): Promise<MediaPaths> {
     return {...data, ...data};
 
   } catch (error) {
-    console.error("Error fetching media links:", error);
+    console.error("Error fetching media paths:", error);
     return [] as any;
   }
 }
