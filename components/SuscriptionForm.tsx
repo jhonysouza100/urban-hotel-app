@@ -1,5 +1,5 @@
 "use client"
-import { useForm } from "react-hook-form";
+import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RiArrowRightLine } from "@remixicon/react";
@@ -8,7 +8,7 @@ import config from "@/config";
 import texts from "@/public/texts";
 import Button from "@/ui/Button";
 
-export default function suscripcionForm() {
+export default function SuscriptionForm() {
 
   const TEXT = texts.ES;
 
@@ -61,14 +61,14 @@ export default function suscripcionForm() {
         aria-label="Formulario de suscripción"
       >
         <input {...register("email")}
-          className="join-input py-5 px-4 bg-neutral-950 placeholder:text-muted-foreground"
+          className="join-input py-5 px-4"
           type="email"
           id="email"
           placeholder={TEXT.joinPlaceholder1}
           aria-label="Formulario de suscripción"
         />
 
-        {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email.message}</label>}
+        {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email ? (errors.email as FieldError).message : ''}</label>}
 
         <Button type="submit" aria-label="Enviar formulario">
           {TEXT.joinButtonText1}

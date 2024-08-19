@@ -1,14 +1,17 @@
 "use client"
-
-// swiper imports
-import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Review from '@/interfaces/review.interface';
 import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import { RiArrowDownSLine } from '@remixicon/react';
-import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import texts from "@/public/texts";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Virtual } from 'swiper/modules';
+// swiper imports
+import 'swiper/css';
+import 'swiper/css/virtual';
+
 
 interface TestimonialsSwiperProps {
   reviews: Review[];
@@ -46,33 +49,50 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
 
   return (
     <>
-    <Swiper className='swiper'
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      spaceBetween={0}
-      loop={true}
+    <Swiper modules={[Autoplay, Virtual]}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      virtual
       grabCursor={true}
-      keyboard={{enabled: true,}}
-      slidesPerView={'auto'}
+      loop={true}
       centeredSlides={true}
+      slidesPerView={1}
+      spaceBetween={10}
       breakpoints={{
-        500: {
+        640: {
           slidesPerView: 2,
-          spaceBetween: 0
-        }, 1080: {
-          slidesPerView: 3,
-          spaceBetween: 10
+          spaceBetween: 10,
         },
-      }}>
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+      }}
+      onSlideChange={({ activeIndex }: { activeIndex: number }) => {
+        const slides = document.querySelectorAll('.swiper-slide');
+        slides.forEach((slide, index) => {
+          if (slide instanceof HTMLElement) { // Asegura que sea un HTMLElement
+            if (index === activeIndex) {
+              slide.style.transform = 'scale(1.1)';
+            } else {
+              slide.style.transform = 'scale(1)';
+            }
+          }
+        })}
+      }
+    >
         
-      {reviews && reviews.map(el => (
-        <SwiperSlide key={crypto.randomUUID()} className="swiper-slide p-3 md:p-5">
+      {reviews && reviews.map((el, index) => (
+        <SwiperSlide virtualIndex={index} key={crypto.randomUUID()} className="swiper-slide p-3 md:p-5 transition-transform duration-500">
           {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
           <Card>
             <CardHeader
-              avatar={ <Avatar className='!bg-primary-1' src={el.picture || el.author.charAt(0)} aria-label="Imagen de perfil del usuario" />}
+              avatar={ <Avatar className='!bg-primary-1' src={el.picture || el.author.charAt(0)} alt="Imagen de perfil del usuario" />}
               action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
               title={<span className='!font-semibold'>{el.author}</span>}
-              subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{el.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={el.platformLogo} />{el.platformName}</span>}
+              subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{el.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={el.platformLogo} alt={el.platformName} />{el.platformName}</span>}
             />
             <CardContent className='!pt-0'>
               <Rating size='small' name="read-only" value={el.rating} readOnly />
@@ -91,10 +111,10 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
             <DialogTitle id="scroll-dialog-title">
               {selectedReview && (
                 <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-                  <Avatar className='!bg-primary-1' src={selectedReview.picture || selectedReview.author.charAt(0)} aria-label="Imagen de perfil del usuario" />
+                  <Avatar className='!bg-primary-1' src={selectedReview.picture || selectedReview.author.charAt(0)} alt="Imagen de perfil del usuario" />
                   <span className='flex flex-col'>
                     <Typography className='!font-medium' variant="subtitle1" color="text.primary">{selectedReview.author}</Typography>
-                    {<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformLogo} />{selectedReview.platformName}</span>}
+                    {<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformName} alt={selectedReview.platformLogo} />{selectedReview.platformName}</span>}
                   </span>
                   <span className='flex justify-start grow sm:justify-end'>
                     <Rating size='small' name="read-only" value={selectedReview.rating} readOnly />
