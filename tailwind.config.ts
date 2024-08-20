@@ -32,7 +32,7 @@ const config: Config = {
         "container": "hsl(0, 0%, 10%)",
         "container-foreground": "hsl(0, 0%, 70%)",
         "muted": "hsl(210, 40%, 96.1%)",
-        "muted-foreground": "hsl(215.4, 16.3%, 46.9%)",
+        "muted-foreground": "rgba(0, 0, 0, 0.6)",
         "error": "rgb(196, 28, 28)",
         "error-soft": "rgb(252, 228, 228)",
         "success": "rgb(31, 122, 31)",

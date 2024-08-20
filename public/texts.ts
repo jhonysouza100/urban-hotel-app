@@ -45,8 +45,11 @@ const texts = {
       { t: "Terminal de Ómnibus", d: "a 300 mts" },
       { t: "Hito 3 Fronteras", d: "a 1200 mts" }
     ],
-    testimonialText1: "Lo que dicen nuestros clientes",
     textClose1: "Cerrar",
+    brandName1: "Iguazú Urban Hotel",
+    brandName2: "Express",
+    testimonilasTitle1: "Que dicen nuestros huéspedes",
+    testimonilasTitle2: "Reseñas",
     joinTitle1: "Tu Viaje",
     joinTitle2: "Comienza Aquí",
     joinText1: "Manténgase actualizado con nuestra última información y viajes.",

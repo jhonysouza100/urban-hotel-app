@@ -1,9 +1,8 @@
 import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
-import React, { Suspense } from 'react';
 import texts from "@/public/texts";
 import Link from "next/link";
-const Avatar = React.lazy(() => import('@mui/material/Avatar'));
+import { Avatar } from "@mui/material";
 
 export default async function Footer() {
   
@@ -16,10 +15,10 @@ export default async function Footer() {
       <div className="footer-container section-container grid gap-6 gap-y-16">
         
         <div className="flex items-center justify-start gap-4">
-          <Suspense><Avatar className="footer-logo !w-16 !h-16" alt="Logo del hotel" sizes="medium" src="./img/logo.png" /></Suspense>
+          <Avatar className="footer-logo !w-16 !h-16" alt="Logo del hotel" sizes="medium" src="./img/logo.png" />
           <div className="footer-text grid gap-1 text-xl font-semibold lg:text-2xl">
-            <p className="text-primary-1">Express</p>
-            <p className="footer-logo text-container-foreground">Iguazú Urban Hotel</p>
+            <p className="text-primary-1">{TEXT.brandName2}</p>
+            <p className="footer-logo text-container-foreground">{TEXT.brandName1}</p>
           </div>
         </div>
 

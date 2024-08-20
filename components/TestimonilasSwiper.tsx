@@ -6,15 +6,17 @@ import { RiArrowDownSLine } from '@remixicon/react';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import texts from "@/public/texts";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Virtual } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 // swiper imports
 import 'swiper/css';
-import 'swiper/css/virtual';
-
 
 interface TestimonialsSwiperProps {
   reviews: Review[];
+}
+
+interface TestimonialCardProps {
+  review: Review;
 }
 
 export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
@@ -46,15 +48,33 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
     }
   }, [open]);
 
+  const TestimonialCard = ({review}: TestimonialCardProps) => {
+    const swiperSlide = useSwiperSlide();
+
+    return (
+      // <Card className={`transition-transform duration-500 ${swiperSlide && swiperSlide.isActive ? 'scale-110' : 'scale-100'}`}>
+      <Card>
+      <CardHeader
+        avatar={ <Avatar className='!bg-primary-1' src={review.picture || review.author.charAt(0)} alt="Imagen de perfil del usuario" />}
+        action={ <IconButton onClick={() => handleClickOpen(review)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
+        title={<span className='!font-semibold !line-clamp-1'>{review.author}</span>}
+        subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{review.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={review.platformLogo} alt={review.platformName} />{review.platformName}</span>}
+      />
+      <CardContent className='!pt-0'>
+        <Rating size='small' name="read-only" value={review.rating} readOnly />
+        <Typography className='!line-clamp-5 !min-h-[100px] !max-h-[100px]' variant="body2" color="text.secondary">{review.text}</Typography>
+      </CardContent>
+    </Card>
+    )
+  };
 
   return (
     <>
-    <Swiper modules={[Autoplay, Virtual]}
+    <Swiper modules={[Autoplay]} 
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
       }}
-      virtual
       grabCursor={true}
       loop={true}
       centeredSlides={true}
@@ -75,7 +95,7 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
         slides.forEach((slide, index) => {
           if (slide instanceof HTMLElement) { // Asegura que sea un HTMLElement
             if (index === activeIndex) {
-              slide.style.transform = 'scale(1.1)';
+              slide.style.transform = 'scale(1.07)';
             } else {
               slide.style.transform = 'scale(1)';
             }
@@ -84,21 +104,9 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
       }
     >
         
-      {reviews && reviews.map((el, index) => (
-        <SwiperSlide virtualIndex={index} key={crypto.randomUUID()} className="swiper-slide p-3 md:p-5 transition-transform duration-500">
-          {/* <Card className='transition-transform duration-500 hover:scale-105'> */}
-          <Card>
-            <CardHeader
-              avatar={ <Avatar className='!bg-primary-1' src={el.picture || el.author.charAt(0)} alt="Imagen de perfil del usuario" />}
-              action={ <IconButton onClick={() => handleClickOpen(el)} aria-label="Leer más"><RiArrowDownSLine /></IconButton> }
-              title={<span className='!font-semibold'>{el.author}</span>}
-              subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{el.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={el.platformLogo} alt={el.platformName} />{el.platformName}</span>}
-            />
-            <CardContent className='!pt-0'>
-              <Rating size='small' name="read-only" value={el.rating} readOnly />
-              <Typography className='!line-clamp-5 !min-h-[100px] !max-h-[100px]' variant="body2" color="text.secondary">{el.text}</Typography>
-            </CardContent>
-          </Card>
+      {reviews && reviews.map((el, virtualIndex) => (
+        <SwiperSlide key={crypto.randomUUID()} className="swiper-slide p-4 md:p-5 transition-transform duration-500">
+          <TestimonialCard review={el} />
         </SwiperSlide>
       ))}
       
@@ -111,10 +119,10 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
             <DialogTitle id="scroll-dialog-title">
               {selectedReview && (
                 <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-                  <Avatar className='!bg-primary-1' src={selectedReview.picture || selectedReview.author.charAt(0)} alt="Imagen de perfil del usuario" />
+                  <Avatar className='!bg-primary-1' src={selectedReview.picture || selectedReview.author.charAt(0)} alt='Imagen de perfil' />
                   <span className='flex flex-col'>
                     <Typography className='!font-medium' variant="subtitle1" color="text.primary">{selectedReview.author}</Typography>
-                    {<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformName} alt={selectedReview.platformLogo} />{selectedReview.platformName}</span>}
+                    {<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformLogo} alt={selectedReview.platformName} />{selectedReview.platformName}</span>}
                   </span>
                   <span className='flex justify-start grow sm:justify-end'>
                     <Rating size='small' name="read-only" value={selectedReview.rating} readOnly />
