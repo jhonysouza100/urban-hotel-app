@@ -1,7 +1,7 @@
 import config from "@/config";
-import MediaPaths from "@/interfaces/mediapath.interface";
+import Path from "@/interfaces/path.interface";
 
-export async function getMediaPaths(): Promise<MediaPaths> {
+export async function getMediaPaths(): Promise<Path> {
   try {
 
     const res = await fetch(`${config.BACKEND_MEDIA_PATHS}`);
@@ -11,8 +11,8 @@ export async function getMediaPaths(): Promise<MediaPaths> {
     }
 
     const data = await res.json();
-
-    return data[0];
+    
+    return {...data};
 
   } catch (error) {
     console.error("Error fetching media paths:", error);

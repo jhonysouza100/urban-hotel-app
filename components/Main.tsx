@@ -1,72 +1,19 @@
-"use client"
 import texts from "@/public/texts";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
-import { RiFacebookCircleFill, RiInformationLine, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
-import Button from "./ui/Button";
+import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
+import MainSwiper from "./MainSwiper";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
-export default function Main() {
+export default async function Main() {
 
   const TEXT = texts.ES;
 
-  // const PATH = await getMediaPaths();
-  const PATH = {
-    whatsapp: '',
-    facebook: '',
-    instagram: '',
-  }
+  const PATH = await getMediaPaths();
 
   return (
     <section className="home relative bg-container h-screen" id="home">
 
-      {/* <Swiper /> */}
-      <Swiper
-        modules={[EffectFade, Pagination, Autoplay, Keyboard]}
-        className="home-slider"
-        pagination={{ clickable: true }}
-        centeredSlides={true}
-        spaceBetween={30}
-        slidesPerView={'auto'}
-        effect={'fade'}
-        loop={true}
-        keyboard={{enabled: true,}}
-        autoplay={{delay: 8000, disableOnInteraction: false,}}
-        grabCursor={true}
-        >
-
-          {Array.from(['1', '2', '3']).map(el => (
-            <SwiperSlide key={crypto.randomUUID()}>
-              <div className="swiper-content relative min-h-screen !bg-center !bg-cover" 
-                style={{ background: `url('/img/home-bg-${el}.webp') no-repeat` }}
-              >
-                <div className="home-shadow dark-filter absolute top-0 left-0 w-full h-full z-10" />
-                <div className="home-content absolute top-0 left-0 h-full w-full pl-6 flex justify-end items-end z-20">
-                  <div className="home-data container px-6 grid gap-y-4">
-                    <h1 className="home-title section-title text-[32px] text-background text-end">{TEXT.homeTitle1}
-                      <br /> {TEXT.homeTitle2} <span className="text-primary-3">{TEXT.homeTitle3}</span>
-                    </h1>
-                    <p className="home-description mb-16 text-background text-end text-xs">{TEXT.homeDescription1}</p>
-                    <div className="flex justify-end mb-24">
-                      <Button className="home-button bg-primary-2 rounded-sm">
-                        <a href={`${PATH.whatsapp}`} target="_blank" className="" aria-label="Whatsapp">
-                          {TEXT.homeButtonTitle1} 
-                        </a>
-                        <RiWhatsappFill className="w-6 h-6" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            
-          ))}
-
-    </Swiper>
+      <MainSwiper paths={PATH} />
+      
       {/* LANG MENU */}
       {/* <LangSelect /> */}
 
