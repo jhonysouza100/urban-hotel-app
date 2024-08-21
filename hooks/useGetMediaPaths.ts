@@ -10,9 +10,9 @@ export async function getMediaPaths(): Promise<MediaPaths> {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    const data: MediaPaths = await res.json();
+    const data = await res.json();
 
-    return {...data, ...data};
+    return data[0];
 
   } catch (error) {
     console.error("Error fetching media paths:", error);

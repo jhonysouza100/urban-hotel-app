@@ -37,17 +37,21 @@
     @apply bg-transparent text-background font-montserrat py-5 px-6 font-semibold inline-flex items-center gap-x-2 backdrop-blur-xl xl:gap-x-6 cursor-pointer;
   }
 
-  .button path {
+  .button svg {
     @apply transition-transform duration-500 ease-in-out;
   }
 
-  .button:hover path {
+  .button:hover svg {
     @apply translate-x-1;
   }
   
   .shading {
     @apply absolute top-0 left-0 w-full h-full;
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
+  }
+
+  .dark-filter {
+    background: #00000050;
   }
 
   .ripple {

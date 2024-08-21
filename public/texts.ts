@@ -21,7 +21,7 @@ const texts = {
     homeTitle2: "Hotel",
     homeTitle3: "Express",
     homeDescription1: "Somos un hotel moderno con todos los servicios para que puedas disfrutar unos días únicos en Puerto Iguazú, Misiones.",
-    homeButtonTitle1: "Saber más",
+    homeButtonTitle1: "Consulta",
     socialLinkTitle1: "Síguenos",
     locationTitle1: "Fray Luis Beltrán 290",
     locationTitle2: "Puerto Iguazú - Misiones",

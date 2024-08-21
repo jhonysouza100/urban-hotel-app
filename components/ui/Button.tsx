@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, className, ...props 
   };
 
   return (
-    <button className={`button relative overflow-hidden ${className || ''}`} onClick={handleClick} {...props}>
+    <button className={`button relative overflow-hidden text-sm ${className || ''}`} onClick={handleClick} {...props}>
       {children}
     </button>
   );

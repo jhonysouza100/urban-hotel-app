@@ -25,8 +25,8 @@ const config: Config = {
       },
       colors: {
         "primary-1": "hsl(84, 36%, 42%)",
-        "primary-2": "hsl(84, 35%, 31%)",
-        "primary-3": "hsl(83, 35%, 20%)",
+        "primary-2": "rgb(25, 114, 92)",
+        "primary-3": "rgb(23, 204, 87)",
         "background": "hsl(0, 0%, 95%)",
         "foreground": "hsl(222.2, 47.4%, 11.2%)",
         "container": "hsl(0, 0%, 10%)",

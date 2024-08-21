@@ -1,3 +1,4 @@
+import Main from "@/components/Main";
 import Testimonials from "@/components/Testimonials";
 import dynamic from "next/dynamic";
 
@@ -10,6 +11,7 @@ export default function Home() {
   
   return (
     <main>
+      <Main />
       <Testimonials />
       <Suscription />
     </main>
