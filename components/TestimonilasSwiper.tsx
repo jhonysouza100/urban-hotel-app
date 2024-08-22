@@ -1,12 +1,12 @@
 "use client"
-import Review from '@/interfaces/review.interface';
-import { Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
-import DialogTitle from '@mui/material/DialogTitle';
-import { RiArrowDownSLine } from '@remixicon/react';
-import { Suspense, useEffect, useRef, useState } from 'react';
 import texts from "@/public/texts";
+import Review from '@/interfaces/review.interface';
+import { Suspense, useEffect, useRef, useState } from 'react';
+import { DialogTitle, Card, Rating, CardHeader, Avatar, CardContent, Typography, IconButton, Button, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
+import { RiArrowDownSLine } from '@remixicon/react';
 
-import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
+import Swiper from 'swiper';
+import { SwiperOptions } from 'swiper/types';
 import { Autoplay } from 'swiper/modules';
 // swiper imports
 import 'swiper/css';
@@ -39,7 +39,43 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
   };
   
   const descriptionElementRef = useRef<HTMLElement>(null);
+
+  const swiperParams : SwiperOptions = {
+    modules: [Autoplay],
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+    // onSlideChange: ({ activeIndex }: { activeIndex: number }) => {
+    //   const slides = document.querySelectorAll('.swiper-slide');
+    //   slides.forEach((slide, index) => {
+    //     if (slide instanceof HTMLElement) { // Asegura que sea un HTMLElement
+    //       if (index === activeIndex) {
+    //         slide.style.transform = 'scale(1.07)';
+    //       } else {
+    //         slide.style.transform = 'scale(1)';
+    //       }
+    //     }
+    //   })
+    // }
+  }
+
   useEffect(() => {
+    
+    const testimonialsSwiper = new Swiper('.testimonials-swiper', swiperParams);
+
     if (open) {
       const { current: descriptionElement } = descriptionElementRef;
       if (descriptionElement !== null) {
@@ -49,7 +85,8 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
   }, [open]);
 
   const TestimonialCard = ({review}: TestimonialCardProps) => {
-    const swiperSlide = useSwiperSlide();
+    
+    // const swiperSlide = useSwiperSlide();
 
     return (
       // <Card className={`transition-transform duration-500 ${swiperSlide && swiperSlide.isActive ? 'scale-110' : 'scale-100'}`}>
@@ -70,47 +107,15 @@ export default function TestimonialsSwiper({reviews}: TestimonialsSwiperProps) {
 
   return (
     <>
-    <Swiper modules={[Autoplay]} 
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}
-      grabCursor={true}
-      loop={true}
-      centeredSlides={true}
-      slidesPerView={1}
-      spaceBetween={10}
-      breakpoints={{
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        1280: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-      }}
-      onSlideChange={({ activeIndex }: { activeIndex: number }) => {
-        const slides = document.querySelectorAll('.swiper-slide');
-        slides.forEach((slide, index) => {
-          if (slide instanceof HTMLElement) { // Asegura que sea un HTMLElement
-            if (index === activeIndex) {
-              slide.style.transform = 'scale(1.07)';
-            } else {
-              slide.style.transform = 'scale(1)';
-            }
-          }
-        })}
-      }
-    >
-        
-      {reviews && reviews.map((el, virtualIndex) => (
-        <SwiperSlide key={crypto.randomUUID()} className="swiper-slide p-4 md:p-5 transition-transform duration-500">
-          <TestimonialCard review={el} />
-        </SwiperSlide>
-      ))}
-      
-    </Swiper>
+    <div className='swiper testimonials-swiper'>
+      <div className="swiper-wrapper">
+        {reviews && reviews.map((el, virtualIndex) => (
+          <div key={crypto.randomUUID()} className="swiper-slide p-4 md:p-5 transition-transform duration-500">
+            <TestimonialCard review={el} />
+          </div>
+        ))}
+      </div>
+    </div>
 
     {showPreview && (
         <Suspense>
