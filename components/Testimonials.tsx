@@ -7,13 +7,15 @@ export default async function Testimonials() {
 
   const TEXT = texts.ES;
 
-  const REVIEWS: Review[] = await getAllReviews();// devuele un arreglo de objetos
+  const REVIEWS: Review[] = await getAllReviews();
 
   return (
     <section className="section-container px-2 md:px-0 pt-10 pb-20">
       <div className="section-header text-center mb-12">
-        <h2 className="section-title text-primary-1">{TEXT.testimonilasTitle2}</h2>
-        <h3 className="text-xl text-foreground">{TEXT.testimonilasTitle1}</h3>
+        <h2 className="section-title sm:text-xl lg:text-2xl">
+          {TEXT.testimonilasTitle1}<br />
+          <span className="text-primary-2">{TEXT.testimonilasTitle2}</span>
+        </h2>
       </div>
 
       <TestimonialsSwiper reviews={REVIEWS} />

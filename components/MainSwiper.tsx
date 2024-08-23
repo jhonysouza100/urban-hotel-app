@@ -52,7 +52,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
                   </h1>
                   <p className="home-description mb-16 text-background text-end text-xs">{TEXT.homeDescription1}</p>
                   <div className="flex justify-end mb-24">
-                    <Button className="home-button bg-primary-2 rounded-sm">
+                    <Button className="home-button bg-primary-2 rounded-md">
                       <a href={`${paths.whatsapp}`} target="_blank" className="" aria-label="Whatsapp">
                         {TEXT.homeButtonTitle1} 
                       </a>
@@ -63,10 +63,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
               </div>
             </div>
           </div>
-
         ))}
-
-
       </div>
     </div>
   );

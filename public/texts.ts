@@ -37,19 +37,21 @@ const texts = {
       { t: "Habitaciones", d: "Dobles y Triples" },
       { t: "Desayuno", d: "Incluido" },
       { t: "Piscina", d: "y Solarium" },
-      { t: "Avenida principal", d: "a 200 mts" }
     ],
     serviceText2: [
       { t: "WIFI", d: "Gratuito" },
       { t: "Recepción", d: "24 hs" },
+    ],
+    locationTextGroup1: [
       { t: "Terminal de Ómnibus", d: "a 300 mts" },
+      { t: "Avenida principal", d: "a 200 mts" },
       { t: "Hito 3 Fronteras", d: "a 1200 mts" }
     ],
     textClose1: "Cerrar",
     brandName1: "Iguazú Urban Hotel",
     brandName2: "Express",
-    testimonilasTitle1: "Que dicen nuestros huéspedes",
-    testimonilasTitle2: "Reseñas",
+    testimonilasTitle1: "Que Dicen Nuestros",
+    testimonilasTitle2: "Huéspedes",
     joinTitle1: "Tu Viaje",
     joinTitle2: "Comienza Aquí",
     joinText1: "Manténgase actualizado con nuestra última información y viajes.",
