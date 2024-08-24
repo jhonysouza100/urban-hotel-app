@@ -42,11 +42,9 @@ const texts = {
       { t: "WIFI", d: "Gratuito" },
       { t: "Recepción", d: "24 hs" },
     ],
-    locationTextGroup1: [
-      { t: "Terminal de Ómnibus", d: "a 300 mts" },
-      { t: "Avenida principal", d: "a 200 mts" },
-      { t: "Hito 3 Fronteras", d: "a 1200 mts" }
-    ],
+    locationTextGroup1: ["Terminal de Ómnibus", "a 300 Mts"],
+    locationTextGroup2: ["Avenida principal", "a 300 Mts"],
+    locationTextGroup3: ["Hito 3 Fronteras", "a 2,9 Km"],
     textClose1: "Cerrar",
     brandName1: "Iguazú Urban Hotel",
     brandName2: "Express",

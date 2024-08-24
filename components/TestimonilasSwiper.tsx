@@ -5,7 +5,9 @@ import TestimonialCard from "./TestimonialCard";
 
 import Swiper from 'swiper';
 import { SwiperOptions } from 'swiper/types';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+// import { EffectCoverflow } from 'swiper/modules';
+// import 'swiper/css/effect-coverflow';
 import 'swiper/css';
 
 interface TestimonialsSwiperProps {
@@ -16,6 +18,16 @@ export default function TestimonialsSwiper({ reviews }: TestimonialsSwiperProps)
  
   const swiperParams: SwiperOptions = {
     modules: [Autoplay],
+    // modules: [Autoplay, EffectCoverflow],
+    // effect: "coverflow",
+    // coverflowEffect: {
+    //   depth: 100,
+    //   modifier: 1,
+    //   rotate: 0,
+    //   scale: 1,
+    //   slideShadows: false,
+    //   stretch: 0,
+    // },
     autoplay: { delay: 5000, disableOnInteraction: false },
     grabCursor: true,
     loop: true,
@@ -29,21 +41,30 @@ export default function TestimonialsSwiper({ reviews }: TestimonialsSwiperProps)
       },
       1280: {
         slidesPerView: 3,
-        spaceBetween: 0,
+        spaceBetween: 10,
       },
     },
-    // onSlideChange: ({ activeIndex }: { activeIndex: number }) => {
-    //   const slides = document.querySelectorAll('.swiper-slide');
-    //   slides.forEach((slide, index) => {
-    //     if (slide instanceof HTMLElement) { // Asegura que sea un HTMLElement
-    //       if (index === activeIndex) {
-    //         slide.style.transform = 'scale(1.07)';
-    //       } else {
-    //         slide.style.transform = 'scale(1)';
-    //       }
-    //     }
-    //   })
-    // }
+    speed: 900,
+    on: {
+      init: function (swiper: Swiper) {
+        swiper.slides.forEach((slide, index) => {
+          if (swiper.activeIndex === index) {
+            slide.style.transform = 'scale(1.1)';
+          } else {
+            slide.style.transform = 'scale(1)';
+          }
+        });
+      },
+      slideChange: function (swiper: Swiper) {
+        swiper.slides.forEach((slide, index) => {
+          if (swiper.activeIndex === index) {
+            slide.style.transform = 'scale(1.1)';
+          } else {
+            slide.style.transform = 'scale(1)';
+          }
+        });
+      }
+    }
   };
 
   useEffect(() => {

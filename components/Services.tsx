@@ -1,5 +1,5 @@
 import texts from "@/public/texts";
-import { RiCheckboxCircleLine, RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiBusLine, RiTrafficLightLine, RiMapLine, RiCameraLine } from "@remixicon/react";
+import { RiCheckboxCircleLine, RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiMapLine } from "@remixicon/react";
 
 export default function Services() {
 
@@ -7,7 +7,7 @@ export default function Services() {
 
   return(
     <section className="services section" id="services">
-      <h3 className="services-title section-title ssm:text-xl lg:text-2xl">{TEXT.sectionTitle2}</h3>
+      <h3 className="services-title section-title">{TEXT.sectionTitle2}</h3>
       <div className="services-container section-container pt-6 grid grid-cols-2 justify-center sm:pt-8 sm:flex sm:justify-around sm:items-start sm:flex-col lg:pt-10 xl:pt-12 2xl:pt-16">
         <div className="services-group left grid gap-4 sm:grid-cols-4">
           {TEXT.serviceText1 && TEXT.serviceText1.map( el => (

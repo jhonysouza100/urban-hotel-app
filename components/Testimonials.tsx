@@ -12,7 +12,7 @@ export default async function Testimonials() {
   return (
     <section className="section-container px-2 md:px-0 pt-10 pb-20">
       <div className="section-header text-center mb-12">
-        <h2 className="section-title sm:text-xl lg:text-2xl">
+        <h2 className="section-title">
           {TEXT.testimonilasTitle1}<br />
           <span className="text-primary-2">{TEXT.testimonilasTitle2}</span>
         </h2>

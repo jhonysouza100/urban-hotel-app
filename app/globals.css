@@ -22,7 +22,7 @@
   }
 
   .section-title {
-    @apply font-montserrat text-center font-semibold text-foreground mb-6 text-2xl leading-tight xl:text-[2.5rem];
+    @apply font-montserrat text-center font-semibold text-foreground mb-6 text-2xl leading-tight;
   }
 
   .footer-title {
