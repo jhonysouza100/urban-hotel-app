@@ -45,12 +45,12 @@ export default function MainSwiper({paths}: MainSwiperProps) {
               style={{ background: `url('/img/home-bg-${el}.webp') no-repeat` }}
             >
               <div className="home-shadow dark-filter absolute top-0 left-0 w-full h-full z-10" />
-              <div className="home-content absolute top-0 left-0 h-full w-full pl-6 flex justify-end items-end z-20">
+              <div className="home-content absolute top-0 left-0 h-full w-full pl-10 flex justify-end items-end z-20 lg:pl-80 lg:pr-8">
                 <div className="home-data container px-6 grid gap-y-4">
-                  <h1 className="home-title section-title text-[32px] text-background text-end">{TEXT.homeTitle1}
+                  <h1 className="home-title section-title text-[32px] text-background text-end lg:text-[2.5rem]">{TEXT.homeTitle1}
                     <br /> {TEXT.homeTitle2} <span className="text-primary-3">{TEXT.homeTitle3}</span>
                   </h1>
-                  <p className="home-description mb-16 text-background text-end text-xs">{TEXT.homeDescription1}</p>
+                  <p className="home-description mb-16 text-background text-end text-xs sm:text-sm lg:text-base">{TEXT.homeDescription1}</p>
                   <div className="flex justify-end mb-24">
                     <Button className="home-button bg-primary-2 rounded-md">
                       <a href={`${paths.whatsapp}`} target="_blank" className="" aria-label="Whatsapp">

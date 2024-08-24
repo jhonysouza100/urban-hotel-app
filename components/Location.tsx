@@ -1,5 +1,5 @@
 import texts from "@/public/texts";
-import { RiBusLine, RiTrafficLightLine, RiCameraLine } from "@remixicon/react";
+import { RiBusLine, RiCameraLine, RiRoadMapLine } from "@remixicon/react";
 
 export default async function Location() {
 
@@ -16,9 +16,9 @@ export default async function Location() {
           <p className="location-description mb-8 text-muted-foreground xl:mb-12">
             {TEXT.locationDescription1}
           </p>
-          <div className="text-start border-l-4 rounded-r-md p-2 border-primary-1 text-success bg-success-soft space-y-2">
+          <div className="text-start border-l-4 rounded-r-md p-4 border-primary-1 text-success bg-success-soft space-y-2">
             <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span>{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup1[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiTrafficLightLine /><span>{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup2[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span>{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup2[1]}</span></div>
             <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span>{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text- text-primary-1">{TEXT.locationTextGroup3[1]}</span></div>
           </div>
         </div>
