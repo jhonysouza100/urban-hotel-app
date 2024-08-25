@@ -10,7 +10,7 @@ export default async function Main() {
   const PATH = await getMediaPaths();
 
   return (
-    <section className="home relative bg-container h-screen" id="home">
+    <section className="home relative bg-container h-screen min-h-[480px]" id="home">
 
       <MainSwiper paths={PATH} />
       

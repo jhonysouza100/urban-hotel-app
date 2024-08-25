@@ -3,11 +3,12 @@ import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import texts from "@/public/texts";
 import Link from "next/link";
 import { Avatar } from "@mui/material";
+import ScrollUp from "./ScrollUp";
 
 export default async function Footer() {
   
-   const TEXT = texts.ES;
-   const PATH = await getMediaPaths();
+  const TEXT = texts.ES;
+  const PATH = await getMediaPaths();
 
   return (
     <footer className="footer pt-6 pb-8 bg-container md:pt-10 md:pb-4">
@@ -55,7 +56,7 @@ export default async function Footer() {
             <h3 className="footer-title">{TEXT.footerTitle3}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${PATH.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
-              <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`${PATH.email}`}> {TEXT.footerInfoEmail}</a></li>
+              <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`mailto:${PATH.email}`}> {TEXT.footerInfoEmail}</a></li>
             </ul>
           </div>
           
@@ -85,6 +86,8 @@ export default async function Footer() {
       </div>
 
       <span className="footer-copyright text-[0.7rem] xl:text-sm text-container-foreground block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."}</span>
+
+      <ScrollUp path={PATH} />
       
     </footer>
   )

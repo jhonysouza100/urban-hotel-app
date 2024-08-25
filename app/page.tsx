@@ -15,7 +15,6 @@ export default function Home() {
     <main>
       <Main />
       <Location />
-      <Services />
       <Testimonials />
       <Suscription />
     </main>

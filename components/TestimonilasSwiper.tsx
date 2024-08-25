@@ -68,7 +68,7 @@ export default function TestimonialsSwiper({ reviews }: TestimonialsSwiperProps)
   };
 
   useEffect(() => {
-    const swiper = new Swiper('.testimonials-swiper', swiperParams);
+    new Swiper('.testimonials-swiper', swiperParams);
   }, [])
 
   return (
@@ -76,7 +76,7 @@ export default function TestimonialsSwiper({ reviews }: TestimonialsSwiperProps)
       <div className='swiper testimonials-swiper'>
         <div className="swiper-wrapper">
           {reviews && reviews.map((el, virtualIndex) => (
-            <div key={crypto.randomUUID()} className="swiper-slide p-4 md:p-5 transition-transform duration-500">
+            <div key={crypto.randomUUID()} className="swiper-slide p-5 transition-transform duration-500">
               <TestimonialCard review={el} />
             </div>
           ))}

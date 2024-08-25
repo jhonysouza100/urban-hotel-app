@@ -31,7 +31,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
   };
   
   useEffect(() => {
-    const swiper = new Swiper('.main-swiper', swiperParams);
+    new Swiper('.main-swiper', swiperParams);
   }, [])
   
   const TEXT = texts.ES;
@@ -41,7 +41,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
       <div className="swiper-wrapper">
         {Array.from(['1', '2', '3']).map(el => (
           <div key={crypto.randomUUID()} className="swiper-slide">
-            <div className="swiper-content relative min-h-screen !bg-center !bg-cover" 
+            <div className="swiper-content relative h-screen min-h-[480px] !bg-center !bg-cover" 
               style={{ background: `url('/img/home-bg-${el}.webp') no-repeat` }}
             >
               <div className="home-shadow dark-filter absolute top-0 left-0 w-full h-full z-10" />
@@ -51,13 +51,13 @@ export default function MainSwiper({paths}: MainSwiperProps) {
                     <br /> {TEXT.homeTitle2} <span className="text-primary-3">{TEXT.homeTitle3}</span>
                   </h1>
                   <p className="home-description mb-16 text-background text-end text-xs sm:text-sm lg:text-base">{TEXT.homeDescription1}</p>
-                  <div className="flex justify-end mb-24">
-                    <Button className="home-button bg-primary-2 rounded-md">
-                      <a href={`${paths.whatsapp}`} target="_blank" className="" aria-label="Whatsapp">
+                  <div className="flex justify-end mb-24 sm:mb-14">
+                    <a href={`${paths.whatsapp}`} target="_blank" className="z-20" aria-label="Whatsapp">
+                      <Button className="home-button bg-primary-2 rounded-md">
                         {TEXT.homeButtonTitle1} 
-                      </a>
-                      <RiWhatsappFill className="w-6 h-6" />
-                    </Button>
+                        <RiWhatsappFill className="w-6 h-6" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -17,9 +17,9 @@ export default async function Location() {
             {TEXT.locationDescription1}
           </p>
           <div className="text-start border-l-4 rounded-r-md p-4 border-primary-1 text-success bg-success-soft space-y-2">
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span>{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup1[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span>{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup2[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span>{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text- text-primary-1">{TEXT.locationTextGroup3[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span className="font-medium">{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup1[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span className="font-medium">{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.locationTextGroup2[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span className="font-medium">{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text- text-primary-1">{TEXT.locationTextGroup3[1]}</span></div>
           </div>
         </div>
         <div className="location-image shadow-md rounded-md overflow-hidden w-full h-full lg:-order-1">
