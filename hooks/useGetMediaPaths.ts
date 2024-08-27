@@ -12,7 +12,7 @@ export async function getMediaPaths(): Promise<Path> {
 
     const data = await res.json();
     
-    return {...data}[0];
+    return {...data};
 
   } catch (error) {
     console.error("Error fetching media paths:", error);

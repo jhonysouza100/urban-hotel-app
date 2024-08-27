@@ -1,6 +1,5 @@
 import Location from "@/components/Location";
 import Main from "@/components/Main";
-import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import dynamic from "next/dynamic";
 

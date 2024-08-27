@@ -26,7 +26,7 @@ export default async function Footer() {
         <div className="footer-content grid grid-cols-1 gap-8 sm:gap-y-8 sm:gap-x-16 sm:grid-cols-max2 lg:gap-x-20 lg:grid-cols-max3 xl:grid-cols-max4">
 
           <div className="footer-data">
-            <h3 className="footer-title">{TEXT.footerTitle1}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle1}</h3>
             <div className="footer-social flex gap-x-6 xl:gap-x-8">
               <a 
                 href={`${PATH.facebook}`} 
@@ -46,14 +46,14 @@ export default async function Footer() {
           </div>
           
           <div className="footer-data">
-            <h3 className="footer-title">{TEXT.footerTitle2}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle2}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiMapPinLine /><a href={`${PATH.maps}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDirection}</a></li>
             </ul>
           </div>
          
           <div className="footer-data sm:col-start-2 xl:row-start-1 xl:col-start-3">
-            <h3 className="footer-title">{TEXT.footerTitle3}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle3}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${PATH.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
               <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`mailto:${PATH.email}`}> {TEXT.footerInfoEmail}</a></li>
@@ -72,7 +72,7 @@ export default async function Footer() {
           </div>
 
           <div className="footer-data sm:row-start-2 xl:row-start-1 xl:col-start-4">
-            <h3 className="footer-title">{TEXT.footerTitle5}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle5}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><a href={`${PATH.developer}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDeveloper}</a></li>
               <li className="footer-info"><Link href="/terms">{TEXT.footerTerms}</Link></li>

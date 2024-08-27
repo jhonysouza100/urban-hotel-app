@@ -43,7 +43,9 @@ const config: Config = {
         "alert": "rgb(154, 91, 19)",
         "alert-soft": "rgb(253, 240, 225, .5)",
         "transparent": "hsla(0, 0%, 100%, .2)",
+        "transparent-75": "hsla(0, 0%, 100%, .75)",
       },
+      
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
