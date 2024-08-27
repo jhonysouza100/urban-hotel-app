@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="es">
       <body className={`${poppins.className} bg-white tracking-wide min-h-screen select-none antialiased`}>
+        <Header />
         {/* <ScrollAnimations /> */}
         {children}
         <Footer />

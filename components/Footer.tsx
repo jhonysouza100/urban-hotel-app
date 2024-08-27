@@ -61,7 +61,7 @@ export default async function Footer() {
           </div>
           
           <div className="footer-data lg:row-start-1 lg:col-start-3 xl:row-start-2 xl:col-start-1 xl:col-span-2">
-            <h3 className="footer-title">{TEXT.footerTitle4}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle4}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${PATH.aeropuertoig}`}>{TEXT.footerInfoAirport}</a></li>
               <li className="footer-info"><a target="_blank" rel="noreferrer" href={`${PATH.cataratasarg}`}>{TEXT.footerInfoParkArg}</a></li>
