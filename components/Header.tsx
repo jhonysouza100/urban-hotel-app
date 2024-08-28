@@ -23,8 +23,10 @@ export default function Header() {
     if(header && open && navLinks) {
       header.classList.toggle('isBlur', Boolean(scrollRef.current));
       open.classList.toggle('text-foreground', Boolean(scrollRef.current));
-      navLinks.forEach( el => el.classList.toggle('lg:text-foreground', Boolean(scrollRef.current)));
-      navLinks.forEach( el => {el.classList.toggle('lg:after:bg-foreground', Boolean(scrollRef.current)); console.log(el)});
+      navLinks.forEach(el => {
+        el.classList.toggle('lg:text-foreground', Boolean(scrollRef.current));
+        el.classList.toggle('lg:after:bg-foreground', Boolean(scrollRef.current));
+    });
     }
   }
 
@@ -85,10 +87,10 @@ export default function Header() {
 
         <div className='nav-menu fixed w-full -top-full left-0 pt-16 pb-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
             <ul className="nav-list text-center flex flex-col gap-x-[4.5rem] gap-y-10 lg:flex-row">
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Home</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Location</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Testimonials</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Suscription</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold transition-colors ease-in duration-100 lg:flex-row lg:gap-x-16">Home</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors ease-in duration-100 lg:flex-row lg:gap-x-16">Location</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors ease-in duration-100 lg:flex-row lg:gap-x-16">Testimonials</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors ease-in duration-100 lg:flex-row lg:gap-x-16">Suscription</a></li>
             </ul>
             <div 
               className="nav-close p-2 flex items-center justify-center text-foreground cursor-pointer absolute top-4 right-6 lg:hidden"
@@ -98,7 +100,7 @@ export default function Header() {
         </div>   
 
         <div 
-          className="nav-open p-2 flex items-center justify-center text-background cursor-pointer transition-colors ease-int duration-100 lg:hidden"
+          className="nav-open p-2 flex items-center justify-center text-background cursor-pointer transition-colors ease-in duration-100 lg:hidden"
           id="nav-open">
           <RiMenuFill className="w-6 h-6" />
         </div>
