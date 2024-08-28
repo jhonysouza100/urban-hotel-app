@@ -7,23 +7,24 @@ export default function Header() {
 
   const scrollRef = React.useRef<Boolean>(false);
   const openRef = React.useRef<Boolean>(false);
-  // const [isMenuOpen, setIsMenuOpen] = React.useState<Boolean>(false);
   
   const handleClick = (open?: Boolean) => {
     open ? openRef.current = true : openRef.current = false;
     const menu = document.getElementById('nav-menu');
     if(menu) {
       menu.classList.toggle('top-0', Boolean(openRef.current));
-      console.log(openRef.current)
     }
   };
 
   const addBlur = () => {
     const header = document.getElementById('header');
     const open = document.getElementById('nav-open');
-    if(header && open) {
+    const navLinks = document.querySelectorAll('.nav-link');
+    if(header && open && navLinks) {
       header.classList.toggle('isBlur', Boolean(scrollRef.current));
       open.classList.toggle('text-foreground', Boolean(scrollRef.current));
+      navLinks.forEach( el => el.classList.toggle('lg:text-foreground', Boolean(scrollRef.current)));
+      navLinks.forEach( el => {el.classList.toggle('lg:after:bg-foreground', Boolean(scrollRef.current)); console.log(el)});
     }
   }
 
@@ -82,12 +83,12 @@ export default function Header() {
           sx={{ width: 32, height: 32 }}
         />
 
-        <div className='nav-menu' id="nav-menu">
-            <ul className="nav- text-center flex flex-col gap-y-10">
-              <li className="nav-item"><a href="#home" className="nav-link section-active relative text-foreground font-montserrat font-semibold lg:flex-row lg:gap-x-16">Home</a></li>
-              <li className="nav-item"><a href="#location" className="nav-link relative text-foreground font-montserrat font-semibold lg:flex-row lg:gap-x-16">Location</a></li>
-              <li className="nav-item"><a href="#testimonials" className="nav-link relative text-foreground font-montserrat font-semibold lg:flex-row lg:gap-x-16">Testimonials</a></li>
-              <li className="nav-item"><a href="#suscription" className="nav-link relative text-foreground font-montserrat font-semibold lg:flex-row lg:gap-x-16">Suscription</a></li>
+        <div className='nav-menu fixed w-full -top-full left-0 pt-16 pb-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
+            <ul className="nav-list text-center flex flex-col gap-x-[4.5rem] gap-y-10 lg:flex-row">
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Home</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Location</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Testimonials</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Suscription</a></li>
             </ul>
             <div 
               className="nav-close p-2 flex items-center justify-center text-foreground cursor-pointer absolute top-4 right-6 lg:hidden"
