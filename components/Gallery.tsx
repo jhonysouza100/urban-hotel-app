@@ -1,5 +1,7 @@
 "use client";
+import { RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiTv2Line } from "@remixicon/react";
 import Image from "next/image";
+import Button from "./ui/Button";
 import React, { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import { FreeMode, Thumbs, Navigation, Pagination } from "swiper/modules";
@@ -8,9 +10,10 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Button from "./ui/Button";
+import texts from "@/public/texts";
 
 export default function Gallery() {
+  const TEXT = texts.ES;
   const images = [
     {src: '/img/gallery-img-1.jpg'},
     {src: '/img/gallery-img-2.jpg'},
@@ -27,8 +30,6 @@ export default function Gallery() {
     {src: '/img/gallery-img-13.jpg'},
     {src: '/img/gallery-img-14.jpg'},
     {src: '/img/gallery-img-15.jpg'},
-    {src: '/img/gallery-img-16.jpg'},
-    {src: '/img/gallery-img-17.jpg'},
   ];
   const galleryRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
@@ -84,35 +85,66 @@ export default function Gallery() {
 
   return (
     <section className="gallery section" id="gallery">
-      <div className="gallery-section section-container">
+      <div className="gallery-section section-container xl:px-4">
 
-        {/* gallery */}
-        <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-lg shadow-md">
-          <div className="swiper-wrapper">
-            {images.map(el => (
-              <div key={crypto.randomUUID()} className="swiper-slide gallery-slide h-96 aspect-square sm:aspect-video">
-                <Image className="block h-full w-full object-cover" src={`${el.src}`} height={1080} width={1080} alt="" />
+        <h2 className="section-title xl:text-[2.5rem]">
+          Alojamiento &<br />
+          <span className="text-secondary">Servicios</span>
+        </h2>
+
+        <div className="grid grid-cols-1 gap-6 gap-y-12 justify-center sm:grid-cols-2 sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4">
+
+          <div>
+            {/* gallery */}
+            <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-lg shadow-md">
+              <div className="swiper-wrapper">
+                {images.map(el => (
+                  <div key={crypto.randomUUID()} className="swiper-slide gallery-slide h-96 aspect-square lg:aspect-video">
+                    <Image className="block h-full w-full object-cover" src={`${el.src}`} height={1080} width={1080} alt="" />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="swiper-button-next"></div>
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-pagination"></div>
-        </div>
+              <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev"></div>
+              <div className="swiper-pagination"></div>
+            </div>
 
-        {/* thumbnails */}
-        <div ref={thumbsRef} className="swiper thumbs-swiper w-full h-32 rounded-lg mt-3">
-          <div className="swiper-wrapper">
-            {images.map(el => (
-              <div key={crypto.randomUUID()} className="swiper-slide thumb-slide">
-                <Button className="flex h-full w-full items-center justify-center p-0">
-                  <Image className="block h-full w-full object-cover" src={`${el.src}`} height={500} width={500} alt="thumbnails image" />
-                </Button>
+            {/* thumbnails */}
+            <div ref={thumbsRef} className="swiper thumbs-swiper w-full h-32 rounded-lg mt-3">
+              <div className="swiper-wrapper">
+                {images.map(el => (
+                  <div key={crypto.randomUUID()} className="swiper-slide thumb-slide">
+                    <Button className="flex h-full w-full items-center justify-center p-0">
+                      <Image className="block h-full w-full object-cover" src={`${el.src}`} height={500} width={500} alt="thumbnails image" />
+                    </Button>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
 
+          <div className="location-data text-center">
+            <h2 className="section-title">
+              Lorem, ipsum dolor.<br />
+              Lorem, ipsum.
+            </h2>
+            <p className="location-description mb-8 text-muted-foreground xl:mb-12">
+              {TEXT.servicesDescription1}
+            </p>
+            <div className="grid grid-cols-2 text-start border-l-4 rounded-r-lg p-4 border-primary-1 text-success bg-success-soft space-y-2">
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiHotelBedLine /><span className="font-medium">{TEXT.serviceTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup1[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiWifiLine /><span className="font-medium">{TEXT.serviceTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup2[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiCupLine /><span className="font-medium">{TEXT.serviceTextGroup3[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup3[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup4[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup4[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTv2Line /><span className="font-medium">{TEXT.serviceTextGroup5[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup5[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup6[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup6[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup7[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup7[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup8[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup8[1]}</span></div>
+            </div>
+          </div>
+
+        </div>
+        
       </div>
     </section>
   );

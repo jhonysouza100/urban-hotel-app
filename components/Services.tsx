@@ -1,5 +1,5 @@
 import texts from "@/public/texts";
-import { RiCheckboxCircleLine, RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiMapLine } from "@remixicon/react";
+import { RiCheckboxCircleLine, RiMapLine } from "@remixicon/react";
 
 export default function Services() {
 

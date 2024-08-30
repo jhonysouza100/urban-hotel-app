@@ -38,6 +38,11 @@
     @apply w-3/4 /* las lineas tambien se mostraran in hover */
   }
 
+  .sombra {
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5),rgba(0,0,0,0));
+  }
+
   .footer-info {
     @apply grid grid-cols-max2 justify-self-start gap-2 items-center text-container-foreground text-xs xl:text-sm truncate transition-all duration-500 hover:text-primary-1 hover:translate-x-1;
   }

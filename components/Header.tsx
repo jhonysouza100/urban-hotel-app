@@ -89,7 +89,7 @@ export default function Header() {
             <ul className="nav-list text-center flex flex-col items-center px-4 gap-x-[4.5rem] gap-y-10 lg:flex-row">
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Inicio</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Ubicación</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Galeria</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Alojamiento</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Reseñas</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Contacto</a></li>
             </ul>

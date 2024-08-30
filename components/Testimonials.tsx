@@ -14,7 +14,7 @@ export default async function Testimonials() {
       <div className="section-header text-center mb-12">
         <h2 className="section-title xl:text-[2.5rem]">
           {TEXT.testimonilasTitle1}<br />
-          <span className="text-primary-2">{TEXT.testimonilasTitle2}</span>
+          <span className="text-secondary">{TEXT.testimonilasTitle2}</span>
         </h2>
       </div>
 

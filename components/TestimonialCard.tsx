@@ -48,7 +48,7 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
         subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{review.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={review.platformLogo} alt={review.platformName} />{review.platformName}</span>}
       />
       <CardContent className='!pt-0'>
-        <Rating size='small' name="read-only" value={review.rating} readOnly />
+        <Rating className="!text-secondary" size='small' name="read-only" value={review.rating} readOnly />
         <Typography className='!line-clamp-5 !min-h-[100px] !max-h-[100px]' variant="body2" color="text.secondary">{review.text}</Typography>
       </CardContent>
     </Card>
@@ -65,7 +65,7 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
                   <span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformLogo} alt={selectedReview.platformName} />{selectedReview.platformName}</span>
                 </span>
                 <span className='flex justify-start grow sm:justify-end'>
-                  <Rating size='small' name="read-only" value={selectedReview.rating} readOnly />
+                  <Rating className="!text-secondary" size='small' name="read-only" value={selectedReview.rating} readOnly />
                 </span>
               </span>
             )}
