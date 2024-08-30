@@ -1,3 +1,4 @@
+import Gallery from "@/components/Gallery";
 import Location from "@/components/Location";
 import Main from "@/components/Main";
 import Testimonials from "@/components/Testimonials";
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Main />
       <Location />
+      <Gallery />
       <Testimonials />
       <Suscription />
     </main>
