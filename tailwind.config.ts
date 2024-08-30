@@ -37,7 +37,7 @@ const config: Config = {
         "error": "rgb(196, 28, 28)",
         "error-soft": "rgb(252, 228, 228, .5)",
         "success": "rgb(31, 122, 31)",
-        "success-soft": "rgba(227, 251, 227, .5)",
+        "success-soft": "rgba(227, 251, 227, .3)",
         "info": "rgb(11, 107, 203)",
         "info-soft": "rgb(227, 239, 251, .5)",
         "alert": "rgb(154, 91, 19)",

@@ -8,8 +8,28 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Button from "./ui/Button";
 
 export default function Gallery() {
+  const images = [
+    {src: '/img/gallery-img-1.jpg'},
+    {src: '/img/gallery-img-2.jpg'},
+    {src: '/img/gallery-img-3.jpg'},
+    {src: '/img/gallery-img-4.jpg'},
+    {src: '/img/gallery-img-5.jpg'},
+    {src: '/img/gallery-img-6.jpg'},
+    {src: '/img/gallery-img-7.jpg'},
+    {src: '/img/gallery-img-8.jpg'},
+    {src: '/img/gallery-img-9.jpg'},
+    {src: '/img/gallery-img-10.jpg'},
+    {src: '/img/gallery-img-11.jpg'},
+    {src: '/img/gallery-img-12.jpg'},
+    {src: '/img/gallery-img-13.jpg'},
+    {src: '/img/gallery-img-14.jpg'},
+    {src: '/img/gallery-img-15.jpg'},
+    {src: '/img/gallery-img-16.jpg'},
+    {src: '/img/gallery-img-17.jpg'},
+  ];
   const galleryRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
   const thumbSwiperRef = useRef<Swiper | null>(null);
@@ -64,26 +84,16 @@ export default function Gallery() {
 
   return (
     <section className="gallery section" id="gallery">
-      <div className="gallery-section section-container xl:py-4 xl:px-4">
+      <div className="gallery-section section-container">
 
         {/* gallery */}
-        <div ref={galleryRef} className="swiper gallery-swiper h-96 w-full rounded-lg">
+        <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-lg shadow-md">
           <div className="swiper-wrapper">
-            <div className="swiper-slide flex h-full items-center justify-center">
-              <Image className="block h-full w-full object-cover" src='/img/popular-forest.jpg' height={500} width={500} alt="" />
-            </div>
-            <div className="swiper-slide flex h-full items-center justify-center">
-              <Image className="block h-full w-full object-cover" src='/img/popular-lake.jpg' height={500} width={500} alt="" />
-            </div>
-            <div className="swiper-slide flex h-full items-center justify-center">
-              <Image className="block h-full w-full object-cover" src='/img/popular-mountain.jpg' height={500} width={500} alt="" />
-            </div>
-            <div className="swiper-slide flex h-full items-center justify-center">
-              <Image className="block h-full w-full object-cover" src='/img/home-mountain.jpg' height={500} width={500} alt="" />
-            </div>
-            <div className="swiper-slide flex h-full items-center justify-center">
-              <Image className="block h-full w-full object-cover" src='/img/home-lake.jpg' height={500} width={500} alt="" />
-            </div>
+            {images.map(el => (
+              <div key={crypto.randomUUID()} className="swiper-slide gallery-slide h-96 aspect-square sm:aspect-video">
+                <Image className="block h-full w-full object-cover" src={`${el.src}`} height={1080} width={1080} alt="" />
+              </div>
+            ))}
           </div>
           <div className="swiper-button-next"></div>
           <div className="swiper-button-prev"></div>
@@ -91,35 +101,18 @@ export default function Gallery() {
         </div>
 
         {/* thumbnails */}
-        <div ref={thumbsRef} className="swiper thumbs-swiper mt-3 h-32 w-full rounded-lg">
+        <div ref={thumbsRef} className="swiper thumbs-swiper w-full h-32 rounded-lg mt-3">
           <div className="swiper-wrapper">
-            <div className="swiper-slide thumb-slide">
-              <button className="flex h-full w-full items-center justify-center">
-                <Image className="block h-full w-full object-cover" src='/img/popular-forest.jpg' height={500} width={500} alt="" />
-              </button>
-            </div>
-            <div className="swiper-slide thumb-slide">
-              <button className="flex h-full w-full items-center justify-center">
-                <Image className="block h-full w-full object-cover" src='/img/popular-lake.jpg' height={500} width={500} alt="" />
-              </button>
-            </div>
-            <div className="swiper-slide thumb-slide">
-              <button className="flex h-full w-full items-center justify-center">
-                <Image className="block h-full w-full object-cover" src='/img/popular-mountain.jpg' height={500} width={500} alt="" />
-              </button>
-            </div>
-            <div className="swiper-slide thumb-slide">
-              <button className="flex h-full w-full items-center justify-center">
-                <Image className="block h-full w-full object-cover" src='/img/home-mountain.jpg' height={500} width={500} alt="" />
-              </button>
-            </div>
-            <div className="swiper-slide thumb-slide">
-              <button className="flex h-full w-full items-center justify-center">
-                <Image className="block h-full w-full object-cover" src='/img/home-lake.jpg' height={500} width={500} alt="" />
-              </button>
-            </div>
+            {images.map(el => (
+              <div key={crypto.randomUUID()} className="swiper-slide thumb-slide">
+                <Button className="flex h-full w-full items-center justify-center p-0">
+                  <Image className="block h-full w-full object-cover" src={`${el.src}`} height={500} width={500} alt="thumbnails image" />
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
