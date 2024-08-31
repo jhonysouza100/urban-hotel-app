@@ -7,6 +7,12 @@ export default async function Location() {
 
   return (
     <section className="location section" id="location">
+
+       {/* <h2 className="section-title xl:text-[2.5rem]">
+          {TEXT.locationTitleA}<br />
+          <span className="text-secondary">{TEXT.locationTitleB}</span>
+        </h2> */}
+
       <div className="location-container section-container grid gap-6 gap-y-12 grid-cols-1 justify-center sm:grid-cols-2 sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4 xl:px-4">
         <div className="location-data text-center sm:text-start">
           <h2 className="section-title sm:text-start">

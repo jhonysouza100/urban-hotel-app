@@ -1,5 +1,5 @@
 "use client";
-import { RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiTv2Line } from "@remixicon/react";
+import { RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiTv2Line, RiSnowflakeLine, RiTempHotLine, RiBaiduLine, RiGogglesLine } from "@remixicon/react";
 import Image from "next/image";
 import Button from "./ui/Button";
 import React, { useEffect, useRef } from "react";
@@ -30,6 +30,11 @@ export default function Gallery() {
     {src: '/img/gallery-img-13.jpg'},
     {src: '/img/gallery-img-14.jpg'},
     {src: '/img/gallery-img-15.jpg'},
+    {src: '/img/gallery-img-16.jpg'},
+    {src: '/img/gallery-img-17.jpg'},
+    {src: '/img/gallery-img-18.jpg'},
+    {src: '/img/gallery-img-19.jpg'},
+    {src: '/img/gallery-img-20.jpg'},
   ];
   const galleryRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
@@ -88,13 +93,36 @@ export default function Gallery() {
       <div className="gallery-section section-container xl:px-4">
 
         <h2 className="section-title xl:text-[2.5rem]">
-          Alojamiento &<br />
-          <span className="text-secondary">Servicios</span>
+        {/* Bienvenido a */}
+        {/* La Aldea de la Selva */}
+          {TEXT.serviceTitle1}<br />
+          <span className="text-secondary">{TEXT.serviceTitle2}</span>
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 gap-y-12 justify-center sm:grid-cols-2 sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4">
+        <div className="flex gap-8">
 
-          <div>
+          <div className="location-data text-center">
+            <h2 className="section-title">
+              Lorem, ipsum dolor.<br />
+              Lorem, ipsum.
+            </h2>
+            <p className="location-description mb-8 text-muted-foreground xl:mb-12">
+              {TEXT.servicesDescription1}
+            </p>
+            <div className="grid grid-cols-2 text-start border-l-4 rounded-r-lg p-4 border-primary-1 text-success bg-success-soft gap-y-2 gap-x-2">
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiHotelBedLine /><span className="font-medium">{TEXT.serviceTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup1[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiWifiLine /><span className="font-medium">{TEXT.serviceTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup2[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiCupLine /><span className="font-medium">{TEXT.serviceTextGroup3[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup3[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup4[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup4[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTv2Line /><span className="font-medium">{TEXT.serviceTextGroup5[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup5[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiSnowflakeLine /><span className="font-medium">{TEXT.serviceTextGroup6[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup6[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTempHotLine /><span className="font-medium">{TEXT.serviceTextGroup7[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup7[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiGogglesLine /><span className="font-medium">{TEXT.serviceTextGroup8[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup8[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2"><RiBaiduLine /><span className="font-medium">{TEXT.serviceTextGroup9[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup9[1]}</span></div>
+            </div>
+          </div>
+
+          <div className="sm:w-2/3">
             {/* gallery */}
             <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-lg shadow-md">
               <div className="swiper-wrapper">
@@ -120,26 +148,6 @@ export default function Gallery() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          <div className="location-data text-center">
-            <h2 className="section-title">
-              Lorem, ipsum dolor.<br />
-              Lorem, ipsum.
-            </h2>
-            <p className="location-description mb-8 text-muted-foreground xl:mb-12">
-              {TEXT.servicesDescription1}
-            </p>
-            <div className="grid grid-cols-2 text-start border-l-4 rounded-r-lg p-4 border-primary-1 text-success bg-success-soft space-y-2">
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiHotelBedLine /><span className="font-medium">{TEXT.serviceTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup1[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiWifiLine /><span className="font-medium">{TEXT.serviceTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup2[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiCupLine /><span className="font-medium">{TEXT.serviceTextGroup3[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup3[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup4[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup4[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTv2Line /><span className="font-medium">{TEXT.serviceTextGroup5[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup5[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup6[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup6[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup7[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup7[1]}</span></div>
-              <div className="grid grid-cols-max2 items-center gap-x-2"><RiTimeLine /><span className="font-medium">{TEXT.serviceTextGroup8[0]}</span><span className="col-start-2 text-sm text-primary-1">{TEXT.serviceTextGroup8[1]}</span></div>
             </div>
           </div>
 
