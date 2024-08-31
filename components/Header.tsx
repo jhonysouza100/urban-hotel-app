@@ -88,9 +88,9 @@ export default function Header() {
         <div className='nav-menu fixed w-full -top-full left-0 pt-16 pb-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
             <ul className="nav-list text-center flex flex-col items-center px-4 gap-x-[4.5rem] gap-y-10 lg:flex-row">
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Inicio</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Ubicación</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Alojamiento</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Reseñas</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Ubicación</a></li>
               <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Contacto</a></li>
             </ul>
             <div 

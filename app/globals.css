@@ -26,7 +26,7 @@
   }
 
   .section-title {
-    @apply font-montserrat text-center font-semibold text-foreground mb-6 text-2xl leading-tight;
+    @apply font-montserrat text-center font-semibold text-foreground mb-16 text-2xl leading-tight;
   }
 
   .isBlur {

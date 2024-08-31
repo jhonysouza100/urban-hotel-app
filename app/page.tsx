@@ -1,4 +1,4 @@
-import Gallery from "@/components/Gallery";
+import Service from "@/components/Service";
 import Location from "@/components/Location";
 import Main from "@/components/Main";
 import Testimonials from "@/components/Testimonials";
@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <main>
       <Main />
-      <Location />
-      <Gallery />
+      <Service />
       <Testimonials />
+      <Location />
       <Suscription />
     </main>
   );
