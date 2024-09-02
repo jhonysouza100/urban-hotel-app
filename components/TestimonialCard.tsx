@@ -17,8 +17,6 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
   
   const descriptionElementRef = useRef<HTMLElement>(null);
 
-  console.log(review)
-
   const handleOpen = (review: Review) => {
     setSelectedReview(review);
     setOpen(true);

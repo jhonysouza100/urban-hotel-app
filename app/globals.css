@@ -26,7 +26,7 @@
   }
 
   .section-title {
-    @apply font-montserrat text-center font-semibold text-foreground mb-16 text-2xl leading-tight;
+    @apply text-center font-montserrat leading-tight text-2xl text-foreground font-medium mt-2 mb-5 sm:text-start lg:text-4xl;
   }
 
   .isBlur {
@@ -71,12 +71,22 @@
   .scale-image:hover img {
     @apply scale-110;
   }
-
-  [class*="MuiTypography"] {
-    @apply !font-poppins;
-  }
+  
   
 }
+
+.box input[name="readmore"]:checked ~ .content label::before {
+  content: attr(data-less);
+}
+
+.box input[name="readmore"]:checked ~ .content .description {
+  max-height: min-content;
+}
+
+.box input[name="readmore"]:checked ~ .content .description::before {
+  height: 0;
+}
+
 
 .swiper-slide.thumb-slide {
   filter: grayscale(0.5) !important;

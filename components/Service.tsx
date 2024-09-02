@@ -92,17 +92,11 @@ export default function Service() {
     <section className="services section" id="gallery">
       <div className="services-section section-container xl:px-4">
 
-      <h2 className="section-title xl:text-[2.5rem]">
-          {TEXT.serviceSectionTitle1}<br />
-          <span className="text-secondary">{TEXT.serviceSectionTitle2}</span>
-        </h2>
-
-
         <div className="grid grid-cols-1 sm:grid-cols-2">
 
           <div className="services-data p-6">
             <span className="block font-montserrat text-xl text-muted-foreground text-center font-light sm:text-start">{TEXT.serviceTitle1}<br /></span>
-            <h3 className="text-center text-4xl text-foreground font-medium mt-2 mb-5 sm:text-start lg:text-5xl">{TEXT.brandName1}</h3>
+            <h3 className="section-title text-4xl lg:text-5xl">{TEXT.brandName1}</h3>
             <p className="text-base text-muted-foreground text-start mb-5">
               {TEXT.servicesDescription1}
             </p>
