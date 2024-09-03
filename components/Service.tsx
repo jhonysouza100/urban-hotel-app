@@ -90,7 +90,7 @@ export default function Service() {
 
   return (
     <section className="services section" id="gallery">
-      <div className="services-section section-container xl:px-4">
+      <div className="services-section section-container">
 
         <div className="grid grid-cols-1 sm:grid-cols-2">
 

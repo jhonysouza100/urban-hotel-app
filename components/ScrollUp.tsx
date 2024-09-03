@@ -33,7 +33,7 @@ export default function ScrollUp({path}: ScrollUpProps) {
       </a>
 
       <a href="#" aria-label="scroll up button"
-        className="scrollup-btn rounded-md p-[8px] bg-muted-foreground text-background inline-flex items-center justify-center backdrop-blur-xl cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-1">
+        className="scrollup-btn rounded-md p-2 bg-muted-foreground text-background inline-flex items-center justify-center backdrop-blur-xl cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-1">
         <RiArrowUpSLine className="w-6 h-6 xl:w-7 xl:h-7" />
       </a>
 

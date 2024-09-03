@@ -19,7 +19,7 @@ export default async function Main() {
 
       {/* social component */}
       <div className="home-social grid justify-items-center gap-y-24 absolute top-1/2 -translate-y-1/2 z-20">
-        <span className="home-social-text relative rotate-90 font-medium text-background text-sm after:content-[''] after:w-12 after:h-[1px] after:bg-background after:absolute after:top-0 after:bottom-0 after:my-auto after:-right-16">
+        <span className="home-social-text relative rotate-90 font-medium text-background text-sm after:content-[''] after:w-12 after:h-[1px] after:bg-neutral-100 after:absolute after:top-0 after:bottom-0 after:my-auto after:-right-16">
           {TEXT.socialLinkTitle1}
         </span>
         <div className="home-social-links grid gap-y-3">

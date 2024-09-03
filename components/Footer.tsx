@@ -13,7 +13,7 @@ export default async function Footer() {
   return (
     <footer className="footer pt-6 pb-8 bg-container md:pt-10 md:pb-4">
 
-      <div className="footer-container section-container grid gap-6 gap-y-16">
+      <div className="footer-container container mx-auto sm:max-w-screen-xl px-4 xl:px-20 grid gap-6 gap-y-16">
         
         <div className="flex items-center justify-start gap-4">
           <Avatar className="footer-logo !w-16 !h-16" alt="Logo del hotel" sizes="medium" src="./img/logo.png" />

@@ -49,7 +49,7 @@ const texts = {
     brandName2: "Express",
     testimonilasTitle1: "Que Dicen",
     testimonilasTitle2: "Nuestros Huéspedes",
-    testimonilasDescription1: "Valoraciones 100% certificadas de huéspedes que verdaderamente se alojaron con nosotros",
+    testimonilasDescription1: "Valoraciones 100% certificadas de huéspedes que verdaderamente se alojaron con nosotros.",
     joinTitle1: "Tu Viaje",
     joinTitle2: "Comienza Aquí",
     joinText1: "Manténgase actualizado con nuestra última información y viajes.",
