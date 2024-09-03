@@ -1,5 +1,5 @@
 "use client";
-import { RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiTv2Line, RiSnowflakeLine, RiTempHotLine, RiBaiduLine, RiGogglesLine } from "@remixicon/react";
+import { RiWifiLine, RiHotelBedLine, RiCupLine, RiTimeLine, RiTv2Line, RiSnowflakeLine, RiTempHotLine, RiBaiduLine, RiGogglesLine, RiKeynoteLine } from "@remixicon/react";
 import Image from "next/image";
 import Button from "./ui/Button";
 import React, { useEffect, useRef } from "react";
@@ -110,6 +110,7 @@ export default function Service() {
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiTempHotLine /><span className="font-medium">{TEXT.serviceTextGroup7[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup7[1]}</span></div>
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiGogglesLine /><span className="font-medium">{TEXT.serviceTextGroup8[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup8[1]}</span></div>
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiBaiduLine /><span className="font-medium">{TEXT.serviceTextGroup9[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup9[1]}</span></div>
+              <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiKeynoteLine /><span className="font-medium">{TEXT.serviceTextGroup10[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup10[1]}</span></div>
             </div>
           </div>
 
