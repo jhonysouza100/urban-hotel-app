@@ -136,7 +136,7 @@
 ::-webkit-scrollbar {
   width: .5rem;
   border-radius: .5rem;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 90%);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: .5rem;

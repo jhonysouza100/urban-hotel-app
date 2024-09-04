@@ -15,7 +15,7 @@ export default async function Testimonials() {
         <div className="box text-center p-6">
           <span className="flex items-center justify-start text-xl gap-2 font-montserrat">
             <Rating className="!text-secondary" name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
-            <span className="text-muted-foreground"> 4.4 RATING</span>
+            <span className="text-muted-foreground"> 4.4 Rating</span>
           </span>
           
           <h3 className="section-title font-montserrat text-start">{TEXT.testimonilasTitle1}<br/>{TEXT.testimonilasTitle2}</h3>

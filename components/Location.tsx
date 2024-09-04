@@ -8,7 +8,7 @@ export default async function Location() {
   return (
     <section className="location section" id="location">
 
-      <div className="location-container section-container grid gap-6 gap-y-12 grid-cols-1 justify-center sm:grid-cols-2 sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4">
+      <div className="location-container section-container grid gap-6 gap-y-12 grid-cols-1 justify-center sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4">
         <div className="location-data overflow-hidden text-center p-6 sm:text-start">
           <h2 className="section-title sm:text-start">
             {TEXT.locationTitle1}<br />
