@@ -1,9 +1,9 @@
-import Service from "@/components/Service";
-import Location from "@/components/Location";
 import Main from "@/components/Main";
-import Testimonials from "@/components/Testimonials";
-import dynamic from "next/dynamic";
+import Service from "@/components/Service";
 import Explore from "@/components/Explore";
+import Testimonials from "@/components/Testimonials";
+import Location from "@/components/Location";
+import dynamic from "next/dynamic";
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
   ssr: true,
