@@ -8,7 +8,7 @@ export default async function Location() {
   return (
     <section className="location section" id="location">
 
-      <div className="location-container section-container grid gap-6 gap-y-12 grid-cols-1 justify-center sm:items-center lg:grid-cols-c xl:gap-x-28 xl:py-4">
+      <div className="location-container section-container grid gap-6 gap-y-12 grid-cols-1 justify-center sm:items-center lg:grid-cols-2 xl:grid-cols-c xl:gap-x-28 xl:py-4">
         <div className="location-data overflow-hidden text-center p-6 sm:text-start">
           <h2 className="section-title sm:text-start">
             {TEXT.locationTitle1}<br />
@@ -17,7 +17,7 @@ export default async function Location() {
           <p className="location-description mb-8 text-muted-foreground xl:mb-12">
             {TEXT.locationDescription1}
           </p>
-          <div className="text-start rounded-r-md grid md:grid-cols-max2 gap-y-2 gap-x-4">
+          <div className="text-start rounded-r-md grid grid-cols-1 sm:grid-cols-max2 gap-y-2 gap-x-4">
             <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup1[1]}</span></div>
             <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup2[1]}</span></div>
             <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup3[1]}</span></div>

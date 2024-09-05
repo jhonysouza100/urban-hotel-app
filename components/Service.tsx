@@ -95,11 +95,10 @@ export default function Service() {
         <div className="grid grid-cols-1 sm:grid-cols-2">
 
           <div className="services-data p-6">
-            <span className="block font-montserrat text-xl text-muted-foreground text-center font-light sm:text-start">{TEXT.serviceTitle1}<br /></span>
-            <h3 className="section-title text-4xl lg:text-5xl">{TEXT.brandName1}</h3>
-            <p className="text-base text-muted-foreground text-start mb-5">
-              {TEXT.servicesDescription1}
-            </p>
+            <span className="block font-montserrat text-xl text-muted-foreground font-light text-start">{TEXT.serviceTitle1}<br /></span>
+            <h3 className="section-title text-4xl text-start lg:text-5xl">{TEXT.brandName1}</h3>
+            <p className="text-base text-muted-foreground mb-5 text-start">{TEXT.servicesDescription1}</p>
+
             <div className="grid grid-cols-2 text-start gap-y-2 gap-x-2">
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiHotelBedLine /><span className="font-medium">{TEXT.serviceTextGroup1[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup1[1]}</span></div>
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiWifiLine /><span className="font-medium">{TEXT.serviceTextGroup2[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.serviceTextGroup2[1]}</span></div>
@@ -115,7 +114,7 @@ export default function Service() {
           </div>
 
           {/* gallery and thumbnails */}
-          <div className="">
+          <div className="sm:p-6 lg:p-0">
 
             {/* gallery */}
             <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-2xl shadow-md">

@@ -1,25 +1,25 @@
-import React from "react";
-import { createContext } from "vm";
+// import React from "react";
+// import { createContext } from "vm";
 
-const AccordionContext = createContext();
+// const AccordionContext = createContext();
 
-export default function Accordion({ children, value, onChange, ...props }) {
+// export default function Accordion({ children, value, onChange, ...props }) {
 
-  const [selected, setSelected] = React.useState(value);
+//   const [selected, setSelected] = React.useState(value);
 
-  React.useEffect(() => {
-    onChange?.(selected);
+//   React.useEffect(() => {
+//     onChange?.(selected);
   
-    return () => {
+//     return () => {
       
-    }
-  }, [selected])
+//     }
+//   }, [selected])
   
-  return (
-    <ul {...props}>
-      <AccordionContext.Provider value={{ selected, setSelected }}>
-        {children}
-      </AccordionContext.Provider>
-    </ul>
-  )
-}
+//   return (
+//     <ul {...props}>
+//       <AccordionContext.Provider value={{ selected, setSelected }}>
+//         {children}
+//       </AccordionContext.Provider>
+//     </ul>
+//   )
+// }
