@@ -33,10 +33,10 @@ export default async function Testimonials() {
             </div>
           </div>
           
-          <div className="box p-6 flex items-center justify-center sm:-order-1">
-            <div className="hidden sm:block w-80 aspect-[4/3]">
-              <Image className="w-full h-full rounded-lg" src="/img/testimonial-img-1.jpg" alt="testimonilas image" width={380} height={380} />
-            </div>
+          <div className="box p-6 flex items-center justify-center">
+            {/* <div className="hidden sm:block w-80 aspect-[4/3]">
+              <Image className="w-full h-full rounded-lg" src="/img/testimonial-img-1.jpg" alt="testimonilas image" width={500} height={500} />
+            </div> */}
           </div>
           
         </div>
