@@ -20,7 +20,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
 
   const swiperParams: SwiperOptions = {
     modules: [Autoplay, EffectFade],
-    autoplay: { delay: 5000, disableOnInteraction: false },
+    autoplay: { delay: 3000, disableOnInteraction: false },
     effect: 'fade',
     grabCursor: true,
     fadeEffect: {

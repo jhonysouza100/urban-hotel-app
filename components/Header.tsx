@@ -76,7 +76,7 @@ export default function Header() {
   
   
   return (
-    <header className='header fixed w-full top-0 left-0 z-50 after:transition-colors after:ease-in-out after:duration-500' id="header">
+    <header className='header fixed w-full top-0 left-0 z-50' id="header">
       
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
         <Avatar className="nav-logo"
@@ -87,12 +87,12 @@ export default function Header() {
 
         <div className='nav-menu fixed w-full min-h-max -top-full left-0 py-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
             <ul className="nav-list text-center flex flex-col items-center px-4 gap-x-[4.5rem] gap-y-10 lg:flex-row">
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Inicio</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Alojamiento</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#explore" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Excursiones</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Reseñas</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Ubicación</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold transition-colors duration-500 lg:flex-row lg:gap-x-16">Contacto</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Inicio</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Alojamiento</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Reseñas</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Ubicación</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#explore" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Excursiones</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Contacto</a></li>
             </ul>
             <div 
               className="nav-close p-2 flex items-center justify-center text-foreground cursor-pointer absolute top-4 right-6 lg:hidden"
@@ -102,7 +102,7 @@ export default function Header() {
         </div>
         
         <div 
-          className="nav-open p-2 flex items-center justify-center text-background cursor-pointer transition-colors duration-500 lg:hidden"
+          className="nav-open p-2 flex items-center justify-center text-background cursor-pointer lg:hidden"
           id="nav-open">
           <RiMenuFill className="w-6 h-6" />
         </div>

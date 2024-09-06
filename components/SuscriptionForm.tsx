@@ -70,9 +70,9 @@ export default function SuscriptionForm() {
 
         {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email ? (errors.email as FieldError).message : ''}</label>}
 
-        <Button type="submit" aria-label="Enviar formulario">
+        <Button className="move-right" type="submit" aria-label="Enviar formulario">
           {TEXT.joinButtonText1}
-          <RiArrowRightLine className="w-5 h-5 stroke-background" />
+          <RiArrowRightLine className="w-5 h-5" />
         </Button>
 
       </form>

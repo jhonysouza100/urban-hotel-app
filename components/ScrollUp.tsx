@@ -14,7 +14,7 @@ export default function ScrollUp({path}: ScrollUpProps) {
   const scrollUpRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => window.scrollY >= 350 ? setShow("bottom-16") : setShow("");
+    const handleScroll = () => window.scrollY >= 350 ? setShow("bottom-16") : setShow(""); /* 350 es la mitad */
 
     window.addEventListener('scroll', handleScroll);
 
