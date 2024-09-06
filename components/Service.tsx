@@ -96,7 +96,7 @@ export default function Service() {
 
           <div className="services-data p-6">
             <span className="block font-montserrat text-xl text-muted-foreground font-light text-start">{TEXT.serviceTitle1}<br /></span>
-            <h3 className="section-title text-4xl text-start lg:text-5xl">{TEXT.brandName1}</h3>
+            <h2 className="section-title text-4xl text-start lg:text-5xl">{TEXT.brandName1}</h2>
             <p className="text-base text-muted-foreground mb-5 text-start">{TEXT.servicesDescription1}</p>
 
             <div className="grid grid-cols-2 text-start gap-y-2 gap-x-2">
