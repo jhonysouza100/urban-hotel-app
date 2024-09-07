@@ -9,11 +9,11 @@ RUN npm install && npm cache clean --force
 COPY . .
 
 # Define las variables de entorno
-ARG REDIS_PASSWORD
-ENV REDIS_PASSWORD=$REDIS_PASSWORD
+ARG BACKEND_REVIEWS_URL
+ENV BACKEND_REVIEWS_URL=$BACKEND_REVIEWS_URL
 
 ENV NODE_ENV=production
 
 EXPOSE 3000
 
-CMD npm run start
+CMD npm run deploy

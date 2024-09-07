@@ -1,8 +1,10 @@
+# *
 User-agent: *
+Allow: /
 
-Disallow: /login*
-  
-Disallow: /privacity*
-  
-Sitemap: https://www.celumarketplace.com/sitemap.xml
-    
+# Host
+Host: https://www.iguazuurbanhotel.com
+
+# Sitemaps
+Sitemap: https://www.iguazuurbanhotel.com/sitemap.xml
+Sitemap: https://www.iguazuurbanhotel.com/server-sitemap-index.xml
