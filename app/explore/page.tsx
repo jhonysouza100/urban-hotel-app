@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import AltHeader from "@/components/AltHeader";
-import { RiBatteryChargeLine, RiMusic2Line, RiTeamLine, RiTicketLine, RiTimeLine, RiTreasureMapLine, RiTShirtLine, RiWalkLine } from "@remixicon/react";
+import { RiBatteryChargeLine, RiCreativeCommonsByLine, RiDrinks2Line, RiFootprintLine, RiMusic2Line, RiSunLine, RiTeamLine, RiTicketLine, RiTimeLine, RiTrainLine, RiTreasureMapLine, RiTShirtLine, RiWalkLine } from "@remixicon/react";
 import Image from "next/image";
 
 export default function ExplorePage() {
@@ -10,17 +10,17 @@ export default function ExplorePage() {
       title1: "Cataratas del Iguazú",
       title2: "Lado Argentino",
       description1: "Las majestuosas Cataratas del Iguazú se encuentran en el interior del Parque Nacional Iguazú, un área de preservación de la naturaleza que abarca 67.720 hectáreas en el extremo norte de la Provincia de Misiones, en la República Argentina. Son un conjunto de 275 saltos que se localizan sobre el Río Iguazú, en el límite entre la Provincia de Misiones y el Estado Brasileño de Paraná a 17 kilómetros de la localidad de Puerto Iguazú.",
-      tag1: "",
-      tag2: "",
-      tag3: ""
+      tag1: "Transporte en tren",
+      tag2: "Llevar protección solar",
+      tag3: "Llevar nacks y agua"
     },
     cataratasBr: {
       title1: "Cataratas del Iguazú",
       title2: "Lado Brasilero",
       description1: "Aprovechá la vista panorámica que se obtiene desde el Lado Brasilero. Desde los miradores y pasarelas del Parque Nacional do Iguaçú se puede apreciar una vista de casi la totalidad de los saltos. Además de un impresionante acercamiento a la Garganta del Diablo.",
-      tag1: "",
-      tag2: "",
-      tag3: ""
+      tag1: "Caminata",
+      tag2: "Llevar protección solar",
+      tag3: "Llevar nacks y agua"
     },
     gomon: {
       title1: "Gomon Gran Aventura",
@@ -51,8 +51,8 @@ export default function ExplorePage() {
       title2: "La casa de los pájaros",
       description1: "Recorrerá senderos rodeado por la selva misionera y conocerá a sus habitantes en recintos que conservan la vegetación del lugar, ofreciendo a los animales que no pueden ser liberados la posibilidad de vivir en su hábitat. GüiráOga le hará reflexionar sobre la necesidad de proteger la fauna silvestre y su entorno. La actividad se realiza en compañía de un guía. Apta para toda la familia.",
       tag1: "Duración 1:30hrs aprox.",
-      tag2: "Leve",
-      tag3: ""
+      tag2: "Visita guiada",
+      tag3: "Leve",
     },
     aripuca: {
       title1: "La Aripuca",
@@ -67,7 +67,8 @@ export default function ExplorePage() {
       title2: "Puerto Iguazú",
       description1: "El Hito es el segundo atractivo más visitado de nuestro destino, donde miles de turistas se acercan para llevarse las mejores postales junto a recuerdo inolvidable de un espacio único que reúne a dos ríos y tres países. Viernes, sábado y domingo se habilita el show de aguas danzantes en el hito de las tres fronteras. Las luces se encienden de 19 a 20 hs, mientras que el show principal se proyecta a las 19:30 hs. Es de entrada libre y gratuita. ¡Los esperamos!",
       tag1: "Leve",
-      tag2: "Se puede llegar caminando"
+      tag2: "Acceso libre",
+      tag3: "Se puede llegar caminando"
     },
     catamaran: {
       title1: "Paseo en Catamarán",
@@ -99,8 +100,14 @@ export default function ExplorePage() {
   return (
     <>
     <AltHeader />
+
     <main>
-      <section className="explore w-full">
+      <section>
+        <div className="pt-0 mt-0 pb-4 overflow-hidden">
+          <Image className="w-full h-full" src="/img/concept-img-0.jpg" width={1080} height={1080} alt="Explore image" quality={100} />
+        </div>
+      </section>
+      <section className="explore w-full pb-24">
         <div className="section-container section grid gap-4 justify-center place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
             <Image className="rounded-lg w-full" src={'/img/explore-img-8.jpg'} 
@@ -116,6 +123,15 @@ export default function ExplorePage() {
             <p className="text-muted-foreground text-sm max-h-40 overflow-auto scrollbar-thin">
               {texts.cataratasArg.description1}
             </p>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiTrainLine className="w-5 h-5" />{texts.cataratasArg.tag1}
+            </span>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiSunLine className="w-5 h-5" />{texts.cataratasArg.tag2}
+            </span>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiDrinks2Line className="w-5 h-5" />{texts.cataratasArg.tag3}
+            </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
             <Image className="rounded-lg w-full" src={'/img/explore-img-9.jpg'} 
@@ -131,6 +147,15 @@ export default function ExplorePage() {
             <p className="text-muted-foreground text-sm max-h-40 overflow-auto scrollbar-thin">
               {texts.cataratasBr.description1}
             </p>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiFootprintLine className="w-5 h-5" />{texts.cataratasBr.tag1}
+            </span>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiSunLine className="w-5 h-5" />{texts.cataratasBr.tag2}
+            </span>
+            <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
+              <RiDrinks2Line className="w-5 h-5" />{texts.cataratasBr.tag3}
+            </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
             <Image className="rounded-lg w-full" src={'/img/explore-img-10.jpg'} 
@@ -216,10 +241,10 @@ export default function ExplorePage() {
               {texts.casaPajaros.description1}
             </p>
             <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
-              <RiTimeLine className="w-5 h-5" />{texts.casaPajaros.tag1}
+              <RiWalkLine className="w-5 h-5" />{texts.casaPajaros.tag2}
             </span>
             <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
-              <RiBatteryChargeLine className="w-5 h-5" />{texts.casaPajaros.tag2}
+              <RiBatteryChargeLine className="w-5 h-5" />{texts.casaPajaros.tag3}
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
@@ -258,10 +283,10 @@ export default function ExplorePage() {
               {texts.hito.description1}
             </p>
             <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
-              <RiBatteryChargeLine className="w-5 h-5" />{texts.hito.tag1}
+              <RiCreativeCommonsByLine className="w-5 h-5" />{texts.hito.tag2}
             </span>
             <span className="rounded-3xl py-2 px-4 text-xs font-semibold border border-info text-info bg-info-soft flex gap-2 justify-start items-center">
-              <RiTreasureMapLine className="w-5 h-5" />{texts.hito.tag2}
+              <RiTreasureMapLine className="w-5 h-5" />{texts.hito.tag3}
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">

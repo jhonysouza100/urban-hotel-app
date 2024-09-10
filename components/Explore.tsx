@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { RiArrowRightLine } from "@remixicon/react";
+import Avatar from "./ui/Avatar";
 
 export default function Explore() {
   
@@ -20,7 +21,7 @@ export default function Explore() {
             alt="Explore image"
             width={1080}
             height={720}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 75vw, (max-width: 1200px) 100vw, 75vw"
             loading="lazy"
             quality={100}
             />
@@ -32,15 +33,8 @@ export default function Explore() {
                 <p className="explore-description text-sm text-container-foreground sm:text-start">{TEXT.exploreDescription1}</p>
             </div>
             <div className="explore-user inline-flex items-center justify-center gap-x-2 xl:justify-end xl:self-end xl:mb-5">
-                <Image src="/img/explore-perfil.png"
-                className="explore-profile w-8 rounded-full"
-                alt="Explore profile"
-                width={40}
-                height={40}
-                loading="lazy"
-                />
-                <span className="explore-name text-xs text-neutral-100">Paul James</span>
-
+              <Avatar src="/img/explore-perfil.png" alt="Explore profile" size="small" />
+              <span className="explore-name text-xs text-neutral-100">Paul James</span>
             </div>
           </div>
       </div>

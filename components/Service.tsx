@@ -124,7 +124,7 @@ export default function Service() {
                     <Image className="block h-full w-full object-cover" src={`${el.src}`}
                       height={380}
                       width={380}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 425px) 75vw,(max-width: 768px) 45vw, (max-width: 1200px) 50vw, 45vw"
                       loading="lazy"
                       alt="Gallery image"
                       />
@@ -145,7 +145,7 @@ export default function Service() {
                       <Image className="block h-full w-full object-cover" src={`${el.src}`} 
                       height={60}
                       width={60}                      
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 375px) 25vw, (max-width: 425px) 20vw, (max-width: 768px) 20vw, (max-width: 1200px) 15vw, 10vw"
                       loading="lazy" 
                       alt="Thumbnails image" />
                     </Button>

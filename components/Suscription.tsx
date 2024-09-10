@@ -22,7 +22,7 @@ export default function Suscription() {
               src="/img/join-image.jpg" 
               width={380}
               height={380}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-with: 425px) 75vw, (max-width: 768px) 50vw, (max-width: 1200px) 45vw, 33vw"
               loading="lazy"
             />
           </div>

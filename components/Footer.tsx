@@ -4,6 +4,7 @@ import texts from "@/public/texts";
 import Link from "next/link";
 import ScrollUp from "./ScrollUp";
 import Image from "next/image";
+import Avatar from "@/ui/Avatar"
 
 export default async function Footer() {
   
@@ -16,14 +17,9 @@ export default async function Footer() {
       <div className="footer-container container mx-auto sm:max-w-screen-xl px-4 xl:px-20 grid gap-6 gap-y-16">
         
         <div className="flex items-center justify-start gap-4">
-          <div className="inline-block logo-container aspect-square overflow-hidden rounded-full">
-            <Image height={64} width={64} 
-              src="/img/logo.png"
-              className="footer-logo w-full h-full"   
-              alt="Logo del hotel"
-              loading="lazy"
-              />
-          </div>
+          
+          <Avatar src="/img/logo.png" alt="Logo del hotel" size="large" />
+
           <div className="footer-text grid gap-1 text-xl font-semibold lg:text-2xl">
             <p className="text-primary-1">{TEXT.brandName2}</p>
             <p className="footer-logo text-container-foreground">{TEXT.brandName1}</p>

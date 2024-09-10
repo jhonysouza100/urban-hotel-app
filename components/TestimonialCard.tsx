@@ -1,7 +1,8 @@
 "use client"
 import Review from "@/interfaces/review.interface";
 import texts from "@/public/texts";
-import { Avatar, Button, Card, CardContent, CardHeader, Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, Rating, Typography, DialogActions } from "@mui/material";
+import Avatar from "@/ui/Avatar"
+import { Button, Card, CardContent, CardHeader, Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, Rating, Typography, DialogActions } from "@mui/material";
 import { RiArrowDownSLine } from "@remixicon/react";
 import { Suspense, useEffect, useRef, useState } from "react";
 
@@ -42,10 +43,10 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
     <>
     <Card>
       <CardHeader
-        avatar={<Avatar className='!bg-primary-1' src={review.picture} alt={`${review.author.charAt(0)}`} />}
+        avatar={<Avatar src={review.picture} alt={`${review.author.charAt(0)}`} />}
         action={<IconButton onClick={() => handleOpen(review)} aria-label="Leer más"><RiArrowDownSLine /></IconButton>}
         title={<span className='!font-semibold !line-clamp-1'>{review.author}</span>}
-        subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{review.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={review.platformLogo} alt={review.platformName} />{review.platformName}</span>}
+        subheader={<span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{review.timestamp} en<Avatar className="h-4 w-4" src={review.platformLogo} alt={review.platformName} />{review.platformName}</span>}
       />
       <CardContent className='!pt-0'>
         <Rating className="!text-secondary" size='small' name="read-only" value={review.rating} readOnly />
@@ -59,10 +60,10 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
           <DialogTitle id="scroll-dialog-title">
             {selectedReview && (
               <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
-                <Avatar className='!bg-primary-1' src={selectedReview.picture} alt={`${selectedReview.author.charAt(0)}`} />
+                <Avatar src={selectedReview.picture} alt={`${selectedReview.author.charAt(0)}`} />
                 <span className='flex flex-col'>
                   <Typography className='!font-medium' variant="subtitle1" color="text.primary">{selectedReview.author}</Typography>
-                  <span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{selectedReview.timestamp} en<Avatar sx={{ width: 16, height: 16 }} src={selectedReview.platformLogo} alt={selectedReview.platformName} />{selectedReview.platformName}</span>
+                  <span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{selectedReview.timestamp} en<Avatar src={selectedReview.platformLogo} alt={selectedReview.platformName} className="h-4 w-4" />{selectedReview.platformName}</span>
                 </span>
                 <span className='flex justify-start grow sm:justify-end'>
                   <Rating className="!text-secondary" size='small' name="read-only" value={selectedReview.rating} readOnly />

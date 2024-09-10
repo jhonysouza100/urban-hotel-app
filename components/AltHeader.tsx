@@ -3,7 +3,7 @@ import { Avatar } from "@mui/material";
 import { RiArrowLeftSLine } from "@remixicon/react";
 import Link from "next/link";
 import React from "react";
-import Button from "./ui/Button";
+import Button from "@/ui/Button";
 
 export default function Header() {
 
@@ -11,8 +11,10 @@ export default function Header() {
 
   const addBlur = () => {
     const header = document.getElementById('alt-header');
-    if(header) {
+    const back = document.getElementById('nav-back');
+    if(header && back) {
       header.classList.toggle('isBlur', Boolean(scrollRef.current));
+      back.classList.toggle('!text-muted-foreground', Boolean(scrollRef.current));
     }
   }
 
@@ -39,8 +41,8 @@ export default function Header() {
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
   
         <Link href="/">
-        <Button 
-          className="rounded-md p-0 flex items-center justify-center text-muted-foreground backdrop-blur-none bg-[rgba(0,0,0,0)] shadow-none cursor-pointer"
+        <Button id="nav-back"
+          className="rounded-md p-0 flex items-center justify-center backdrop-blur-none bg-[rgba(0,0,0,0)] shadow-none cursor-pointer"
           aria-label="Volver">
           <RiArrowLeftSLine className="w-9 h-9" />
         </Button>
