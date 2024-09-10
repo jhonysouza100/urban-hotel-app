@@ -3,7 +3,6 @@ import TestimonialsSwiper from "./TestimonilasSwiper";
 import Review from "@/interfaces/review.interface";
 import texts from "@/public/texts";
 import { Avatar, Rating } from "@mui/material";
-import Image from "next/image";
 
 export default async function Testimonials() {
   const TEXT = texts.ES;

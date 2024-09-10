@@ -1,7 +1,9 @@
 "use client"
+import React from "react";
 import { Avatar } from "@mui/material";
 import { RiCloseLine, RiMenuFill } from "@remixicon/react";
-import React from "react";
+import { socket } from "@/utils/socket";
+
 
 export default function Header() {
 
@@ -66,8 +68,13 @@ export default function Header() {
     close?.addEventListener('click',() => handleClick(false));
     
     window.addEventListener('scroll', handleScroll);
-    
+
+    socket.on('user-joined', (data) => {
+      console.log(data.views);
+    });
+
     return () => {
+      socket.off("user-joined");
       open?.removeEventListener('click', () => handleClick());
       close?.removeEventListener('click', () => handleClick());
       window.removeEventListener('scroll', handleScroll);

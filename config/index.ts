@@ -4,6 +4,7 @@ const index = {
   BACKEND_USERS_URL: process.env.NEXT_PUBLIC_BACKEND_USERS_URL,
   BACKEND_MEDIA_PATHS: process.env.BACKEND_MEDIA_PATHS,
   GOOGLE_MAPS_PLACE_REVIEWS: process.env.GOOGLE_MAPS_PLACE_REVIEWS,
+  SOCKET_CONNECTION: process.env.NEXT_PUBLIC_SOCKET_CONNECTION,
 }
 
-export default index
+export default index;
