@@ -103,7 +103,12 @@ export default function ExplorePage() {
       <section className="explore w-full">
         <div className="section-container section grid gap-4 justify-center place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-8.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-8.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.cataratasArg.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.cataratasArg.title2}</span>
@@ -113,7 +118,12 @@ export default function ExplorePage() {
             </p>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-9.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-9.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.cataratasBr.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.cataratasBr.title2}</span>
@@ -123,7 +133,12 @@ export default function ExplorePage() {
             </p>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-10.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-10.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.gomon.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.gomon.title2}</span>
@@ -142,7 +157,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-12.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-12.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.jungleFly.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.jungleFly.title2}</span>
@@ -161,7 +181,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-13.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-13.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.cabalgata.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.cabalgata.title2}</span>
@@ -177,7 +202,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-15.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-15.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.casaPajaros.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.casaPajaros.title2}</span>
@@ -193,7 +223,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-19.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-19.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.aripuca.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.aripuca.title2}</span>
@@ -209,7 +244,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-14.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-14.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.hito.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.hito.title2}</span>
@@ -225,7 +265,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-18.webp'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-18.webp'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.catamaran.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.catamaran.title2}</span>
@@ -244,7 +289,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-16.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-16.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.ruinas.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.ruinas.title2}</span>
@@ -260,7 +310,12 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-17.jpg'} width={380} height={380} alt="Explore image" />
+            <Image className="rounded-lg w-full" src={'/img/explore-img-17.jpg'} 
+              alt="Explore image"
+              width={380}
+              height={380}
+              sizes="(max-width: 768px) 66vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager" />
             <h3 className="text-foreground font-bold">
               {texts.minas.title1}<br />
               <span className="text-muted-foreground text-sm">{texts.minas.title2}</span>

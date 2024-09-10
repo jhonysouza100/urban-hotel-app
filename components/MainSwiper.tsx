@@ -55,7 +55,7 @@ export default function MainSwiper({paths}: MainSwiperProps) {
                     <a href={`${paths.whatsapp}`} target="_blank" className="z-20" aria-label="Whatsapp">
                       <Button className="home-button bg-primary-2 rounded-md">
                         {TEXT.homeButtonTitle1} 
-                        <RiWhatsappFill className="w-6 h-6" />
+                        <RiWhatsappFill />
                       </Button>
                     </a>
                   </div>

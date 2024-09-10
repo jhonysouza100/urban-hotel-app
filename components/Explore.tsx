@@ -20,6 +20,8 @@ export default function Explore() {
             alt="Explore image"
             width={1080}
             height={720}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
             quality={100}
             />
             <div className="explore-shadow absolute top-0 left-0 w-full h-full"></div>
@@ -33,8 +35,9 @@ export default function Explore() {
                 <Image src="/img/explore-perfil.png"
                 className="explore-profile w-8 rounded-full"
                 alt="Explore profile"
-                width={320}
-                height={320}
+                width={40}
+                height={40}
+                loading="lazy"
                 />
                 <span className="explore-name text-xs text-neutral-100">Paul James</span>
 

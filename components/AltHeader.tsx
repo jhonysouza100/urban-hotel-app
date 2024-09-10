@@ -39,8 +39,10 @@ export default function Header() {
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
   
         <Link href="/">
-        <Button className="rounded-md p-0 flex items-center justify-center text-muted-foreground backdrop-blur-none bg-[rgba(0,0,0,0)] shadow-none cursor-pointer">
-          <RiArrowLeftSLine className="w-10 h-10" />
+        <Button 
+          className="rounded-md p-0 flex items-center justify-center text-muted-foreground backdrop-blur-none bg-[rgba(0,0,0,0)] shadow-none cursor-pointer"
+          aria-label="Volver">
+          <RiArrowLeftSLine className="w-9 h-9" />
         </Button>
         </Link>
 

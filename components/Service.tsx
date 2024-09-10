@@ -121,7 +121,13 @@ export default function Service() {
               <div className="swiper-wrapper">
                 {images.map(el => (
                   <div key={crypto.randomUUID()} className="swiper-slide gallery-slide h-96 aspect-square lg:aspect-video">
-                    <Image className="block h-full w-full object-cover" src={`${el.src}`} height={1080} width={1080} alt="" />
+                    <Image className="block h-full w-full object-cover" src={`${el.src}`}
+                      height={380}
+                      width={380}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                      alt="Gallery image"
+                      />
                   </div>
                 ))}
               </div>
@@ -136,7 +142,12 @@ export default function Service() {
                 {images.map(el => (
                   <div key={crypto.randomUUID()} className="swiper-slide thumb-slide">
                     <Button className="flex h-full w-full items-center justify-center p-0">
-                      <Image className="block h-full w-full object-cover" src={`${el.src}`} height={500} width={500} alt="thumbnails image" />
+                      <Image className="block h-full w-full object-cover" src={`${el.src}`} 
+                      height={60}
+                      width={60}                      
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy" 
+                      alt="Thumbnails image" />
                     </Button>
                   </div>
                 ))}

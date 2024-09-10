@@ -29,7 +29,7 @@ export default function ScrollUp({path}: ScrollUpProps) {
 
       <a href={`${path.whatsapp}`} target="_blank"
         className="scrollup-btn p-[8px] relative cursor-pointer transition-all duration-500 hover:-translate-y-1">
-        <Image src='./img/whatsapp.svg' height={400} width={400} loading="lazy" className="whatsapp-icon absolute top-0 left-0 -translate-y-1/2 w-11" alt="whatsapp-logo" />
+        <Image src='./img/whatsapp.svg' height={40} width={40} quality={100} loading="lazy" className="whatsapp-icon absolute top-0 left-0 -translate-y-1/2 w-11" alt="whatsapp-logo" />
       </a>
 
       <a href="#" aria-label="scroll up button"

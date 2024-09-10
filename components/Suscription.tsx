@@ -17,11 +17,13 @@ export default function Suscription() {
 
         <div className="join-image -order-1 w-full h-auto grid justify-items-center overflow-hidden">
           <div className="aspect-square w-[300px] xl:w-full">
-            <Image priority
+            <Image
               className="join-img transition-transform duration-500 w-full h-full object-cover" alt="Imagen de la habitación"
               src="/img/join-image.jpg" 
-              width={320} height={720} 
+              width={380}
+              height={380}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
             />
           </div>
           {/* <div className="shading"></div> */}
