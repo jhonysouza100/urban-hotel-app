@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       url: "https://static.misionesonline.news/wp-content/uploads/2022/06/Iguazu-Urban-Hotel-Express-3.jpg",
     }],
   },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Iguazú Urban Hotel Express" },
+  themeColor: "	#cdab7e",
+  manifest: "/site.webmanifest",
   authors: [{ name: "Iguazú Urban Hotel Express", url: "https://www.iguazuurbanhotel.com" }],
   robots: { index: true, follow: true },
 };
