@@ -1,9 +1,8 @@
 import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import Link from "next/link";
 import ScrollUp from "./ScrollUp";
-import Image from "next/image";
 import Avatar from "@/ui/Avatar"
 
 export default async function Footer() {
@@ -14,7 +13,7 @@ export default async function Footer() {
   return (
     <footer className="footer pt-6 pb-8 bg-container md:pt-10 md:pb-4">
 
-      <div className="footer-container container mx-auto sm:max-w-screen-xl px-4 xl:px-20 grid gap-6 gap-y-16">
+      <div className="footer-container container mx-auto md:max-w-screen-xl px-4 xl:px-20 grid gap-6 gap-y-16">
         
         <div className="flex items-center justify-start gap-4">
           
@@ -26,7 +25,7 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="footer-content grid grid-cols-1 gap-8 sm:gap-y-8 sm:gap-x-16 sm:grid-cols-max2 lg:gap-x-20 lg:grid-cols-max3 xl:grid-cols-max4">
+        <div className="footer-content grid grid-cols-1 gap-8 md:gap-y-8 md:gap-x-16 md:grid-cols-max2 lg:gap-x-20 lg:grid-cols-max3 xl:grid-cols-max4">
 
           <div className="footer-data">
             <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle1}</h3>
@@ -55,7 +54,7 @@ export default async function Footer() {
             </ul>
           </div>
          
-          <div className="footer-data sm:col-start-2 xl:row-start-1 xl:col-start-3">
+          <div className="footer-data md:col-start-2 xl:row-start-1 xl:col-start-3">
             <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle3}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${PATH.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
@@ -74,7 +73,7 @@ export default async function Footer() {
             </ul>
           </div>
 
-          <div className="footer-data sm:row-start-2 xl:row-start-1 xl:col-start-4">
+          <div className="footer-data md:row-start-2 xl:row-start-1 xl:col-start-4">
             <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle5}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><a href={`${PATH.developer}`} target="_blank" rel="noreferrer">{TEXT.footerInfoDeveloper}</a></li>

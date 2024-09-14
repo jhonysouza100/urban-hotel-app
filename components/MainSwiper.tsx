@@ -1,6 +1,6 @@
 "use client"
 import Path from "@/interfaces/path.interface";
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import Button from "./ui/Button";
 import { RiWhatsappFill } from "@remixicon/react";
 import { useEffect } from "react";
@@ -50,8 +50,8 @@ export default function MainSwiper({paths}: MainSwiperProps) {
                   <h1 className="home-title section-title text-[32px] text-background text-end lg:text-[2.5rem]">{TEXT.homeTitle1}
                     <br /> {TEXT.homeTitle2} <span className="text-primary-3">{TEXT.homeTitle3}</span>
                   </h1>
-                  <p className="home-description mb-16 text-background text-end text-xs sm:text-sm lg:text-base">{TEXT.homeDescription1}</p>
-                  <div className="flex justify-end mb-24 sm:mb-14">
+                  <p className="home-description mb-16 text-background text-end text-xs md:text-sm lg:text-base">{TEXT.homeDescription1}</p>
+                  <div className="flex justify-end mb-24 md:mb-14">
                     <a href={`${paths.whatsapp}`} target="_blank" className="z-20" aria-label="Whatsapp">
                       <Button className="home-button bg-primary-2 rounded-md">
                         {TEXT.homeButtonTitle1} 

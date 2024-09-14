@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { RiArrowRightLine } from "@remixicon/react";
 import { Toaster, toast } from "sonner";
 import config from "@/config";
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import Button from "@/ui/Button";
 
 export default function SuscriptionForm() {

@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import AltHeader from "@/components/AltHeader";
 import { RiBatteryChargeLine, RiCreativeCommonsByLine, RiDrinks2Line, RiFootprintLine, RiMusic2Line, RiSunLine, RiTeamLine, RiTicketLine, RiTimeLine, RiTrainLine, RiTreasureMapLine, RiTShirtLine, RiWalkLine } from "@remixicon/react";
 import Image from "next/image";
 
@@ -98,9 +96,6 @@ export default function ExplorePage() {
   
   
   return (
-    <>
-    <AltHeader />
-
     <main>
       <section>
         <div className="pt-0 mt-0 pb-4 overflow-hidden">
@@ -108,7 +103,7 @@ export default function ExplorePage() {
         </div>
       </section>
       <section className="explore w-full pb-24">
-        <div className="section-container section grid gap-4 justify-center place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="section-container section grid gap-4 justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
             <Image className="rounded-lg w-full" src={'/img/explore-img-8.jpg'} 
               alt="Explore image"
@@ -357,8 +352,6 @@ export default function ExplorePage() {
           </div>
         </div>
       </section>
-      </main>
-    <Footer />
-    </>
+    </main>
   );
 }

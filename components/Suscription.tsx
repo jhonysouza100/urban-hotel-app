@@ -1,4 +1,4 @@
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import SuscriptionForm from "@/components/SuscriptionForm";
 import Image from "next/image";
 
@@ -8,10 +8,10 @@ export default function Suscription() {
   
   return (
     <section className="join section bg-container" id="suscription">
-      <div className="join-container container mx-auto sm:max-w-screen-xl px-4 xl:px-20 grid gap-6 justify-center gap-y-12 pb-10 sm:grid-cols-a sm:items-center xl:pt-4 xl:gap-x-32 xl:grid-cols-b xl:pb-20">
+      <div className="join-container container mx-auto md:max-w-screen-xl px-4 xl:px-20 grid gap-6 justify-center gap-y-12 pb-10 md:grid-cols-a md:items-center xl:pt-4 xl:gap-x-32 xl:grid-cols-b xl:pb-20">
         <div className="join-data text-center max-w-[340px]">
-          <h2 className="section-title text-background mb-6 sm:text-start sm:mb-4 lg:mb-6 xl:text-[2.5rem]">{TEXT.joinTitle1} <br /> {TEXT.joinTitle2}</h2>
-          <p className="join-description mb-8 text-container-foreground sm:text-start sm:mb-6 lg:mb-12">{TEXT.joinText1}</p>
+          <h2 className="section-title text-background mb-6 md:text-start md:mb-4 lg:mb-6 xl:text-[2.5rem]">{TEXT.joinTitle1} <br /> {TEXT.joinTitle2}</h2>
+          <p className="join-description mb-8 text-container-foreground md:text-start md:mb-6 lg:mb-12">{TEXT.joinText1}</p>
           <SuscriptionForm />
         </div>
 

@@ -1,6 +1,6 @@
 "use client"
 import Review from "@/interfaces/review.interface";
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import Avatar from "@/ui/Avatar"
 import { Button, Card, CardContent, CardHeader, Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, Rating, Typography, DialogActions } from "@mui/material";
 import { RiArrowDownSLine } from "@remixicon/react";
@@ -59,13 +59,13 @@ export default function TestimonialCard({review}: TestimonialCardProps) {
         <Dialog open={open} onClose={handleClose} scroll={'paper'} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description">
           <DialogTitle id="scroll-dialog-title">
             {selectedReview && (
-              <span className='flex flex-row flex-wrap items-center justify-start gap-3 sm:flex-nowrap md:gap-4'>
+              <span className='flex flex-row flex-wrap items-center justify-start gap-3 md:flex-nowrap md:gap-4'>
                 <Avatar src={selectedReview.picture} alt={`${selectedReview.author.charAt(0)}`} />
                 <span className='flex flex-col'>
                   <Typography className='!font-medium' variant="subtitle1" color="text.primary">{selectedReview.author}</Typography>
                   <span className='!flex !items-center !justify-start !gap-1 !text-muted-foreground !text-xs'>{selectedReview.timestamp} en<Avatar src={selectedReview.platformLogo} alt={selectedReview.platformName} className="h-4 w-4" />{selectedReview.platformName}</span>
                 </span>
-                <span className='flex justify-start grow sm:justify-end'>
+                <span className='flex justify-start grow md:justify-end'>
                   <Rating className="!text-secondary" size='small' name="read-only" value={selectedReview.rating} readOnly />
                 </span>
               </span>

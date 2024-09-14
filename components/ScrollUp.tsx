@@ -25,7 +25,7 @@ export default function ScrollUp({path}: ScrollUpProps) {
   }, []);
 
   return (
-    <div ref={scrollUpRef} className={`scrollup ${show} z-50 grid gap-4 fixed right-4 -bottom-1/2 transition-all duration-500 lg:right-12`}>
+    <div ref={scrollUpRef} className={`scrollup ${show} z-50 grid gap-4 fixed right-4 -bottom-1/2 transition-all duration-500 md:right-12`}>
 
       <a href={`${path.whatsapp}`} target="_blank"
         className="scrollup-btn p-[8px] relative cursor-pointer transition-all duration-500 hover:-translate-y-1">

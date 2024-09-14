@@ -10,7 +10,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 
 export default function Service() {
   const TEXT = texts.ES;
@@ -92,9 +92,9 @@ export default function Service() {
     <section className="services section" id="gallery">
       <div className="services-section section-container">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
 
-          <div className="services-data p-6">
+          <div className="section-data">
             <span className="block font-montserrat text-xl text-muted-foreground font-light text-start">{TEXT.serviceTitle1}<br /></span>
             <h2 className="section-title text-4xl text-start lg:text-5xl">{TEXT.brandName1}</h2>
             <p className="text-base text-muted-foreground mb-5 text-start">{TEXT.servicesDescription1}</p>
@@ -114,7 +114,7 @@ export default function Service() {
           </div>
 
           {/* gallery and thumbnails */}
-          <div className="sm:p-6 lg:p-0">
+          <div className="md:p-6 lg:p-0">
 
             {/* gallery */}
             <div ref={galleryRef} className="swiper gallery-swiper w-full rounded-2xl shadow-md">

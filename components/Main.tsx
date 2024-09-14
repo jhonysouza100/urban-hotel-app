@@ -1,4 +1,4 @@
-import texts from "@/public/texts";
+import texts from "@/lang/es";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
 import MainSwiper from "./MainSwiper";

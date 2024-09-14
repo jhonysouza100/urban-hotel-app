@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'sm': '500px',
-      'md': '768px',
+      'sm': '425px',
+      'md': '620px',
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1440px',
