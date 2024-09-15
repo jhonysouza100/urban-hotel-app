@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
     <html lang="es">
       <body className={`${poppins.className} bg-neutral-100 tracking-wide min-h-screen select-none antialiased`}>
         {children}
+        <Footer />
       </body>
     </html>
   );

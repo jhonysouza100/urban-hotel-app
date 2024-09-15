@@ -6,7 +6,6 @@ import Location from "@/components/Location";
 import dynamic from "next/dynamic";
 
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
   ssr: true,
@@ -14,7 +13,7 @@ const Suscription = dynamic(() => import("@/components/Suscription"), {
 });
 
 export default function Home() {
-  
+
   return (
     <>
     <Header />
@@ -26,7 +25,6 @@ export default function Home() {
       <Explore />
       <Suscription />
     </main>
-    <Footer />
     </>
   );
 }

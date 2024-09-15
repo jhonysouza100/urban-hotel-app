@@ -1,5 +1,6 @@
 import { RiBatteryChargeLine, RiCreativeCommonsByLine, RiDrinks2Line, RiFootprintLine, RiMusic2Line, RiSunLine, RiTeamLine, RiTicketLine, RiTimeLine, RiTrainLine, RiTreasureMapLine, RiTShirtLine, RiWalkLine } from "@remixicon/react";
 import Image from "next/image";
+import AltHeader from "@/components/AltHeader";
 
 export default function ExplorePage() {
 
@@ -94,8 +95,9 @@ export default function ExplorePage() {
     }
   };
   
-  
   return (
+    <>
+    <AltHeader />
     <main>
       <section>
         <div className="pt-0 mt-0 pb-4 overflow-hidden">
@@ -353,5 +355,6 @@ export default function ExplorePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
