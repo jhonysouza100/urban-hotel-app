@@ -1,9 +1,9 @@
 "use client"
-import { Avatar } from "@mui/material";
 import { RiArrowLeftSLine } from "@remixicon/react";
 import Link from "next/link";
 import React from "react";
 import Button from "@/ui/Button";
+import Avatar from "./ui/Avatar";
 
 export default function Header() {
 
@@ -50,8 +50,7 @@ export default function Header() {
 
         <Avatar className="nav-logo"
           alt="logo del hotel"
-          src="./img/logo.webp"
-          sx={{ width: {xs: 32, md: 40}, height: {xs: 32, md: 40} }}
+          src="/img/logo.webp"
         />
       </nav>
 

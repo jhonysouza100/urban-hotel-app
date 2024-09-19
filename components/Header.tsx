@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import { Avatar } from "@mui/material";
 import { RiCloseLine, RiMenuFill } from "@remixicon/react";
 import { socket } from "@/utils/socket";
+import Avatar from "./ui/Avatar";
 
 
 export default function Header() {
@@ -88,8 +88,7 @@ export default function Header() {
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
         <Avatar className="nav-logo"
           alt="logo del hotel"
-          src="./img/logo.webp"
-          sx={{ width: {xs: 32, md: 40}, height: {xs: 32, md: 40} }}
+          src="/img/logo.webp"
         />
 
         <div className='nav-menu fixed w-full min-h-max -top-full left-0 py-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">

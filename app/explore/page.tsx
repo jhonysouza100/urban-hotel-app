@@ -1,6 +1,11 @@
 import { RiBatteryChargeLine, RiCreativeCommonsByLine, RiDrinks2Line, RiFootprintLine, RiMusic2Line, RiSunLine, RiTeamLine, RiTicketLine, RiTimeLine, RiTrainLine, RiTreasureMapLine, RiTShirtLine, RiWalkLine } from "@remixicon/react";
 import Image from "next/image";
 import AltHeader from "@/components/AltHeader";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: '¿Qué hacer?',
+}
 
 export default function ExplorePage() {
 

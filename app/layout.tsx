@@ -6,9 +6,12 @@ import "./globals.css";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Iguazú Urban Hotel Express",
+  title: {
+    default: "Iguazú Urban Hotel Express",
+    template: "%s | Iguazú Urban Hotel",
+  },
   description: "Hotel en las Cataratas del Iguazú - Disfruta de una experiencia única en nuestro hotel ubicado en la maravillosa región de las Cataratas del Iguazú. Habitaciones cómodas, servicios de calidad y vistas espectaculares.",
-  keywords: "hotel, Cataratas del Iguazú, alojamiento, turismo, naturaleza, viaje, paseo, vacaciones, Cataratas del iguazú entradas, cataratas del Iguazú información, reservar hotel, reservar hostel, reservar Habitación, habitación matrimonial, viaje a Cataratas del Iguazú todo incluido en avión, Booking paquetes a Cataratas, Viajes a Cataratas del Iguazú en micro, viajar a Argentina, viajar a Brasil, Despegar pasajes a cataratas del Iguazú",
+  keywords: ["hotel", "Cataratas del Iguazú", "alojamiento", "Cataratas del iguazú entradas", "Cataratas del Iguazú información", "reservar hotel", "reservar hostel", "reservar Habitación", "habitación matrimonial", "Viaje a Cataratas del Iguazú todo incluido en avión", "Booking paquetes a Cataratas", "Viajes a Cataratas del Iguazú en micro", "Pasajes a cataratas del Iguazú", "turismo", "naturaleza", "viaje", "paseo", "vacaciones" ],
   openGraph: {
     type: "website",
     url: "https://www.iguazuurbanhotel.com",
@@ -23,7 +26,17 @@ export const metadata: Metadata = {
   themeColor: "	#cdab7e",
   manifest: "/site.webmanifest",
   authors: [{ name: "Iguazú Urban Hotel Express", url: "https://www.iguazuurbanhotel.com" }],
+  creator: 'jhonysouza100',
+  publisher: 'Chill Hop',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: { index: true, follow: true },
+  generator: 'Next.js',
+  applicationName: 'urban-hotel-app',
+  referrer: 'origin-when-cross-origin',
 };
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
