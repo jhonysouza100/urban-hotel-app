@@ -1,7 +1,11 @@
+// import Skeleton from "@/ui/Skeleton";
+import { Skeleton } from "@mui/material";
+
 function Loading() {
   return (
-    <div className="text-3xl font-bold text-red-500">
-      {"Cargando pagina :>_"}
+    <div className="">
+      {/* <Skeleton variant="rectangular" /> */}
+      <Skeleton />
     </div>
   );
 }

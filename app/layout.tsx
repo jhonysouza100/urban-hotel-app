@@ -33,14 +33,14 @@ export const metadata: Metadata = {
       media: '(device-width: 768px) and (device-height: 1024px)',
     },]
   },
-  themeColor: "	#cdab7e",
+  // themeColor: "	#cdab7e", /* deprecated */
   verification: { google: 'google'},
   alternates: {
     canonical: 'https://www.iguazuurbanhotel.com',
-    languages: {
-      'en-US': 'https://www.iguazuurbanhotel.com/en',
-      'pt-Br': 'https://www.iguazuurbanhotel.com/pt',
-    }
+    // languages: {
+    //   'en-US': 'https://www.iguazuurbanhotel.com/en',
+    //   'pt-Br': 'https://www.iguazuurbanhotel.com/pt',
+    // }
   },
   other: {
     street_address: 'Fray Luiz Beltran 290',

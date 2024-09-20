@@ -24,7 +24,7 @@ export default async function Testimonials() {
             </span>
             {/*Title */}
             <h3 className="section-title text-neutral-100 font-montserrat text-start">{TEXT.testimonilasTitle1}<br/>{TEXT.testimonilasTitle2}</h3>
-            <p className="text-base text-muted text-start mb-5">{TEXT.testimonilasDescription1}</p>
+            <p className="text-base text-container-foreground text-start mb-5">{TEXT.testimonilasDescription1}</p>
             <div className="box text-start space-y-2">
               <span className="inline-flex gap-4">
                 <Avatar className='w-6 h-6' src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="google logo" />
