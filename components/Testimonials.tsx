@@ -6,6 +6,7 @@ import Avatar from "@/ui/Avatar";
 import { Rating } from "@mui/material";
 
 export default async function Testimonials() {
+
   const TEXT = texts.ES;
 
   const REVIEWS: Review[] = await getAllReviews();

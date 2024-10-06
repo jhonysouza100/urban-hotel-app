@@ -62,7 +62,7 @@ const texts = {
     joinTitle2: "Comienza Aquí",
     joinText1: "Si desea recibir más información, envíenos un email, estaremos encantados en ayudarte.",
     joinPlaceholder1: "Ingresa tu correo electrónico",
-    joinButtonText1: "Suscribirse",
+    joinButtonText1: "Enviar",
     joinSuccess: "Gracias por elegirnos ",
     footerTitle1: "Síguenos",
     footerTitle2: "Dirección",
