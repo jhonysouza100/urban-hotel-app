@@ -1,0 +1,131 @@
+{
+  "navText1": "Inicio",
+  "navText2": "Ubicación",
+  "navText3": "Fotos",
+  "navText4": "Servicios",
+  "authText1": "Cerrar sesión",
+  "authText2": "Iniciar sesión",
+  "accountMenuText1": "Mi cuenta",
+  "accountMenuText2": "Ajustes",
+  "accountMenuText3": "Configuración de la cuenta",
+  "backButtonText1": "Volver",
+  "moreButtonText1": "Saber más",
+  "tabMenuTitle1": "Notas",
+  "tabMenuTitle2": "Reservas",
+  "tabMenuTitle3": "Pagos",
+  "tabMenuTextAlert1": "Aún no tienes reservas.",
+  "reviewPlaceholderText1": "Deja tu comentario…",
+  "reviewButtonText1": "Comentar",
+  "authToastText1": "¡Bienvenido/a",
+  "homeTitle1": "Iguazú Urban",
+  "homeTitle2": "Hotel",
+  "homeTitle3": "Express",
+  "homeDescription1": "Somos un hotel moderno con todos los servicios para que puedas disfrutar unos días únicos en Puerto Iguazú, Misiones.",
+  "homeButtonTitle1": "Consulta",
+  "socialLinkTitle1": "Síguenos",
+  "locationTitleA": "Donde Estamos",
+  "locationTitleB": "Úbicados",
+  "locationTitle1": "Fray Luis Beltrán 290",
+  "locationTitle2": "Puerto Iguazú - Misiones",
+  "locationDescription1": "Ubicado en una zona céntrica, cerca de restaurantes, comercios, mercados y la terminal de autobuses.",
+  "locationTextGroup1": [
+    "Terminal de Ómnibus",
+    "a 300 Mts"
+  ],
+  "locationTextGroup3": [
+    "Hito 3 Fronteras",
+    "a 2,9 Km"
+  ],
+  "locationTextGroup2": [
+    "Avenida principal",
+    "a 300 Mts"
+  ],
+  "locationTextGroup4": [
+    "Duty Free Shop",
+    "a 2,6 Km"
+  ],
+  "locationTextGroup5": [
+    "Parque Nacional Iguazú",
+    "a 18 Km"
+  ],
+  "locationTextGroup6": [
+    "Aeropuerto",
+    "a 20 Km"
+  ],
+  "serviceTitle1": "Bienvenido al",
+  "serviceSectionTitle1": "Alojamiento &",
+  "serviceSectionTitle2": "Servicios",
+  "servicesDescription1": "Disfruta de una experiencia única en nuestro hotel ubicado en la maravillosa región de las Cataratas del Iguazú. Habitaciones cómodas, servicios de calidad y vistas espectaculares.",
+  "serviceTextGroup1": [
+    "Habitaciones",
+    "Dobles y Triples"
+  ],
+  "serviceTextGroup2": [
+    "WIFI",
+    "Gratuito"
+  ],
+  "serviceTextGroup3": [
+    "Desayuno",
+    "Incluido"
+  ],
+  "serviceTextGroup4": [
+    "Recepción",
+    "24hs"
+  ],
+  "serviceTextGroup5": [
+    "TV LCD",
+    "y Cable Satelital"
+  ],
+  "serviceTextGroup7": [
+    "Ducha",
+    "Caliente"
+  ],
+  "serviceTextGroup6": [
+    "Aire",
+    "Acondicionado"
+  ],
+  "serviceTextGroup8": [
+    "Piscina",
+    "y Solarium"
+  ],
+  "serviceTextGroup9": [
+    "Mascotas",
+    "Pequeñas"
+  ],
+  "serviceTextGroup10": [
+    "Room Service",
+    "todos los días"
+  ],
+  "textClose1": "Cerrar",
+  "brandName1": "Iguazú Urban Hotel",
+  "brandName2": "Express",
+  "testimonilasTitle1": "Que Dicen",
+  "testimonilasTitle2": "Nuestros Huéspedes",
+  "testimonilasDescription1": "Valoraciones 100% certificadas de huéspedes que verdaderamente se alojaron con nosotros.",
+  "exploreTitle1": "Explora Iguazú",
+  "exploreTitle2": "Descubre el Paraíso",
+  "exploreDescription1": "Explorar las Cataratas del Iguazú es sumergirse en uno de los mayores espectáculos naturales del mundo. Ubicadas en la frontera entre Argentina y Brasil, estas impresionantes cascadas ofrecen una experiencia inigualable de belleza y aventura. Aquí, el rugido del agua y la exuberante selva crean un entorno único donde la armonía y la paz se fusionan con la emoción.",
+  "joinTitle1": "Tu Viaje",
+  "joinTitle2": "Comienza Aquí",
+  "joinText1": "Si desea recibir más información, envíenos un email, estaremos encantados en ayudarte.",
+  "joinPlaceholder1": "Ingresa tu correo electrónico",
+  "joinButtonText1": "Enviar",
+  "joinSuccess": "Gracias por elegirnos ",
+  "footerTitle1": "Síguenos",
+  "footerTitle2": "Dirección",
+  "footerTitle3": "Contacto",
+  "footerTitle4": "Más Información",
+  "footerTitle5": "Support",
+  "footerInfoDirection": "Fray Luis Beltrán 290, Iguazú - Misiones",
+  "footerInfoPhone": "+54 3757 - 458904",
+  "footerInfoEmail": "Iguazuurbanhotel@gmail.com",
+  "footerInfoParkArg": "Parque Nacional Iguazú",
+  "footerInfoParkBr": "Parque Nacional do Iguazú (Brasil)",
+  "footerInfoMigrationBr": "Documentación para ingresar a Brasil (DNM)",
+  "footerInfoAirport": "Aeropuerto Iguazú",
+  "footerInFullMoon": "Paseo de luna llena en las Cataratas del Iguazú",
+  "footerInfoFaq": "FAQ",
+  "footerTerms": "Términos y Condiciones",
+  "footerInfoPolicy": "Política de Privacidad",
+  "footerInfoDeveloper": "Desarrollador"
+}

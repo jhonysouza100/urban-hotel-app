@@ -2,9 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
@@ -16,36 +16,35 @@ const config: Config = {
     },
     extend: {
       gridTemplateColumns: {
-        // added new 4 column grid as new4
         'max2': 'repeat(2, max-content)',
         'max3': 'repeat(3, max-content)',
         'max4': 'repeat(4, max-content)',
         'a': 'repeat(2, 350px)',
-        'b': "460px 340px",
-        'c': "620px 1fr",
+        'b': '460px 340px',
+        'c': '620px 1fr',
       },
       colors: {
-        "primary-1": "hsl(84, 36%, 42%)",
-        "primary-2": "rgb(25, 114, 92)",
-        "primary-3": "rgb(23, 204, 87)",
-        "secondary": "hsl(34, 44%, 65%)",
-        "secondary-muted": "hsl(34, 44%, 65%, 0.3)",
-        "background": "hsl(0, 0%, 95%)",
-        "foreground": "hsl(222.2, 47.4%, 11.2%)",
-        "container": "hsl(0, 0%, 10%)",
-        "container-foreground": "hsl(0, 0%, 70%)",
-        "muted": "hsl(210, 40%, 96.1%)",
-        "muted-foreground": "rgba(0, 0, 0, 0.6)",
-        "error": "rgb(196, 28, 28)",
-        "error-soft": "rgb(252, 228, 228, .3)",
-        "success": "rgb(31, 122, 31)",
-        "success-soft": "rgba(227, 251, 227, .3)",
-        "info": "rgb(11, 107, 203)",
-        "info-soft": "rgb(227, 239, 251, .3)",
-        "alert": "rgb(154, 91, 19)",
-        "alert-soft": "rgb(253, 240, 225, .3)",
-        "transparent": "hsla(0, 0%, 100%, .2)",
-        "transparent-75": "hsla(0, 0%, 100%, .75)",
+        'primary-1': 'hsl(84, 36%, 42%)',
+        'primary-2': 'rgb(25, 114, 92)',
+        'primary-3': 'rgb(23, 204, 87)',
+        'secondary': 'hsl(34, 44%, 65%)',
+        'secondary-muted': 'hsl(34, 44%, 65%, 0.3)',
+        'background': 'hsl(0, 0%, 95%)',
+        'foreground': 'hsl(222.2, 47.4%, 11.2%)',
+        'container': 'hsl(0, 0%, 10%)',
+        'container-foreground': 'hsl(0, 0%, 70%)',
+        'muted': 'hsl(210, 40%, 96.1%)',
+        'muted-foreground': 'rgba(0, 0, 0, 0.6)',
+        'error': 'rgb(196, 28, 28)',
+        'error-soft': 'rgb(252, 228, 228, .3)',
+        'success': 'rgb(31, 122, 31)',
+        'success-soft': 'rgba(227, 251, 227, .3)',
+        'info': 'rgb(11, 107, 203)',
+        'info-soft': 'rgb(227, 239, 251, .3)',
+        'alert': 'rgb(154, 91, 19)',
+        'alert-soft': 'rgb(253, 240, 225, .3)',
+        'transparent': 'hsla(0, 0%, 100%, .2)',
+        'transparent-75': 'hsla(0, 0%, 100%, .75)',
       },
       
       fontFamily: {
@@ -54,8 +53,8 @@ const config: Config = {
         dancing: ['Dancing Script', 'cursive'],
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       lineHeight: {
         'extra-tight': '1.2',
