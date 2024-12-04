@@ -2,18 +2,19 @@
 
 import { useEffect } from 'react';
 
-// Importamos generatePdf de forma dinámica solo en el cliente
 const scrollAnimation = () => {
   import('@/utils/scrollReveal').then(module => {
     module.scrollAnimation();
   });
 };
 
-function ScrollAnimationsWrapper({ children }: Readonly<{children?: React.ReactNode;}>) {
+// Función para cargar las animaciones de ScrollReveal
+function ScrollRevealLoader({ children }: Readonly<{children?: React.ReactNode;}>) {
   useEffect(() => {
+    // Cargar las animaciones al montar
     scrollAnimation();
-  }, [])
-  
+  }, []);
+
   return (
     <div>
       {children}
@@ -21,4 +22,4 @@ function ScrollAnimationsWrapper({ children }: Readonly<{children?: React.ReactN
   );
 }
 
-export default ScrollAnimationsWrapper;
+export default ScrollRevealLoader;

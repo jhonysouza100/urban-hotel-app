@@ -1,8 +1,8 @@
-import TEXT from "@/lang/es.json";;
+import TEXT from "@/lang/es.json";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
 import MainSwiper from "./MainSwiper";
-import Button from "./ui/Button";
+import AdSenseClickBaitButton from "./AdSenseClickBaitButton";
 
 export default async function Main() {
 
@@ -18,13 +18,7 @@ export default async function Main() {
           </h1>
           <p className="home-description mb-16 text-background text-end text-xs md:text-sm lg:text-base">{TEXT.homeDescription1}</p>
           <div className="flex justify-end mb-24 md:mb-14">
-            <a href={`${PATH.whatsapp}`} target="_blank" className="z-20" aria-label="Whatsapp">
-              <Button 
-                text={TEXT.homeButtonTitle1} 
-                endIcon={<RiWhatsappFill />}
-                className="home-button bg-primary-2 rounded-md pointer-events-auto"
-              />
-            </a>
+            <AdSenseClickBaitButton path={PATH} />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import Script from "next/script";
 import config from "@/config";
 
-function AddSenseScript() {
+function AdSenseScript() {
   const pId = config.GOOGLE_PUB_ID;
 
   return (
@@ -13,4 +13,4 @@ function AddSenseScript() {
     />
   );
 }
-export default AddSenseScript;
+export default AdSenseScript;

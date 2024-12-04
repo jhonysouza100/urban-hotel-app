@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
-import AddSenseScript from "@/providers/AddSenseScript";
+import AdSenseScript from "@/providers/AdSenseScript";
 import "./globals.css";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
@@ -105,7 +105,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="es">
       <head>
-        <AddSenseScript />
+        <AdSenseScript />
       </head>
       <body className={`${poppins.className} bg-neutral-100 tracking-wide min-h-screen select-none antialiased`}>
         {children}

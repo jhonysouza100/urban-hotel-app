@@ -3,14 +3,14 @@
 import { useEffect } from "react";
 import config from "@/config";
 
-interface AddSenseBannerProps {
+interface AdSenseBannerProps {
   className?: string;
   dataAdSlot: string;
   dataAdFormat: string;
   dataFullWidthResponsive: string;
 }
 
-function AddSenseBanner({ className, dataAdFormat, dataAdSlot, dataFullWidthResponsive }: AddSenseBannerProps) {
+function AdSenseBanner({ className, dataAdFormat, dataAdSlot, dataFullWidthResponsive }: AdSenseBannerProps) {
   useEffect(() => {
     if (typeof window !== "undefined" && (window as any).adsbygoogle) {
       try {
@@ -25,7 +25,7 @@ function AddSenseBanner({ className, dataAdFormat, dataAdSlot, dataFullWidthResp
   }, []);  // El array vacío asegura que el efecto se ejecute solo una vez
 
   return (
-    <div className={`google_ad ${className || ''}`}>
+    <div className={`google_ad ${className || ''}`} id={`_${dataAdSlot}`}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
@@ -38,4 +38,4 @@ function AddSenseBanner({ className, dataAdFormat, dataAdSlot, dataFullWidthResp
   );
 }
 
-export default AddSenseBanner;
+export default AdSenseBanner;

@@ -4,7 +4,7 @@ import React from "react";
 import { RiCloseLine, RiMenuFill } from "@remixicon/react";
 import { socket } from "@/utils/socket";
 import Avatar from "./ui/Avatar";
-import AddSenseBanner from "@/providers/AddSenseBanner";
+import AdSenseBanner from "@/providers/AdSenseBanner";
 
 interface DataViews {
   views: number;
@@ -120,7 +120,7 @@ export default function Header() {
         </div>
       </nav>
 
-      <AddSenseBanner className="absolute w-full -bottom-[90px] left-0 h-[90px] z-10" dataAdSlot="2266824893" dataAdFormat="auto" dataFullWidthResponsive="true" />
+      <AdSenseBanner className="absolute w-full -bottom-[90px] left-0 h-[90px] z-10" dataAdSlot="2266824893" dataAdFormat="auto" dataFullWidthResponsive="true" />
 
     </header>
   )

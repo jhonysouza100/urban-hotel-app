@@ -4,7 +4,7 @@ import Review from "@/interfaces/review.interface";
 import TEXT from "@/lang/es.json";;
 import Avatar from "@/components/ui/Avatar";
 import { Rating } from "@mui/material";
-import AddSenseBanner from "@/providers/AddSenseBanner";
+import AdSenseBanner from "@/providers/AdSenseBanner";
 
 export default async function Testimonials() {
 
@@ -34,7 +34,7 @@ export default async function Testimonials() {
           </div>
           
           <div className="box hidden md:flex p-6 items-center justify-center">
-            <AddSenseBanner className="w-80 aspect-[6/5]" dataAdSlot="3404545119" dataAdFormat="auto" dataFullWidthResponsive="true" />
+            <AdSenseBanner className="w-80 aspect-[6/5]" dataAdSlot="3404545119" dataAdFormat="auto" dataFullWidthResponsive="true" />
           </div>
           
         </div>
