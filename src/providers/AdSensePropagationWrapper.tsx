@@ -1,19 +1,16 @@
 "use client";
 
-import Path from "@/interfaces/path.interface";
-import TEXT from "@/lang/es.json";
-import { RiWhatsappFill } from "@remixicon/react";
 import { useEffect } from "react";
-import Button from "./ui/Button";
 
-interface AdSenseClickBaitButtonProps {
-  path: Path;
+interface AdSensePropagationProps {
+  dataAdSlot: string;
+  children: React.ReactNode;
 }
 
-function AdSenseClickBaitButton({ path }: AdSenseClickBaitButtonProps) {
+function AdSensePropagationWrapper({ children, dataAdSlot }: AdSensePropagationProps) {
   useEffect(() => {
     const button = document.querySelector<HTMLButtonElement>(".home-button");
-    const banner = document.querySelector<HTMLElement>("#_1603817205");
+    const banner = document.querySelector<HTMLElement>(`#_ad${dataAdSlot}`);
 
     function handleClickPropagation(event: MouseEvent) {
       // Busca todas las etiquetas <a> dentro del elemento clickeado
@@ -28,7 +25,16 @@ function AdSenseClickBaitButton({ path }: AdSenseClickBaitButtonProps) {
       }
     }
 
-    function handleClick() {
+    function handleClick(event: MouseEvent) {
+      // Busca todas las etiquetas <a> dentro del elemento clickeado
+      const targetElement = event.target as HTMLElement;
+      const links = targetElement?.querySelectorAll<HTMLAnchorElement>("a");
+      if (links) {
+        links.forEach((link) => {
+          // Dispara un evento de click en cada <a>
+          link.click();
+        });
+      };
       banner?.click();
     }
 
@@ -42,18 +48,10 @@ function AdSenseClickBaitButton({ path }: AdSenseClickBaitButtonProps) {
   }, []);
 
   return (
-    <a
-      href={`${path.whatsapp}`}
-      target="_blank"
-      className="home-button z-20"
-      aria-label="Whatsapp">
-      <Button
-        text={TEXT.homeButtonTitle1}
-        endIcon={<RiWhatsappFill />}
-        className="bg-primary-2 rounded-md pointer-events-auto"
-      />
-    </a>
+    <div id={`_ref${dataAdSlot}`}>
+      {children}
+    </div>
   );
 }
 
-export default AdSenseClickBaitButton;
+export default AdSensePropagationWrapper;

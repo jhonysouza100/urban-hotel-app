@@ -3,6 +3,7 @@ import { RiArrowUpSLine } from "@remixicon/react";
 import Image from "next/image";
 import Path from "@/interfaces/path.interface";
 import { useEffect, useRef, useState } from "react";
+import AdSensePropagationWrapper from "@/providers/AdSensePropagationWrapper";
 
 interface ScrollUpProps {
   path: Path;
@@ -28,8 +29,9 @@ export default function ScrollUp({path}: ScrollUpProps) {
     <div ref={scrollUpRef} className={`scrollup ${show} z-50 grid gap-4 fixed right-4 -bottom-1/2 transition-all duration-500 md:right-12`}>
 
       <a href={`${path.whatsapp}`} target="_blank"
-        className="scrollup-btn p-[8px] relative cursor-pointer transition-all duration-500 hover:-translate-y-1">
-        <Image src='./img/whatsapp.svg' height={40} width={40} quality={100} loading="lazy" className="whatsapp-icon absolute top-0 left-0 -translate-y-1/2 w-11" alt="whatsapp-logo" />
+        className="scrollup-btn p-2 relative cursor-pointer transition-all duration-500 hover:-translate-y-1">
+        <Image src='./img/whatsapp.svg' height={40} width={40} quality={100} loading="lazy"
+          className="whatsapp-icon absolute top-0 left-0 -translate-y-1/2 w-10 h-10" alt="whatsapp-logo" />
       </a>
 
       <a href="#" aria-label="scroll up button"

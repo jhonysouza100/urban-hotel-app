@@ -2,11 +2,19 @@ import TEXT from "@/lang/es.json";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
 import MainSwiper from "./MainSwiper";
-import AdSenseClickBaitButton from "./AdSenseClickBaitButton";
+import Button from "./ui/Button";
+import AdSensePropagationWrapper from "@/providers/AdSensePropagationWrapper";
 
 export default async function Main() {
 
   const PATH = await getMediaPaths();
+
+  // Array de redes sociales para mapear
+  const socialLinks = [
+    { icon: <RiInstagramFill />, url: PATH.instagram, label: "Instagram" },
+    { icon: <RiFacebookCircleFill />, url: PATH.facebook, label: "Facebook" },
+    { icon: <RiWhatsappFill />, url: PATH.whatsapp, label: "Whatsapp" }
+  ];
 
   return (
     <section className="home relative bg-container h-screen min-h-[480px]" id="home">
@@ -18,7 +26,19 @@ export default async function Main() {
           </h1>
           <p className="home-description mb-16 text-background text-end text-xs md:text-sm lg:text-base">{TEXT.homeDescription1}</p>
           <div className="flex justify-end mb-24 md:mb-14">
-            <AdSenseClickBaitButton path={PATH} />
+            <AdSensePropagationWrapper dataAdSlot="1603817205">
+              <a
+                href={`${PATH.whatsapp}`}
+                target="_blank"
+                className="home-button z-20"
+                aria-label="Whatsapp">
+                <Button
+                  text={TEXT.homeButtonTitle1}
+                  endIcon={<RiWhatsappFill />}
+                  className="bg-primary-2 rounded-md pointer-events-auto"
+                />
+              </a>
+            </AdSensePropagationWrapper>
           </div>
         </div>
       </div>
@@ -34,9 +54,17 @@ export default async function Main() {
           {TEXT.socialLinkTitle1}
         </span>
         <div className="home-social-links grid gap-y-3">
-          <a href={`${PATH.instagram}`} target="_blank" className="home-social-link w-6 h-6 text-background transition-transform duration-500 hover:scale-110 cursor-pointer" aria-label="Instagram"><RiInstagramFill /></a>
-          <a href={`${PATH.facebook}`} target="_blank" className="home-social-link w-6 h-6 text-background transition-transform duration-500 hover:scale-110 cursor-pointer" aria-label="Facebook"><RiFacebookCircleFill /></a>
-          <a href={`${PATH.whatsapp}`} target="_blank" className="home-social-link w-6 h-6 text-background transition-transform duration-500 hover:scale-110 cursor-pointer" aria-label="Whatsapp"><RiWhatsappFill  /></a>
+          {socialLinks.map((el, index) => (
+            <AdSensePropagationWrapper key={index} dataAdSlot="7100349173">
+              <a
+                href={`${el.url}`}
+                target="_blank"
+                className="home-social-link w-6 h-6 text-background transition-transform duration-500 hover:scale-110 cursor-pointer"
+                aria-label={el.label}>
+                {el.icon}
+              </a>
+            </AdSensePropagationWrapper>
+          ))}
         </div>
       </div>
 

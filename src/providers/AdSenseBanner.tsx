@@ -25,7 +25,7 @@ function AdSenseBanner({ className, dataAdFormat, dataAdSlot, dataFullWidthRespo
   }, []);  // El array vacío asegura que el efecto se ejecute solo una vez
 
   return (
-    <div className={`google_ad ${className || ''}`} id={`_${dataAdSlot}`}>
+    <div className={`google_ad ${className || ''}`} id={`_ad${dataAdSlot}`}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}

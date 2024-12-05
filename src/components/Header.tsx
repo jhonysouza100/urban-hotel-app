@@ -75,12 +75,12 @@ export default function Header() {
     
     window.addEventListener('scroll', handleScroll);
 
-    // socket.on('user-joined', (data: DataViews) => {
-    //   console.log(data.views);
-    // });
+    socket.on('user-joined', (data: DataViews) => {
+      console.log(data.views);
+    });
 
     return () => {
-      // socket.off("user-joined");
+      socket.off("user-joined");
       open?.removeEventListener('click', () => handleClick());
       close?.removeEventListener('click', () => handleClick());
       window.removeEventListener('scroll', handleScroll);

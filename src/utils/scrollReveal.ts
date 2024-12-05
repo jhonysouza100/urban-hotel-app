@@ -7,7 +7,7 @@ export function scrollAnimation() {
     distance: '60px',
     duration: 2000,
     delay: 200,
-    reset: true,
+    reset: false,
   });
   
   sr.reveal(`.explore-data, .explore-user, .footer-image`);
