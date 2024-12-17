@@ -24,7 +24,6 @@ export default function Service() {
     {src: '/img/gallery-img-7.jpg'},
     {src: '/img/gallery-img-8.jpg'},
     {src: '/img/gallery-img-9.jpg'},
-    {src: '/img/gallery-img-10.jpg'},
     {src: '/img/gallery-img-11.jpg'},
     {src: '/img/gallery-img-12.jpg'},
     {src: '/img/gallery-img-13.jpg'},
@@ -33,7 +32,6 @@ export default function Service() {
     {src: '/img/gallery-img-16.jpg'},
     {src: '/img/gallery-img-17.jpg'},
     {src: '/img/gallery-img-18.jpg'},
-    {src: '/img/gallery-img-19.jpg'},
     {src: '/img/gallery-img-20.jpg'},
   ];
   const galleryRef = useRef<HTMLDivElement>(null);
