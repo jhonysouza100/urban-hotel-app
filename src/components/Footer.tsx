@@ -1,7 +1,7 @@
 import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import TEXT from "@/lang/es.json";;
-import ScrollUp from "./ScrollUp";
+import ScrollUp from "@/components/ScrollUp";
 import Avatar from "@/components/ui/Avatar"
 import Image from "next/image";
 

@@ -4,11 +4,11 @@ import { FieldError, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RiArrowRightLine } from "@remixicon/react";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 import config from "@/config";
 import TEXT from "@/lang/es.json";;
 import Button from "@/components/ui/Button";
-import { handleEmail } from "@/app/action";
+import { handleEmail } from "@/libs/brevo";
 
 export default function SuscriptionForm() {
 
@@ -28,70 +28,70 @@ export default function SuscriptionForm() {
   // "errors" Se dispara con el evento "submit", e impide que este continue.
   // console.log('errors: ', errors) // {email: { message: 'INVALID_EMAIL' } }
 
-  const htmlContent = `
-    <html>
-      <head>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-          }
-          .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-          }
-          .header {
-            text-align: center;
-          }
-          .header h1 {
-            color: #0067b8;
-          }
-          .content {
-            margin-top: 20px;
-            text-align: center;
-          }
-          .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
-            color: #888;
-          }
-          img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>¡Bienvenido al Iguazú Urban Hotel!</h1>
-          </div>
-          <div class="content">
-            <p>Hola viajero,</p>
-            <p>Gracias por elegir Iguazú Urban Hotel. Nos complace tenerte como parte de nuestra familia.</p>
-            <img src="https://lp-cms-production.imgix.net/2019-06/e92149cf3a85ad5e88c45a6b83f51b21-parque-nacional-iguazu.jpg" alt="Imagen de bienvenida">
-            <p>Te esperamos pronto en nuestro hotel, donde la comodidad y la hospitalidad son nuestra prioridad.</p>
-            <p>¡Que tengas una excelente estancia!</p>
-          </div>
-          <div class="footer">
-            <p>&copy; 2024 Iguazú Urban Hotel | Todos los derechos reservados</p>
-          </div>
-        </div>
-      </body>
-    </html>
-  `;
-
+  
   const handleEmailWithAPi = async (email: string) => {
+    const htmlContent = `
+      <html>
+        <head>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              color: #333;
+              margin: 0;
+              padding: 0;
+            }
+            .container {
+              width: 100%;
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .header {
+              text-align: center;
+            }
+            .header h1 {
+              color: #0067b8;
+            }
+            .content {
+              margin-top: 20px;
+              text-align: center;
+            }
+            .footer {
+              text-align: center;
+              margin-top: 30px;
+              font-size: 12px;
+              color: #888;
+            }
+            img {
+              width: 100%;
+              max-width: 300px;
+              border-radius: 8px;
+              }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>¡Bienvenido al Iguazú Urban Hotel!</h1>
+            </div>
+            <div class="content">
+              <p>Hola viajero,</p>
+              <p>Gracias por elegir Iguazú Urban Hotel. Nos complace tenerte como parte de nuestra familia.</p>
+              <img src="https://lp-cms-production.imgix.net/2019-06/e92149cf3a85ad5e88c45a6b83f51b21-parque-nacional-iguazu.jpg" alt="Imagen de bienvenida">
+              <p>Te esperamos pronto en nuestro hotel, donde la comodidad y la hospitalidad son nuestra prioridad.</p>
+              <p>¡Que tengas una excelente estancia!</p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2024 Iguazú Urban Hotel | Todos los derechos reservados</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
     try {
       const res = await fetch(`${config.BACKEND_EMAIL_URL}`, {
         method: 'POST',
@@ -175,9 +175,6 @@ export default function SuscriptionForm() {
         />
 
       </form>
-
-      <Toaster />
-
     </>
   );
 }
