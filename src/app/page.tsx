@@ -6,7 +6,7 @@ import Location from "@/components/Location";
 import dynamic from "next/dynamic";
 import { unstable_noStore } from "next/cache";
 import Header from "@/components/Header";
-import AdSenseBanner from "@/providers/AdSenseBanner";
+// import AdSenseBanner from "@/providers/AdSenseBanner";
 import ScrollRevealLoader from "@/providers/ScrollRevealLoader";
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
@@ -22,10 +22,10 @@ export default function HomePage() {
     <main>
       <Main />
       <Service />
-        <AdSenseBanner className="w-full h-[90px]" dataAdSlot="7100349173" dataAdFormat="auto" dataFullWidthResponsive="true" />
+        {/* <AdSenseBanner className="w-full h-[90px]" dataAdSlot="7100349173" dataAdFormat="auto" dataFullWidthResponsive="true" /> */}
       <Testimonials />
       <Location />
-        <AdSenseBanner className="adsense_banner w-full h-[90px]" dataAdSlot="1603817205" dataAdFormat="auto" dataFullWidthResponsive="true" />
+        {/* <AdSenseBanner className="adsense_banner w-full h-[90px]" dataAdSlot="1603817205" dataAdFormat="auto" dataFullWidthResponsive="true" /> */}
       <Explore />
       <Suscription />
     </main>

@@ -3,6 +3,7 @@ import { getMediaPaths } from "@/hooks/useGetMediaPaths";
 import TEXT from "@/lang/es.json";;
 import ScrollUp from "./ScrollUp";
 import Avatar from "@/components/ui/Avatar"
+import Image from "next/image";
 
 export default async function Footer() {
   
@@ -12,16 +13,24 @@ export default async function Footer() {
     <footer className="footer pt-6 pb-8 bg-container md:pt-10 md:pb-4">
 
       <div className="footer-container container mx-auto md:max-w-screen-xl px-4 xl:px-20 grid gap-6 gap-y-16">
-        
-        <div className="footer-image flex items-center justify-start gap-4">
-          
-          <Avatar src="/img/logo.png" alt="Logo del hotel" size="large" />
 
-          <div className="footer-text grid gap-1 text-xl font-semibold lg:text-2xl">
-            <p className="text-primary-1">{TEXT.brandName2}</p>
-            <p className="footer-logo text-container-foreground">{TEXT.brandName1}</p>
+        <div className="footer-image flex flex-col justify-between items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-8">
+          <div className="flex items-center justify-start gap-4">
+            
+            <Avatar src="/img/logo.png" alt="Logo del hotel" size="large" />
+
+            <div className="footer-text grid gap-1 text-xl font-semibold lg:text-2xl">
+              <p className="text-primary-1">{TEXT.brandName2}</p>
+              <p className="footer-logo text-container-foreground">{TEXT.brandName1}</p>
+            </div>
           </div>
+
+          <a className="-order-1 aspect-square w-[84px] h-[84px] translate-y-3 sm:w-[120px] sm:h-[120px]" href={PATH.hotelesVerdes} target="_blank" aria-label="Hoteles más verdes">
+            <Image src="/img/certificacion_bronce.png" alt="Hoteles más verdes" width={500} height={500} />
+          </a>
+
         </div>
+        
 
         <div className="footer-content grid grid-cols-1 gap-8 md:gap-y-8 md:gap-x-16 md:grid-cols-max2 lg:gap-x-20 lg:grid-cols-max3 xl:grid-cols-max4">
 

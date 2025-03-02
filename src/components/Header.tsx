@@ -2,9 +2,9 @@
 
 import React from "react";
 import { RiCloseLine, RiMenuFill } from "@remixicon/react";
-import { socket } from "@/utils/socket";
+// import { socket } from "@/utils/socket";
 import Avatar from "./ui/Avatar";
-import AdSenseBanner from "@/providers/AdSenseBanner";
+// import AdSenseBanner from "@/providers/AdSenseBanner";
 
 interface DataViews {
   views: number;
@@ -75,12 +75,13 @@ export default function Header() {
     
     window.addEventListener('scroll', handleScroll);
 
-    socket.on('user-joined', (data: DataViews) => {
-      console.log(data.views);
-    });
+    // Disabled Socket !!!
+    // socket.on('user-joined', (data: DataViews) => {
+    //   console.log(data.views);
+    // });
 
     return () => {
-      socket.off("user-joined");
+      // socket.off("user-joined");
       open?.removeEventListener('click', () => handleClick());
       close?.removeEventListener('click', () => handleClick());
       window.removeEventListener('scroll', handleScroll);
@@ -120,7 +121,7 @@ export default function Header() {
         </div>
       </nav>
 
-      <AdSenseBanner className="absolute w-full -bottom-[90px] left-0 h-[90px] z-10" dataAdSlot="2266824893" dataAdFormat="auto" dataFullWidthResponsive="true" />
+      {/* <AdSenseBanner className="absolute w-full -bottom-[90px] left-0 h-[90px] z-10" dataAdSlot="2266824893" dataAdFormat="auto" dataFullWidthResponsive="true" /> */}
 
     </header>
   )

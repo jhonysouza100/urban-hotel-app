@@ -11,4 +11,5 @@ export default interface Path {
   aeropuertoig: string; 
   lunallena: string; 
   booking: string;
+  hotelesVerdes: string;
 }

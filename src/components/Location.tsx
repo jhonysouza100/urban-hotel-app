@@ -16,12 +16,12 @@ export default async function Location() {
             {TEXT.locationDescription1}
           </p>
           <div className="text-start rounded-r-md grid grid-cols-1 md:grid-cols-max2 gap-y-2 gap-x-4">
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup1[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup2[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup3[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiShoppingBagLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup4[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup4[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiTreeLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup5[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup5[1]}</span></div>
-            <div className="grid grid-cols-max2 items-center gap-x-2"><RiPlaneLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup6[0]}</span><span className="col-start-2 text-sm text-secondary">{TEXT.locationTextGroup6[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiBusLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup1[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiRoadMapLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup2[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiCameraLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup3[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup3[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiShoppingBagLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup4[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup4[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiTreeLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup5[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup5[1]}</span></div>
+            <div className="grid grid-cols-max2 items-center gap-x-2"><RiPlaneLine /><span className="font-medium text-muted-foreground">{TEXT.locationTextGroup6[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.locationTextGroup6[1]}</span></div>
           </div>
         </div>
         <div className="location-image shadow-md rounded-lg overflow-hidden w-full h-full lg:-order-1">
