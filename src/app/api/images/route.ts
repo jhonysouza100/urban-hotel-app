@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { NextResponse } from 'next/server';
 import path from 'path';
 
 // Image data interface
@@ -14,15 +15,15 @@ export async function GET() {
 
     // Verificar si el archivo existe
     if (!fs.existsSync(filePath)) {
-      return new Response(JSON.stringify({ error: "No se encontró un archivo de imágenes" }), { status: 404 });
+      return NextResponse.json({ message: "No se encontró un archivo de imágenes" }, {status: 404});
     }
-
+    
     // Leer el archivo JSON
     const fileData = fs.readFileSync(filePath, 'utf-8');
     
     // Parsear el archivo JSON
     const imagesData: ImageData[] = JSON.parse(fileData);
-
+    
     // Devolver los datos de las imágenes
     return new Response(JSON.stringify(imagesData), {
       headers: {
@@ -32,6 +33,6 @@ export async function GET() {
 
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ error: "Hubo un problema al leer el archivo" }), { status: 500 });
+    return NextResponse.json({ message: "Hubo un problema al leer el archivo" }, {status: 500});
   }
 }

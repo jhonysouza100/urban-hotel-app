@@ -31,8 +31,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         message: "Por favor, seleccione uno o más archivos para subir.",
-        status: 400,
-        ok: false
       }, {status: 400}
     );
   }
@@ -45,22 +43,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           message: "Uno de los archivos no es válido",
-          status: 400,
-          ok: false
         }, {status: 400}
       );
     }
 
     // Verificar el tamaño del archivo
-    if (file.size > MAX_FILE_SIZE) {
-      return NextResponse.json(
-        {
-          message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${MAX_FILE_SIZE / (1024 * 1024)}MB`,
-          status: 400,
-          ok: false
-        }, {status: 400}
-      );
-    }
+    // if (file.size > MAX_FILE_SIZE) {
+    //   return NextResponse.json(
+    //     {
+    //       message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${MAX_FILE_SIZE / (1024 * 1024)}MB`,
+    //     }, {status: 400}
+    //   );
+    // }
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
@@ -75,7 +69,7 @@ export async function POST(req: NextRequest) {
             } else if (result) {
               resolve(result);
             } else {
-              reject(NextResponse.json({ message: `No se recibió respuesta de Cloudinary`, status: 404, ok: false }, {status: 404}));
+              reject(NextResponse.json({ message: `No se recibió respuesta de Cloudinary` }, {status: 404}));
             }
           })
           .end(buffer);
@@ -91,9 +85,7 @@ export async function POST(req: NextRequest) {
     } catch (error: UploadApiErrorResponse | any) {
       return NextResponse.json(
         { 
-          message: `${error.message}: ${file.name}`, 
-          status: error.http_code, 
-          ok: false 
+          message: `${error.message}: ${file.name}`,
         }, {status: error.http_code}
       );
     }
@@ -115,5 +107,5 @@ export async function POST(req: NextRequest) {
   // Escribir los datos actualizados en el archivo JSON
   fs.writeFileSync(jsonFilePath, JSON.stringify(existingData, null, 2));
 
-  return NextResponse.json({ message: "Archivos subidos y datos guardados", status: 200, ok: true, data: uploadedImages }, {status: 200});
+  return NextResponse.json({ message: "Archivos subidos y datos guardados", data: uploadedImages }, {status: 200});
 }

@@ -12,30 +12,23 @@ export const metadata: Metadata = {
     default: "Iguazú Urban Hotel Express",
     template: "%s | Iguazú Urban Hotel",
   },
-  description: "Hotel en las Cataratas del Iguazú - Disfruta de una experiencia única en nuestro hotel ubicado en la maravillosa región de las Cataratas del Iguazú. Habitaciones cómodas, servicios de calidad y vistas espectaculares.",
+  description: "Hotel económico en las Cataratas del Iguazú con excelente relación calidad-precio. Habitaciones cómodas, desayuno incluido, WiFi gratis y ubicación céntrica a solo 20 min de las Cataratas. ¡Reserva ahora!",
   keywords: [
-    "Cataratas del Iguazú",
-    "Hotel barato",
-    "Hotel Cataratas del Iguazú",
-    "Alojamiento en Puerto Iguazú económico",
-    "Hoteles en Iguazú centro",
-    "Hotel cerca de las Cataratas",
-    "Alojamiento cerca de las Cataratas del Iguazú",
-    "Hoteles en Cataratas del Iguazú lado argentino",
-    "Hoteles en Cataratas del Iguazú lado brasileño",
-    "Hoteles en Puerto Iguazú 3 estrellas",
-    "Hoteles en Puerto Iguazú 4 estrellas",
-    "Hoteles económicos en Puerto Iguazú",
-    "Cabañas en Puerto Iguazú",
-    "Reservas en Puerto Iguazú",
-    "Reservas hotel Iguazú",
+    "Hotel barato Cataratas del Iguazú",
+    "Alojamiento económico Puerto Iguazú",
+    "Hotel económico cerca de Cataratas",
+    "Mejor precio hotel Iguazú",
     "Ofertas hotel Cataratas",
-    "Hoteles baratos en Cataratas del Iguazú",
-    "Mejores hoteles en Iguazú para familias",
-    "Hotel con vista a las Cataratas del Iguazú",
-    "Alojamiento para parejas en Iguazú",
-    "Hostales y hoteles en Puerto Iguazú",
-    "Turismo en Iguazú",
+    "Hotel económico Iguazú centro",
+    "Hospedaje barato Cataratas",
+    "Hotel calidad precio Iguazú",
+    "Alojamiento accesible Cataratas",
+    "Hoteles baratos Puerto Iguazú",
+    "Reserva hotel económico Iguazú",
+    "Promociones hotel Cataratas",
+    "Descuentos hotel Iguazú",
+    "Habitaciones baratas Cataratas",
+    "Presupuesto hotel Iguazú",
   ],  
   category: 'tourism',
   openGraph: {
@@ -43,11 +36,20 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.iguazuurbanhotel.com",
     title: "Hotel en las Cataratas del Iguazú",
-    description: "Disfruta de una experiencia única en nuestro hotel ubicado en la maravillosa región de las Cataratas del Iguazú. Habitaciones cómodas, servicios de calidad y vistas espectaculares.",
+    description: "Hotel en las Cataratas del Iguazú. Habitaciones cómodas, ubicación céntrica, desayuno incluido y WiFi gratis. A solo 20 min de las Cataratas. ¡Mejor relación calidad-precio garantizada!",
     siteName: "Iguazú Urban Hotel Express",
     images: [{
       url: "https://static.misionesonline.news/wp-content/uploads/2022/06/Iguazu-Urban-Hotel-Express-3.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Habitaciones económicas en Iguazú"
     }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hotel Económico en las Cataratas del Iguazú | Iguazú Urban Hotel Express',
+    description: 'Hotel en las Cataratas del Iguazú. Habitaciones cómodas, ubicación céntrica, desayuno incluido y WiFi gratis.',
+    images: ['https://static.misionesonline.news/wp-content/uploads/2022/06/Iguazu-Urban-Hotel-Express-3.jpg'],
   },
   appleWebApp: { 
     capable: true, 
@@ -59,13 +61,13 @@ export const metadata: Metadata = {
     },]
   },
   // themeColor: "	#cdab7e", /* deprecated */
-  verification: { google: 'google'},
+  verification: { google: 'google0d1ea2d6ded018dc.html'},
   alternates: {
     canonical: 'https://www.iguazuurbanhotel.com',
-    // languages: {
-    //   'en-US': 'https://www.iguazuurbanhotel.com/en',
-    //   'pt-Br': 'https://www.iguazuurbanhotel.com/pt',
-    // }
+    languages: {
+      'en-US': 'https://www.iguazuurbanhotel.com/en',
+      'pt-BR': 'https://www.iguazuurbanhotel.com/pt',
+    }
   },
   other: {
     street_address: 'Fray Luiz Beltran 290',
@@ -73,7 +75,14 @@ export const metadata: Metadata = {
     postal_code: '3370',
     country_name: ' Argentina',
     Latitude: '-25.5970016',
-    Longitude: '-54.5684891'
+    Longitude: '-54.5684891',
+    'og:priceRange': 'U$40',
+    'business:contact_data:street_address': 'Fray Luiz Beltran 290',
+    'business:contact_data:locality': 'Puerto Iguazú',
+    'business:contact_data:postal_code': '3370',
+    'business:contact_data:country_name': 'Argentina',
+    'place:location:latitude': '-25.5970016',
+    'place:location:longitude': '-54.5684891'
   },
   manifest: "/site.webmanifest",
   authors: [{ name: "Iguazú Urban Hotel Express", url: "https://www.iguazuurbanhotel.com" }],
@@ -98,7 +107,7 @@ export const metadata: Metadata = {
     },
   },
   generator: 'Next.js',
-  applicationName: 'urban-hotel-app',
+  applicationName: 'Iguazú Urban Hotel',
   referrer: 'origin-when-cross-origin',
 };
 

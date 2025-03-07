@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     const { public_id } = await req.json();
 
     if (!public_id) {
-      return NextResponse.json({ error: "No se proporcionó un public_id" }, { status: 400 });
+      return NextResponse.json({ message: "No se proporcionó un public_id" }, { status: 400 });
     }
 
     // Eliminar la imagen de Cloudinary ↓↓↓
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     // Verificar si el archivo existe
     if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: "No se encontró el archivo de imágenes" }, { status: 404 });
+      return NextResponse.json({ message: "No se encontró el archivo de imágenes" }, { status: 404 });
     }
 
     // Leer el archivo JSON
@@ -49,10 +49,10 @@ export async function POST(req: NextRequest) {
     // Escribir los datos actualizados en el archivo JSON
     fs.writeFileSync(filePath, JSON.stringify(imagesData, null, 2));
 
-    return NextResponse.json({ message: "Imagen eliminada exitosamente" });
+    return NextResponse.json({ message: "Imagen eliminada exitosamente" }, {status: 200});
 
   } catch (error) {
     console.error("Error al eliminar la imagen:", error);
-    return NextResponse.json({ error: "Hubo un problema al eliminar la imagen" }, { status: 500 });
+    return NextResponse.json({ message: "Hubo un problema al eliminar la imagen" }, { status: 500 });
   }
 }

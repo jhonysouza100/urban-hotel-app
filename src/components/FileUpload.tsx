@@ -1,25 +1,52 @@
 "use client";
 
-import { useState, type FormEvent, type ChangeEvent, type DragEvent } from "react";
-import { RiCloseLine, RiFileImageLine, RiFileLine, RiFileUnknowLine, RiUploadCloudLine } from "@remixicon/react";
-import Button from "./ui/Button";
-import { toast } from "sonner";
+import type React from "react"
 
-interface resObjType {
-  message: string;
-  status: number;
-  ok: boolean;
-  data?: {
-    public_id: string
-    secure_url: string
-  }[];
+import { useState, type FormEvent, type ChangeEvent, type DragEvent } from "react"
+import { RiCloseLine, RiFileImageLine, RiFileLine, RiFileUnknowLine, RiUploadCloudLine } from "@remixicon/react"
+import Button from "./ui/Button"
+import { toast } from "sonner"
+import axios, { AxiosResponse, type AxiosProgressEvent } from "axios"
+import { Router } from "next/router";
+
+interface ResObjType extends AxiosResponse {
+  data: {
+    message: string;
+    obj?: {
+      public_id: string;
+      secure_url: string;
+    }[];
+  };
+}
+
+const formatFileSize = (bytes: number): string => {
+  if (bytes === 0) return "0 Bytes"
+  const k = 1024
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB"]
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i]
+}
+
+const formatEstimatedTime = (seconds: number): string => {
+  if (seconds < 60) {
+    return `${Math.round(seconds)}s`
+  } else if (seconds < 3600) {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = Math.round(seconds % 60)
+    return `${minutes}m ${remainingSeconds}s`
+  } else {
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    return `${hours}h ${minutes}m`
+  }
 }
 
 export default function FileUpload() {
-  const [files, setFiles] = useState<File[]>([]);
-  const [file, setFile] = useState<File | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
+  const [files, setFiles] = useState<File[]>([])
+  const [isUploading, setIsUploading] = useState(false)
   const [dragActive, setDragActive] = useState(false)
+  const [uploading, setUploading] = useState<number>(0)
+  const [estimated, setEstimated] = useState<string>("");
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault()
@@ -32,95 +59,77 @@ export default function FileUpload() {
   }
 
   const handleDrop = (e: DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragActive(false);
-  
-    // Verificar si el evento tiene archivos
-    if (e.dataTransfer && e.dataTransfer.files) {
-      const droppedFiles = Array.from(e.dataTransfer.files);
-  
-      // Si solo hay un archivo, lo asignamos al estado `file` (el archivo seleccionado)
-      if (droppedFiles.length === 1) {
-        setFile(droppedFiles[0]);
-      }
-  
-      // Mapear los archivos que se están arrastrando para obtener los datos necesarios
-      const newFiles = droppedFiles.map((selectedFile) => selectedFile);
-  
-      // Actualizar el estado de `files` con los nuevos archivos arrastrados
-      setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    }
-  };
+    e.preventDefault()
+    e.stopPropagation()
+    setDragActive(false)
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // Handle file upload logic here
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
-    }
-    
-    if (e.target.files) {
-      // Map through all selected files and update the state
-      const newFiles = Array.from(e.target.files).map((selectedFile) => selectedFile);
-  
-      // Update the state with the newly selected files (add them to the existing files)
-      setFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    if (e.dataTransfer && e.dataTransfer.files) {
+      const droppedFiles = Array.from(e.dataTransfer.files)
+
+      const newFiles = droppedFiles.map((selectedFile) => selectedFile)
+
+      setFiles((prevFiles) => [...prevFiles, ...newFiles])
     }
   }
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files).map((selectedFile) => selectedFile)
+      setFiles((prevFiles) => [...prevFiles, ...newFiles])
+    }
+  }
+  
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
+    setIsUploading(true)
 
-    setIsUploading(true);
-    
-    const formData = new FormData();
-  
-    // Agregar todos los archivos de la lista `files` a formData
+    const formData = new FormData()
     files.forEach((file) => {
-      formData.append("files[]", file); // Usamos "files[]" para enviar un array de archivos
-    });
-  
+      formData.append("files[]", file)
+    })
+
     try {
-      const res: any = await fetch("/api/image/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response: ResObjType = await axios.post("/api/image/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent: AxiosProgressEvent) => {
+          if (
+            progressEvent.lengthComputable &&
+            progressEvent.total !== undefined &&
+            progressEvent.estimated !== undefined
+          ) {
+            const percentComplete = (progressEvent.loaded / progressEvent.total) * 100;
+            console.log(formatEstimatedTime(progressEvent.estimated))
+            setEstimated(formatEstimatedTime(progressEvent.estimated))
+            setUploading(percentComplete)
+          }
+        },
+      })
 
-      if (!res.ok) {
-        let errorObj: resObjType = await res.json();
-        throw new Error(errorObj.message);
+      if (response.status === 200) {
+        toast.success(response.data.message)
+      } else {
+        throw new Error(response.data.message || "An error occurred while uploading the files.")
       }
-      
-      let successObj: resObjType = await res.json();
-
-      // console.log("success:", successObj.message);
-      toast.success(`${successObj.message}`);
     } catch (error) {
-      // console.log("catch error:", error);
-      toast.error(`${error}`);
+      console.error("Error uploading files:", error)
+      toast.error(error instanceof Error ? error.message : "An unknown error occurred")
     } finally {
-      setIsUploading(false);
-      // Limpiar los estados de los archivos
-      setFile(null);
-      setFiles([]);
+      setIsUploading(false)
+      setFiles([])
+      setUploading(0)
+      setEstimated("")
     }
-  };
-  
+  }
+
   const removeFile = (name: string) => {
-     // Verificar si el archivo a eliminar es el que está seleccionado en el estado `file`
-    if (file && file.name === name) {
-      setFile(null);  // Si es el archivo seleccionado, restablecer el estado `file`
-    }
     setFiles(files.filter((file) => file.name !== name))
   }
 
   const handleCancel = () => {
-    setFile(null);
-    setFiles([]);
-  };
-
-  // console.log("files:", files);
-  // console.log("file:", file);
+    setFiles([])
+  }
 
   return (
     <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-sm">
@@ -165,33 +174,41 @@ export default function FileUpload() {
                 key={crypto.randomUUID()}
                 className="flex items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-gray-600">
-                  {file.type && file.type.includes("image") ? (
+                <div className="flex items-center gap-3 flex-grow">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-200 text-gray-600">
+                    {file.type && file.type.includes("image") ? (
                       <RiFileImageLine className="h-4 w-4" />
                     ) : (
                       <RiFileUnknowLine className="h-4 w-4" />
-                    )
-                  }
+                    )}
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{file.name}</p>
+                  <div className="file_info flex-grow min-w-0">
+                    <p className="text-sm font-medium text-gray-900 truncate">{file.name}</p>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-gray-500">{`${(file.size / (1024 * 1024)).toFixed(1)} mb`}</span>
-                      {/* {file.progress && (
+                      <span className="text-xs text-gray-500">{formatFileSize(file.size)}</span>
+                      {uploading > 0 && (
                         <>
-                          <span className="text-xs text-gray-500">{file.progress}%</span>
-                          <span className="text-xs text-gray-500">•</span>
-                          <span className="text-xs text-gray-500">{file.timeLeft}</span>
+                          <span className="text-xs text-gray-500">{Math.round(uploading)}%</span>
+                          {estimated && (
+                            <>
+                              <span className="text-xs text-gray-500">•</span>
+                              <span className="text-xs text-gray-500">{estimated}</span>
+                            </>
+                          )}
                         </>
-                      )} */}
+                      )}
                     </div>
-                    {/* {file.progress && <Progress value={file.progress} className="mt-1 h-1 w-full max-w-[160px]" />} */}
+                    <div className="mt-1 h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-blue-500 rounded-full transition-all duration-300 ease-in-out"
+                        style={{ width: `${uploading}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
                 <button
                   onClick={() => removeFile(file.name)}
-                  className="rounded-full p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600"
+                  className="ml-2 rounded-full p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600"
                 >
                   <RiCloseLine className="h-4 w-4" />
                 </button>
@@ -202,14 +219,19 @@ export default function FileUpload() {
       )}
 
       <div className="mt-6 flex justify-between">
-        <Button onClick={handleCancel} className="rounded-md text-error hover:bg-error-soft [transition:background_.3s]">
+        <Button
+          disabled={isUploading || files.length === 0}
+          onClick={handleCancel}
+          className="rounded-md text-error hover:bg-error-soft disabled:cursor-not-allowed [transition:background_.3s]"
+        >
           Cancelar
         </Button>
         <form onSubmit={handleSubmit}>
           <Button
             type="submit"
-            disabled={isUploading}
-            className="rounded-md bg-blue-600 hover:bg-blue-700 [transition:background_.3s]">
+            disabled={isUploading || files.length === 0}
+            className={`rounded-md disabled:bg-blue-300 ${isUploading ? "!cursor-progress" : "cursor-pointer"} disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700 [transition:background_.3s`}
+          >
             {isUploading ? "Subiendo..." : "Enviar"}
           </Button>
         </form>

@@ -9,6 +9,10 @@ interface ImageData {
   secure_url: string
 }
 
+interface ResObjtType {
+  message: string
+}
+
 export default function ImagesGrid() {
   const [images, setImages] = useState<ImageData[]>([]);
 
@@ -33,8 +37,8 @@ export default function ImagesGrid() {
         body: JSON.stringify({ public_id: publicId }),
       });
   
-      const result = await response.json();
-      console.log(result.message);
+      const result: ResObjtType = await response.json();
+      console.log(result);
       if (result.message === "Imagen eliminada exitosamente") {
         // Eliminar la imagen del estado
         setImages((prevImages) =>
