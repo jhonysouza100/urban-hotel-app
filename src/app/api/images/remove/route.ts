@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 
 import { v2 as cloudinary } from 'cloudinary';
+import { ImageData } from "@/types/image_data.interface";
 
 // Configuration
 cloudinary.config({ 
@@ -10,12 +11,6 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY, 
     api_secret: process.env.CLOUDINARY_API_SECRET, // Click 'View API Keys' above to copy your API secret
 });
-
-// Image data interface
-interface ImageData {
-  public_id: string
-  secure_url: string
-}
 
 export async function POST(req: NextRequest) {
   try {

@@ -117,7 +117,7 @@ export default function FileUpload() {
       // Actualizar estado a 'uploading'
       updateFileStatus(id, { status: "uploading" })
 
-      const response: ResObjType = await axios.post("/api/image/upload", formData, {
+      const response: ResObjType = await axios.post("/api/images/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -249,7 +249,7 @@ export default function FileUpload() {
             <input type="file" className="hidden" multiple onChange={handleFileChange} ref={fileInputRef} />
           </label>
         </p>
-        <p className="text-xs text-gray-500">500 MB max file size</p>
+        <p className="text-xs text-gray-500">10 MB max file size</p>
       </div>
 
       {files.length > 0 && (

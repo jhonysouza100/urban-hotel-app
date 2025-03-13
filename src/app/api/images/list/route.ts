@@ -1,12 +1,7 @@
+import { ImageData } from '@/types/image_data.interface';
 import fs from 'fs';
 import { NextResponse } from 'next/server';
 import path from 'path';
-
-// Image data interface
-interface ImageData {
-  public_id: string
-  secure_url: string
-}
 
 export async function GET() {
   try {

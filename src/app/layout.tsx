@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 // import AdSenseScript from "@/providers/AdSenseScript";
 import "./globals.css";
+import { AuthProvider } from "@/hooks/useAuth"
 import { Toaster } from "sonner";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
@@ -118,8 +119,9 @@ export default function RootLayout({ children }: Readonly<{children: React.React
         {/* <AdSenseScript /> */}
       {/* </head> */}
       <body className={`${poppins.className} bg-neutral-50 tracking-wide min-h-screen select-none antialiased`}>
-        {children}
-        <Footer />
+        <AuthProvider>
+          {children}
+        </AuthProvider>
         <Toaster />
       </body>
     </html>

@@ -8,6 +8,7 @@ import { unstable_noStore } from "next/cache";
 import Header from "@/components/Header";
 // import AdSenseBanner from "@/providers/AdSenseBanner";
 import ScrollRevealLoader from "@/providers/ScrollRevealLoader";
+import Footer from "@/components/Footer";
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
   ssr: true,
@@ -29,6 +30,8 @@ export default function HomePage() {
       <Explore />
       <Suscription />
     </main>
+    <Footer />
+    
     <ScrollRevealLoader />
     </>
   );

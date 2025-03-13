@@ -1,13 +1,8 @@
 "use client";
 
+import { ImageData } from "@/types/image_data.interface";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-// Image data interface
-interface ImageData {
-  public_id: string
-  secure_url: string
-}
 
 interface ResObjtType {
   message: string
@@ -19,7 +14,7 @@ export default function ImagesGrid() {
   // Función para obtener las imagenes
   async function getImages() {
     try {
-      const response = await fetch("/api/images");
+      const response = await fetch("/api/images/list");
       const data = await response.json();
       setImages(data);
     } catch (error) {
@@ -29,7 +24,7 @@ export default function ImagesGrid() {
   // Función para eliminar una imagen
   async function deleteImage(publicId: string){
     try {
-      const response = await fetch("/api/image/remove", {
+      const response = await fetch("/api/images/remove", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

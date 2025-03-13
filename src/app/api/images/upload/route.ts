@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary";
+import { ImageData } from "@/types/image_data.interface";
 
 // Configuración de Cloudinary
 cloudinary.config({
@@ -14,12 +15,6 @@ cloudinary.config({
 
 // Definir el tamaño máximo de archivo (5MB en bytes)
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-
-// Interfaz para los datos de la imagen
-interface ImageData {
-  public_id: string;
-  secure_url: string;
-}
 
 export async function POST(req: NextRequest) {
   const data = await req.formData();
