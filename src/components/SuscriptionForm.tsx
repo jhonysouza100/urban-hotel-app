@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import config from "@/config";
 import TEXT from "@/lang/es.json";;
 import Button from "@/components/ui/Button";
-import { handleEmail } from "@/libs/brevo";
+import { handleEmail } from "@/lib/brevo";
 
 export default function SuscriptionForm() {
 

@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 const scrollAnimation = () => {
-  import('@/libs/scrollReveal').then(module => {
+  import('@/lib/scrollReveal').then(module => {
     module.scrollAnimation();
   });
 };

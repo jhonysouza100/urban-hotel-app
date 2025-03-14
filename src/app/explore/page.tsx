@@ -106,13 +106,13 @@ export default function ExplorePage() {
     <main>
       <section>
         <div className="pt-0 mt-0 pb-4 overflow-hidden">
-          <Image className="w-full h-full" src="/img/concept-img-0.jpg" width={1080} height={1080} alt="Explore image" quality={100} />
+          <Image className="w-full h-full" src="/images/concept-img-0.jpg" width={1080} height={1080} alt="Explore image" quality={100} />
         </div>
       </section>
       <section className="explore w-full pb-24">
         <div className="section-container section grid gap-4 justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-8.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-8.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -136,7 +136,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-9.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-9.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -160,7 +160,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-10.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-10.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -184,7 +184,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-12.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-12.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -208,7 +208,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-13.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-13.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -229,7 +229,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-15.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-15.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -250,7 +250,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-19.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-19.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -271,7 +271,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-14.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-14.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -292,7 +292,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-18.webp'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-18.webp'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -316,7 +316,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-16.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-16.jpg'} 
               alt="Explore image"
               width={380}
               height={380}
@@ -337,7 +337,7 @@ export default function ExplorePage() {
             </span>
           </div>
           <div className="card shadow-md bg-neutral-50 w-80 min-h-[620px] aspect-[3/2] rounded-lg p-4 flex flex-col gap-4 items-start justify-start snap-y lg:w-72">
-            <Image className="rounded-lg w-full" src={'/img/explore-img-17.jpg'} 
+            <Image className="rounded-lg w-full" src={'/images/explore-img-17.jpg'} 
               alt="Explore image"
               width={380}
               height={380}

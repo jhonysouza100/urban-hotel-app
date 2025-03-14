@@ -51,7 +51,7 @@ export default function Header() {
 
         <Avatar className="nav-logo"
           alt="logo del hotel"
-          src="/img/logo.webp"
+          src="/images/logo.webp"
         />
       </nav>
 

@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary";
-import { ImageData } from "@/types/image_data.interface";
+import ImageDataResponse from "@/interfaces/image_data_response.interface";
 
 // Configuración de Cloudinary
 cloudinary.config({
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const uploadedImages: ImageData[] = [];
+  const uploadedImages: ImageDataResponse[] = [];
 
   // Subir cada archivo individualmente a Cloudinary
   for (const file of files) {
@@ -71,12 +71,12 @@ export async function POST(req: NextRequest) {
       });
 
       // Crear el objeto con los datos de la imagen
-      const imageData: ImageData = {
+      const ImageDataResponse: ImageDataResponse = {
         public_id: uploadResult.public_id,
         secure_url: uploadResult.secure_url,
       };
 
-      uploadedImages.push(imageData);
+      uploadedImages.push(ImageDataResponse);
     } catch (error: UploadApiErrorResponse | any) {
       return NextResponse.json(
         { 
@@ -87,10 +87,10 @@ export async function POST(req: NextRequest) {
   }
 
   // Ruta para guardar el archivo JSON en la carpeta 'public'
-  const jsonFilePath = path.join(process.cwd(), "public", "images_data.json");
+  const jsonFilePath = path.join(process.cwd(), "public/documents", "images_data.json");
 
   // Leer el archivo JSON existente, si existe
-  let existingData: ImageData[] = [];
+  let existingData: ImageDataResponse[] = [];
   if (fs.existsSync(jsonFilePath)) {
     const fileData = fs.readFileSync(jsonFilePath);
     existingData = JSON.parse(fileData.toString());

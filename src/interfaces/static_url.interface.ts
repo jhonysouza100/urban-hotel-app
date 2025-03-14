@@ -1,4 +1,4 @@
-export default interface Path {
+export default interface StaticUrl {
   developer: string;
   instagram: string;
   facebook: string;

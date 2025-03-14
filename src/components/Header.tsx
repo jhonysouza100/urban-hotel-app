@@ -95,7 +95,7 @@ export default function Header() {
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
         <Avatar className="nav-logo"
           alt="logo del hotel"
-          src="/img/logo.webp"
+          src="/images/logo.webp"
         />
 
         <div className='nav-menu z-50 fixed w-full min-h-max -top-full left-0 py-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">

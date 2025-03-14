@@ -18,7 +18,7 @@ export default function Explore() {
                 endIcon={<RiArrowRightLine className="w-5 h-5" />}
               />
             </Link>
-            <Image src="/img/explore-img-0.jpg"
+            <Image src="/images/explore-img-0.jpg"
             className="explore-img w-full h-[333px] object-cover object-center md:w-screen xl:h-[600px]"
             alt="Explore image"
             width={1080}
@@ -35,7 +35,7 @@ export default function Explore() {
                 <p className="explore-description text-sm text-container-foreground md:text-start">{TEXT.exploreDescription1}</p>
             </div>
             <div className="explore-user inline-flex items-center justify-center gap-x-2 xl:justify-end xl:self-end xl:mb-5">
-              <Avatar src="/img/explore-perfil.png" alt="Explore profile" size="small" />
+              <Avatar src="/images/explore-perfil.png" alt="Explore profile" size="small" />
               <span className="explore-name text-xs text-neutral-100">Paul James</span>
             </div>
           </div>

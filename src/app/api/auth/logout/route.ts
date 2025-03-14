@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { removeTokenCookie } from "@/libs/jwt"
+import { removeTokenCookie } from "@/lib/jwt"
 
 export async function POST() {
   try {

@@ -17,7 +17,7 @@ export default function Suscription() {
           <div className="aspect-square w-[300px] xl:w-full">
             <Image
               className="join-img transition-transform duration-500 w-full h-full object-cover" alt="Imagen de la habitación"
-              src="/img/join-image.jpg" 
+              src="/images/join-image.jpg" 
               width={380}
               height={380}
               sizes="(max-with: 425px) 75vw, (max-width: 768px) 50vw, (max-width: 1200px) 45vw, 33vw"

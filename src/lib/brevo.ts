@@ -1,7 +1,7 @@
 "use server";
 
 import * as brevo from '@getbrevo/brevo';
-import htmlContent from '@/data/html_content';
+import htmlContent from '@/static/html_content';
 import config from '@/config';
 
 export interface SendEmailDto {

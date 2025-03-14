@@ -1,6 +1,6 @@
-import { getAllReviews } from "@/hooks/useGetReviews";
+import { getAllUserReviews } from "@/hooks/useUserReviews";
 import TestimonialsSwiper from "./TestimonilasSwiper";
-import Review from "@/interfaces/review.interface";
+import Review from "@/interfaces/user_review.interface";
 import TEXT from "@/lang/es.json";;
 import Avatar from "@/components/ui/Avatar";
 import { Rating } from "@mui/material";
@@ -8,7 +8,7 @@ import { Rating } from "@mui/material";
 
 export default async function Testimonials() {
 
-  const REVIEWS: Review[] = await getAllReviews();
+  const REVIEWS: Review[] = await getAllUserReviews();
 
   return (
     <section className="testimonials section pb-20 relative" id="testimonials">

@@ -1,5 +1,5 @@
 "use client";
-import Review from '@/interfaces/review.interface';
+import Review from '@/interfaces/user_review.interface';
 import { useEffect } from 'react';
 import TestimonialCard from "./TestimonialCard";
 

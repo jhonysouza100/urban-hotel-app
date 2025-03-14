@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server"
 // import { rateLimit } from "./lib/rateLimit"
-import { verifyToken } from "@/libs/jwt"
+import { verifyToken } from "@/lib/jwt"
 
 // Tipos de archivos permitidos
 const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"]

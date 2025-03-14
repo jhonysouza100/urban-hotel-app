@@ -1,6 +1,5 @@
 "use client";
 
-import Path from "@/interfaces/path.interface";
 import { useEffect } from "react";
 
 import Swiper from 'swiper';
@@ -34,7 +33,7 @@ export default function MainSwiper() {
         {Array.from(['1', '2', '3']).map(el => (
           <div key={crypto.randomUUID()} className="swiper-slide">
             <div className="swiper-content relative h-screen min-h-[480px] !bg-center !bg-cover" 
-              style={{ background: `url('/img/home-bg-${el}.webp') no-repeat` }}
+              style={{ background: `url('/images/home-bg-${el}.webp') no-repeat` }}
             >
               <div className="home-shadow dark-filter absolute top-0 left-0 w-full h-full z-10" />
             </div>

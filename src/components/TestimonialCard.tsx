@@ -1,6 +1,6 @@
 "use client";
 
-import Review from "@/interfaces/review.interface";
+import Review from "@/interfaces/user_review.interface";
 import TEXT from "@/lang/es.json";;
 import Avatar from "@/components/ui/Avatar"
 import { Button, Card, CardContent, CardHeader, Dialog, DialogContent, DialogContentText, DialogTitle, IconButton, Rating, Typography, DialogActions } from "@mui/material";

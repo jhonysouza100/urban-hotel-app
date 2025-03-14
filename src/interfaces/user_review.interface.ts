@@ -1,6 +1,4 @@
-import User from "./user.interface";
-
-export default interface Review {
+export default interface UserReview {
   id: number;
   author: string;
   picture: string;
@@ -11,5 +9,10 @@ export default interface Review {
   platformLogo: string;
   platformName: string;
   userId: number;
-  user: User;
+  user: {
+    id: number;
+    username: string;
+    email: string;
+    picture: string;
+  };
 }

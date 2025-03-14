@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import config from "@/config";
-import Reviews from "@/interfaces/review.interface";
+import UserReview from "@/interfaces/user_review.interface";
 
-export async function getAllReviews(): Promise<Reviews[]> {
+export async function getAllUserReviews(): Promise<UserReview[]> {
   try {
     // const res = await fetch(`${config.BACKEND_REVIEWS_URL}` as string, {
     //   method: "POST",
@@ -19,18 +19,18 @@ export async function getAllReviews(): Promise<Reviews[]> {
     //   throw new Error(`HTTP error! status: ${res.status}`);
     // }
     
-    // const data: Reviews[] = await res.json();
+    // const data: UserReview[] = await res.json();
 
     // return data;
 
     // Definir la ruta al archivo JSON local
-    const filePath = path.join(process.cwd(), 'src/data', 'reviews.json');
+    const filePath = path.join(process.cwd(), 'src/static', 'user_reviews.json');
     
     // Leer el archivo de manera asincrona
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     
     // Parsear el contenido del archivo a un objeto JSON
-    const data: Reviews[] = JSON.parse(fileContent);
+    const data: UserReview[] = JSON.parse(fileContent);
 
     // Función para mezclar aleatoriamente los elementos (algoritmo Fisher-Yates)
     const shuffleArray = (array: any[]) => {
@@ -44,9 +44,9 @@ export async function getAllReviews(): Promise<Reviews[]> {
     shuffleArray(data);
 
     // Tomar los primeros 20 elementos del arreglo mezclado
-    const randomReviews = data.slice(0, 20);
+    const randomUserReview = data.slice(0, 20);
 
-    return randomReviews;
+    return randomUserReview;
   } catch (error) {
     console.error("Error fetching reviews:", error);
     return [] as any;

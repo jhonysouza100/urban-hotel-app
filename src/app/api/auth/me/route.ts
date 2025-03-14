@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { getTokenFromCookies, verifyToken } from "@/libs/jwt"
+import { getTokenFromCookies, verifyToken } from "@/lib/jwt"
 
 export async function GET(request: NextRequest) {
   try {

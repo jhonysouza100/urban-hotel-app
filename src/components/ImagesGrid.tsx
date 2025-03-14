@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageData } from "@/types/image_data.interface";
+import ImageDataResponse from "@/interfaces/image_data_response.interface";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ interface ResObjtType {
 }
 
 export default function ImagesGrid() {
-  const [images, setImages] = useState<ImageData[]>([]);
+  const [images, setImages] = useState<ImageDataResponse[]>([]);
 
   // Función para obtener las imagenes
   async function getImages() {
@@ -37,7 +37,7 @@ export default function ImagesGrid() {
       if (result.message === "Imagen eliminada exitosamente") {
         // Eliminar la imagen del estado
         setImages((prevImages) =>
-          prevImages.filter((image: ImageData) => image.public_id !== publicId)
+          prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId)
         );
       }
     } catch (error) {
@@ -54,7 +54,7 @@ export default function ImagesGrid() {
       {/* <h3 className="text-3xl text-muted-foreground mb-4">Imágenes Subidas</h3> */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {images && images.map((image: ImageData) => (
+        {images && images.map((image: ImageDataResponse) => (
           <div
             key={image.public_id}
             className="relative border border-gray-200 rounded-lg overflow-hidden"

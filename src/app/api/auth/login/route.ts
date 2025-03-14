@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { createToken, setTokenCookie } from "@/libs/jwt"
+import { createToken, setTokenCookie } from "@/lib/jwt"
 
 // Simulación de base de datos de usuarios (en producción, usa una base de datos real)
 const USERS = [

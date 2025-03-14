@@ -1,5 +1,5 @@
 import TEXT from "@/lang/es.json";
-import { getMediaPaths } from "@/hooks/useGetMediaPaths";
+import { getAllStaticUrls } from "@/hooks/useStaticUrls";
 import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "@remixicon/react";
 import MainSwiper from "./MainSwiper";
 import Button from "./ui/Button";
@@ -7,13 +7,13 @@ import AdSensePropagationWrapper from "@/providers/AdSensePropagationWrapper";
 
 export default async function Main() {
 
-  const PATH = await getMediaPaths();
+  const URL = await getAllStaticUrls();
 
   // Array de redes sociales para mapear
   const socialLinks = [
-    { icon: <RiInstagramFill />, url: PATH.instagram, label: "Instagram" },
-    { icon: <RiFacebookCircleFill />, url: PATH.facebook, label: "Facebook" },
-    { icon: <RiWhatsappFill />, url: PATH.whatsapp, label: "Whatsapp" }
+    { icon: <RiInstagramFill />, url: URL.instagram, label: "Instagram" },
+    { icon: <RiFacebookCircleFill />, url: URL.facebook, label: "Facebook" },
+    { icon: <RiWhatsappFill />, url: URL.whatsapp, label: "Whatsapp" }
   ];
 
   return (
@@ -28,7 +28,7 @@ export default async function Main() {
           <div className="flex justify-end mb-24 md:mb-14">
             <AdSensePropagationWrapper dataAdSlot="1603817205">
               <a
-                href={`${PATH.whatsapp}`}
+                href={`${URL.whatsapp}`}
                 target="_blank"
                 className="home-button z-20"
                 aria-label="Whatsapp">

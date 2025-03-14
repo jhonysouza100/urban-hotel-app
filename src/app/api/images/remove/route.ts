@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 import { v2 as cloudinary } from 'cloudinary';
-import { ImageData } from "@/types/image_data.interface";
+import ImageDataResponse from "@/interfaces/image_data_response.interface";
 
 // Configuration
 cloudinary.config({ 
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     await cloudinary.uploader.destroy(public_id);
 
     // Ruta al archivo images_data.json en la carpeta 'public'
-    const filePath = path.join(process.cwd(), "public", "images_data.json");
+    const filePath = path.join(process.cwd(), "public/documents", "images_data.json");
 
     // Verificar si el archivo existe
     if (!fs.existsSync(filePath)) {
@@ -36,10 +36,10 @@ export async function POST(req: NextRequest) {
     const fileData = fs.readFileSync(filePath, "utf-8");
 
     // Parsear el archivo JSON
-    let imagesData: ImageData[] = JSON.parse(fileData);
+    let imagesData: ImageDataResponse[] = JSON.parse(fileData);
 
     // Filtrar y eliminar el objeto con el public_id correspondiente
-    imagesData = imagesData.filter((image: ImageData) => image.public_id !== public_id);
+    imagesData = imagesData.filter((image: ImageDataResponse) => image.public_id !== public_id);
 
     // Escribir los datos actualizados en el archivo JSON
     fs.writeFileSync(filePath, JSON.stringify(imagesData, null, 2));
