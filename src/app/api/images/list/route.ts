@@ -1,33 +1,34 @@
-import ImageDataResponse from '@/interfaces/image_data_response.interface';
-import fs from 'fs';
-import { NextResponse } from 'next/server';
-import path from 'path';
+import { NextResponse } from "next/server"
+import fs from "fs/promises"
+import path from "path"
+import type ImageDataResponse from "@/interfaces/image_data_response.interface"
 
 export async function GET() {
   try {
-    // Ruta al archivo images_data.json en la carpeta 'public'
-    const filePath = path.join(process.cwd(), 'public/documents', 'images_data.json');
+    // Ruta al archivo images_data.json
+    const filePath = path.join(process.cwd(), "public/documents", "images_data.json")
 
-    // Verificar si el archivo existe
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ message: "No se encontró un archivo de imágenes" }, {status: 404});
-    }
-    
     // Leer el archivo JSON
-    const fileData = fs.readFileSync(filePath, 'utf-8');
-    
-    // Parsear el archivo JSON
-    const imagesData: ImageDataResponse[] = JSON.parse(fileData);
-    
-    // Devolver los datos de las imágenes
-    return new Response(JSON.stringify(imagesData), {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    try {
+      const fileData = await fs.readFile(filePath, "utf-8")
+      const imagesData: ImageDataResponse[] = JSON.parse(fileData)
 
+      // Devolver los datos de las imágenes
+      return NextResponse.json(imagesData)
+    } catch (readError) {
+      // Si el archivo no existe o está vacío, devolver un array vacío
+      if (readError instanceof Error && "code" in readError && readError.code === "ENOENT") {
+        return NextResponse.json([])
+      }
+
+      console.error("Error al leer el archivo JSON:", readError)
+      return NextResponse.json({ message: "Error al leer el archivo de imágenes" }, { status: 500 })
+    }
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ message: "Hubo un problema al leer el archivo" }, {status: 500});
+    console.error("Error general al listar las imágenes:", error)
+    return NextResponse.json(
+      { message: error instanceof Error ? error.message : "Error desconocido al listar las imágenes" },
+      { status: 500 },
+    )
   }
 }
