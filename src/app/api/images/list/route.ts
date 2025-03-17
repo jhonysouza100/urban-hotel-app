@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import fs from "fs/promises"
+import fs from "fs"
 import path from "path"
 import type ImageDataResponse from "@/interfaces/image_data_response.interface"
 
@@ -10,7 +10,7 @@ export async function GET() {
 
     // Leer el archivo JSON
     try {
-      const fileData = await fs.readFile(filePath, "utf-8")
+      const fileData = fs.readFileSync(filePath, "utf-8")
       const imagesData: ImageDataResponse[] = JSON.parse(fileData)
 
       // Devolver los datos de las imágenes

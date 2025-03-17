@@ -1,0 +1,261 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model admins {
+  id         Int         @id @default(autoincrement())
+  username   String      @db.VarChar(255)
+  email      String      @db.VarChar(255)
+  password   String?     @db.VarChar(255)
+  role       admins_role @default(admin)
+  picture    String?     @db.VarChar(255)
+  verified   Int?        @default(0) @db.TinyInt
+  authorId   Int?
+  createdAt  DateTime    @default(now()) @db.DateTime(0)
+  modifiedAt DateTime    @default(now()) @db.DateTime(0)
+  hotels     hotels[]
+}
+
+model books {
+  id             Int          @id @default(autoincrement())
+  hotelId        Int
+  roomId         Int
+  authorId       Int
+  pricingDetails Json
+  bookingDetails Json
+  notes          String?      @db.VarChar(255)
+  status         books_status @default(pending)
+  createdAt      DateTime     @default(now()) @db.DateTime(0)
+  modifiedAt     DateTime     @default(now()) @db.DateTime(0)
+  parentId       Int
+  users          users        @relation(fields: [authorId], references: [id], onDelete: Cascade, map: "FK_54f49efe2dd4d2850e736e9ab86")
+  rooms          rooms        @relation(fields: [roomId], references: [id], onDelete: Cascade, map: "FK_c39dfbb91504ae0e03484aa91c3")
+  hotels         hotels       @relation(fields: [hotelId], references: [id], onDelete: Cascade, map: "FK_c7bd291ddf238eb09446b305d1e")
+
+  @@index([authorId], map: "FK_54f49efe2dd4d2850e736e9ab86")
+  @@index([roomId], map: "FK_c39dfbb91504ae0e03484aa91c3")
+  @@index([hotelId], map: "FK_c7bd291ddf238eb09446b305d1e")
+}
+
+model cart {
+  id         Int          @id
+  total      Float        @default(0) @db.Float
+  modifiedAt DateTime     @default(now()) @db.DateTime(0)
+  cart_items cart_items[]
+  users      users?
+}
+
+model cart_items {
+  id         Int      @id @default(autoincrement())
+  cartId     Int
+  productId  Int?
+  quantity   Int      @default(0)
+  subtotal   Float    @default(0) @db.Float
+  modifiedAt DateTime @default(now()) @db.DateTime(0)
+  cart       cart     @relation(fields: [cartId], references: [id], onDelete: Cascade, map: "FK_edd714311619a5ad09525045838")
+
+  @@index([cartId], map: "FK_edd714311619a5ad09525045838")
+}
+
+model emails {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique(map: "IDX_3cbf51004f0706ac67ff8c22db") @db.VarChar(255)
+  createdAt  DateTime @default(now()) @db.DateTime(0)
+  modifiedAt DateTime @default(now()) @db.DateTime(0)
+}
+
+model hotels {
+  id            Int         @id @default(autoincrement())
+  name          String      @db.VarChar(255)
+  description   String      @db.VarChar(255)
+  type          hotels_type @default(hotel)
+  picture       String      @db.VarChar(255)
+  authorId      Int
+  images        String?     @db.Text
+  stars         Int?        @default(0)
+  likes         Int?        @default(0)
+  verified      Int?        @default(0) @db.TinyInt
+  cheapestPrice Float?      @default(1) @db.Float
+  country       String      @db.VarChar(255)
+  state         String      @db.VarChar(255)
+  city          String      @db.VarChar(255)
+  phone         String      @db.VarChar(255)
+  email         String      @db.VarChar(255)
+  createdAt     DateTime    @default(now()) @db.DateTime(0)
+  modifiedAt    DateTime    @default(now()) @db.DateTime(0)
+  books         books[]
+  admins        admins      @relation(fields: [authorId], references: [id], onDelete: Cascade, map: "FK_1a8e279897b398373f177d298be")
+  rooms         rooms[]
+
+  @@index([authorId], map: "FK_1a8e279897b398373f177d298be")
+}
+
+model images {
+  id         Int       @id @default(autoincrement())
+  urls       String    @db.Text
+  createdAt  DateTime  @default(now()) @db.DateTime(0)
+  modifiedAt DateTime  @default(now()) @db.DateTime(0)
+  products   products?
+}
+
+model paths {
+  id            Int      @id @default(autoincrement())
+  developer     String?  @db.VarChar(255)
+  instagram     String?  @db.VarChar(255)
+  facebook      String?  @db.VarChar(255)
+  whatsapp      String?  @db.VarChar(500)
+  email         String?  @db.VarChar(255)
+  maps          String?  @db.VarChar(255)
+  cataratasarg  String?  @db.VarChar(255)
+  cataratasbr   String?  @db.VarChar(255)
+  ingresobrasil String?  @db.VarChar(255)
+  aeropuertoig  String?  @db.VarChar(255)
+  lunallena     String?  @db.VarChar(255)
+  booking       String?  @db.VarChar(255)
+  createdAt     DateTime @default(now()) @db.DateTime(0)
+  modifiedAt    DateTime @default(now()) @db.DateTime(0)
+}
+
+model products {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  description String   @db.VarChar(500)
+  price       Int
+  stock       Int
+  image       String?  @db.VarChar(500)
+  createdAt   DateTime @default(now()) @db.DateTime(0)
+  modifiedAt  DateTime @default(now()) @db.DateTime(0)
+  imagesId    Int?     @unique(map: "REL_b4c0e22f7ac0520959c950976c")
+  images      images?  @relation(fields: [imagesId], references: [id], onDelete: Cascade, map: "FK_b4c0e22f7ac0520959c950976c3")
+}
+
+model profiles {
+  id          Int      @id @default(autoincrement())
+  firstname   String   @db.VarChar(255)
+  lastname    String   @db.VarChar(255)
+  age         Int
+  nacionality String   @db.VarChar(255)
+  createdAt   DateTime @default(now()) @db.DateTime(0)
+  modifiedAt  DateTime @default(now()) @db.DateTime(0)
+  users       users?
+}
+
+model reviews {
+  id           Int      @id @default(autoincrement())
+  author       String   @db.VarChar(255)
+  picture      String?  @db.VarChar(500)
+  nacionality  String?  @db.VarChar(255)
+  text         String   @db.VarChar(20000)
+  rating       Int      @default(5)
+  timestamp    String?  @db.VarChar(255)
+  platformLogo String?  @db.VarChar(255)
+  platformName String?  @db.VarChar(255)
+  userId       Int?
+  createdAt    DateTime @default(now()) @db.DateTime(0)
+  modifiedAt   DateTime @default(now()) @db.DateTime(0)
+  users        users?   @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_7ed5659e7139fc8bc039198cc1f")
+
+  @@index([userId], map: "FK_7ed5659e7139fc8bc039198cc1f")
+}
+
+model rooms {
+  id          Int        @id @default(autoincrement())
+  name        String     @db.VarChar(255)
+  description String     @db.VarChar(255)
+  hotelId     Int
+  type        rooms_type @default(matrimonial)
+  totalRooms  Int
+  images      String?    @db.Text
+  dates       Json?
+  createdAt   DateTime   @default(now()) @db.DateTime(0)
+  modifiedAt  DateTime   @default(now()) @db.DateTime(0)
+  modifiedBy  Int
+  authorId    Int
+  books       books[]
+  hotels      hotels     @relation(fields: [hotelId], references: [id], onDelete: Cascade, map: "FK_e9d4d68c8c47b7fe47b8e233f60")
+
+  @@index([hotelId], map: "FK_e9d4d68c8c47b7fe47b8e233f60")
+}
+
+model root {
+  id         Int       @id @default(autoincrement())
+  username   String    @db.VarChar(255)
+  email      String    @db.VarChar(255)
+  password   String?   @db.VarChar(255)
+  role       root_role @default(admin)
+  picture    String?   @db.VarChar(255)
+  verified   Int?      @default(0) @db.TinyInt
+  authorId   Int?
+  createdAt  DateTime  @default(now()) @db.DateTime(0)
+  modifiedAt DateTime  @default(now()) @db.DateTime(0)
+}
+
+model users {
+  id         Int        @id
+  username   String     @db.VarChar(255)
+  email      String     @unique(map: "IDX_97672ac88f789774dd47f7c8be") @db.VarChar(255)
+  password   String?    @db.VarChar(255)
+  picture    String?    @db.VarChar(255)
+  role       users_role @default(user)
+  createdAt  DateTime   @default(now()) @db.DateTime(0)
+  modifiedAt DateTime   @default(now()) @db.DateTime(0)
+  cartId     Int?       @unique(map: "REL_89502c44bd22c06e714c31c1e9")
+  profileId  Int?       @unique(map: "REL_b1bda35cdb9a2c1b777f5541d8")
+  books      books[]
+  reviews    reviews[]
+  cart       cart?      @relation(fields: [cartId], references: [id], onDelete: Cascade, map: "FK_89502c44bd22c06e714c31c1e93")
+  profiles   profiles?  @relation(fields: [profileId], references: [id], onDelete: Cascade, map: "FK_b1bda35cdb9a2c1b777f5541d87")
+}
+
+model views {
+  id         Int      @id
+  count      Int      @default(0)
+  createdAt  DateTime @default(now()) @db.DateTime(0)
+  modifiedAt DateTime @default(now()) @db.DateTime(0)
+}
+
+enum hotels_type {
+  hotel
+  hostel
+  cabin
+}
+
+enum admins_role {
+  user
+  admin
+  superadmin
+  root
+}
+
+enum rooms_type {
+  matrimonial
+  twin
+  triple
+  suite
+  cucheta
+}
+
+enum root_role {
+  user
+  admin
+  superadmin
+  root
+}
+
+enum users_role {
+  user
+  admin
+  superadmin
+  root
+}
+
+enum books_status {
+  pending
+  aproved
+  canceled
+}

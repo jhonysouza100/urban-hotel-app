@@ -74,13 +74,19 @@ export default function FileUpload() {
 
     if (e.dataTransfer && e.dataTransfer.files) {
       const droppedFiles = Array.from(e.dataTransfer.files)
-      const newFiles = droppedFiles.map((file) => ({
-        file,
-        uploadingProgress: 0,
-        estimatedTime: 0,
-        id: `${file.name}-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-        status: "pending" as const,
-      }))
+      const newFiles = droppedFiles.map((file) => {
+        const now = new Date();
+        const formattedDate = `${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}`;
+        const formattedTime = `${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}`;
+        const id = `IMG_${formattedDate}_${formattedTime}`;
+        return {
+          file,
+          uploadingProgress: 0,
+          estimatedTime: 0,
+          id,
+          status: "pending" as const,
+        };
+      });
       setFiles((prevFiles) => [...prevFiles, ...newFiles])
     }
   }
@@ -88,13 +94,19 @@ export default function FileUpload() {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const selectedFiles = Array.from(e.target.files)
-      const newFiles = selectedFiles.map((file) => ({
-        file,
-        uploadingProgress: 0,
-        estimatedTime: 0,
-        id: `${file.name}-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-        status: "pending" as const,
-      }))
+      const newFiles = selectedFiles.map((file) => {
+        const now = new Date();
+        const formattedDate = `${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}`;
+        const formattedTime = `${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}`;
+        const id = `IMG_${formattedDate}_${formattedTime}`;
+        return {
+          file,
+          uploadingProgress: 0,
+          estimatedTime: 0,
+          id,
+          status: "pending" as const,
+        };
+      });
       setFiles((prevFiles) => [...prevFiles, ...newFiles])
 
       // Resetear el valor del input para permitir seleccionar los mismos archivos nuevamente

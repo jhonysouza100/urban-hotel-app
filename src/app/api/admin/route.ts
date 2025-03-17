@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from "next/server"
-import { getAllUsers, getUserByEmail } from "@/database/user.connection"
+import { getAdminByEmailAction, getAllAdminsAction } from "@/actions/admin.actions"
 
 export async function GET(request: Request) {
   try {
@@ -13,7 +13,7 @@ export async function GET(request: Request) {
 
     if (email) {
       // Buscar un usuario específico por email
-      result = await getUserByEmail(email)
+      result = await getAdminByEmailAction(email)
 
       // Si no se encuentra el usuario, devolver un mensaje
       if (!result) {
@@ -27,7 +27,7 @@ export async function GET(request: Request) {
       }
     } else {
       // Obtener todos los usuarios
-      const users = await getAllUsers()
+      const users = await getAllAdminsAction()
 
       // Ocultar las contraseñas en la respuesta
       result = users.map((user) => {

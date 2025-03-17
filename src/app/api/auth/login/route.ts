@@ -1,5 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createToken, setTokenCookie } from "@/lib/jwt"
+import { getAdminByEmailAction } from "@/actions/admin.actions"
+import { compare } from "bcrypt"
 
 // Simulación de base de datos de usuarios (en producción, usa una base de datos real)
 const USERS = [
@@ -29,19 +31,20 @@ export async function POST(request: NextRequest) {
     }
 
     // Buscar el usuario en la "base de datos"
-    const user = USERS.find((u) => u.email === email)
+    const user = await getAdminByEmailAction(email);
 
     // Verificar si el usuario existe y la contraseña es correcta
-    if (!user || user.password !== password) {
+    const checkdPassword = await compare(password, user?.password as string );
+    if (!user || !checkdPassword) {
       return NextResponse.json({ error: "Credenciales inválidas" }, { status: 401 })
     }
 
     // Crear el token JWT
     const token = await createToken({
-      id: user.id,
+      id: user.id.toString(),
       email: user.email,
       role: user.role,
-      name: user.name,
+      name: user.username,
     })
 
     // Establecer el token en las cookies
@@ -53,7 +56,7 @@ export async function POST(request: NextRequest) {
       user: {
         id: user.id,
         email: user.email,
-        name: user.name,
+        name: user.username,
         role: user.role,
       },
     })
