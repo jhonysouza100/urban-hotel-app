@@ -89,7 +89,7 @@ export default function Navbar() {
             <div className="text-sm text-gray-700">
               <span className="font-medium">{user.name || user.email}</span>
               <span className="ml-1 text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">
-                {user.role === "admin" ? "Admin" : "Usuario"}
+                {user.role === "superadmin" ? "Admin" : "Usuario"}
               </span>
             </div>
 

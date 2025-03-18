@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // 1. Logging de solicitudes
-  console.log(`[${new Date().toISOString()}] ${request.method} ${pathname} - IP: ${request.ip || "unknown"}`)
+  console.log(`middleware [${new Date().toISOString()}] ${request.method} ${pathname} - IP: ${request.ip || "unknown"}`)
 
   // 2. Aplicar límites de velocidad según la ruta
   if (pathname === "/api/images/upload") {
@@ -62,7 +62,7 @@ export async function middleware(request: NextRequest) {
     }
 
     // Verificar permisos específicos
-    if (pathname === "/api/images/remove" && payload.role !== "admin") {
+    if (pathname === "/api/images/remove" && payload.role !== "superadmin") {
       return NextResponse.json({ error: "No tiene permisos para realizar esta acción." }, { status: 403 })
     }
   }

@@ -12,8 +12,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET, // Click 'View API Keys' above to copy your API secret
 });
 
-export async function DELETE(req: NextRequest) {
-  console.log("req delete")
+export async function POST(req: NextRequest) {
   try {
     // Obtener el body de la solicitud
     const { public_id } = await req.json();

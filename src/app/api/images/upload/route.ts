@@ -4,6 +4,7 @@ import fs from "fs/promises"
 import { v2 as cloudinary } from "cloudinary"
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary"
 import type ImageDataResponse from "@/interfaces/image_data_response.interface"
+import { createImageAction } from "@/actions/image.actions"
 
 // Configuración de Cloudinary
 cloudinary.config({
@@ -63,13 +64,20 @@ export async function POST(req: NextRequest) {
             .end(buffer)
         })
 
+        const userId = req.cookies.get("X-User-Id")?.value;
+        if (!userId) {
+          return NextResponse.json({ message: "No se encontró la cookie X-User-Id" }, { status: 400 });
+        }
+
         // Crear el objeto con los datos de la imagen
         const imageData: ImageDataResponse = {
+          authorId: Number(userId),
           public_id: uploadResult.public_id,
           secure_url: uploadResult.secure_url,
         }
 
         uploadedImages.push(imageData)
+        // await createImageAction(imageData)
       } catch (error: UploadApiErrorResponse | any) {
         console.error(`Error al subir el archivo ${file.name} a Cloudinary:`, error)
         return NextResponse.json(

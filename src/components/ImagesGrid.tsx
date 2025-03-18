@@ -46,23 +46,21 @@ export default function ImagesGrid() {
   async function deleteImage(publicId: string) {
     try {
       const response = await fetch("/api/images/remove", {
-        method: "DELETE",
+        method: "POST",
         body: JSON.stringify({ public_id: publicId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
 
+      
       if (!response.ok) {
         throw new Error(`${response.status}`)
       }
 
-      const result: ResObjtType = await response.json()
-
-      if (result.message === "Imagen eliminada exitosamente") {
-        // Eliminar la imagen del estado
-        setImages((prevImages) => prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId))
-        toast.success("Imagen eliminada correctamente")
-      } else {
-        toast.error(result.message || "Error al eliminar la imagen")
-      }
+      // Eliminar la imagen del estado
+      setImages((prevImages) => prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId))
+      toast.success("Imagen eliminada correctamente")
     } catch (error) {
       console.error(error)
       toast.error(error instanceof Error ? error.message : "Error desconocido")

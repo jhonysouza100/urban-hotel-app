@@ -18,7 +18,16 @@ model admins {
   authorId   Int?
   createdAt  DateTime    @default(now()) @db.DateTime(0)
   modifiedAt DateTime    @default(now()) @db.DateTime(0)
-  hotels     hotels[]
+  cloudinary_images cloudinary_images[]
+  hotels            hotels[]
+}
+
+model cloudinary_images {
+  id         Int      @id @default(autoincrement())
+  public_id  String   @db.VarChar(255)
+  secure_url String   @db.VarChar(255)
+  authorId   Int
+  admins     admins   @relation(fields: [authorId], references: [id], onDelete: Cascade, map: "FK_cloudinary_images_admins")
 }
 
 model books {
