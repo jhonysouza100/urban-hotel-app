@@ -4,9 +4,10 @@ import { cookies } from "next/headers"
 // Interfaz para el payload del token
 export interface UserJwtPayload {
   id: string
+  picture: string
   email: string
   role: string
-  name?: string
+  name: string
 }
 
 // Función para crear un token JWT

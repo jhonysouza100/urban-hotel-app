@@ -77,13 +77,7 @@ export default function LoginForm() {
       </form>
 
       <div className="mt-6 text-center text-sm text-gray-500">
-        <p>Credenciales de prueba:</p>
-        <p className="mt-1">
-          <strong>Admin:</strong> admin@gmail.com / admin123
-        </p>
-        <p>
-          <strong>Usuario:</strong> user@gmail.com / user123
-        </p>
+        <p>La aplicacion utiliza cookies para mantener la sesión activa y segura, por favor permite el uso de <strong>cookies</strong> en tu navegador.</p>
       </div>
     </div>
   )

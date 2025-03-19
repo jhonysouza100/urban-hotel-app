@@ -9,20 +9,21 @@ export async function GET(request: NextRequest) {
     const token = getTokenFromCookies()
 
     if (!token) {
-      return NextResponse.json({ error: "No autenticado" }, { status: 401 })
+      return NextResponse.json({ message: "No autenticado" }, { status: 401 })
     }
 
     // Verificar el token
     const { valid, payload, error } = await verifyToken(token)
 
     if (!valid || !payload) {
-      return NextResponse.json({ error: "Token inválido o expirado" }, { status: 401 })
+      return NextResponse.json({ message: "Token inválido o expirado" }, { status: 401 })
     }
 
     // Devolver la información del usuario
     return NextResponse.json({
       user: {
         id: payload.id,
+        picture: payload.picture,
         email: payload.email,
         name: payload.name,
         role: payload.role,
@@ -30,6 +31,6 @@ export async function GET(request: NextRequest) {
     })
   } catch (error) {
     console.error("Error al obtener información del usuario:", error)
-    return NextResponse.json({ error: "Error en el servidor" }, { status: 500 })
+    return NextResponse.json({ message: "Error en el servidor" }, { status: 500 })
   }
 }

@@ -9,6 +9,6 @@ export async function POST() {
     return NextResponse.json({ message: "Sesión cerrada exitosamente" })
   } catch (error) {
     console.error("Error al cerrar sesión:", error)
-    return NextResponse.json({ error: "Error en el servidor" }, { status: 500 })
+    return NextResponse.json({ message: "Error en el servidor" }, { status: 500 })
   }
 }

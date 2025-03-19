@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 // Tipo para el usuario autenticado
 interface User {
   id: string
+  picture?: string
   email: string
   name?: string
   role: string

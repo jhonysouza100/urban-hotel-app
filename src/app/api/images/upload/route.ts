@@ -5,6 +5,7 @@ import { v2 as cloudinary } from "cloudinary"
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary"
 import type ImageDataResponse from "@/interfaces/image_data_response.interface"
 import { createImageAction } from "@/actions/image.actions"
+import { getTokenFromCookies, verifyToken } from "@/lib/jwt"
 
 // Configuración de Cloudinary
 cloudinary.config({
@@ -64,22 +65,25 @@ export async function POST(req: NextRequest) {
             .end(buffer)
         })
 
-        const userId = req.cookies.get("X-User-Id")?.value;
-        if (!userId) {
-          return NextResponse.json({ message: "No se encontró la cookie X-User-Id" }, { status: 400 });
-        }
-
+        // Obtener el token de las cookies
+        const token = getTokenFromCookies()
+  
+        // Verificar el token
+        const { payload } = await verifyToken(token as string)
+    
         // Crear el objeto con los datos de la imagen
         const imageData: ImageDataResponse = {
-          authorId: Number(userId),
+          authorId: Number(payload?.id),
           public_id: uploadResult.public_id,
           secure_url: uploadResult.secure_url,
         }
 
         uploadedImages.push(imageData)
-        // await createImageAction(imageData)
+
+        await createImageAction(imageData)
+
       } catch (error: UploadApiErrorResponse | any) {
-        console.error(`Error al subir el archivo ${file.name} a Cloudinary:`, error)
+        console.error(`${file.name}`, error)
         return NextResponse.json(
           { 
             message: `${error.message}: ${file.name}`,

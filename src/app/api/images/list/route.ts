@@ -1,7 +1,10 @@
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
 import type ImageDataResponse from "@/interfaces/image_data_response.interface"
+import { getImagesByAuthorAction } from "@/actions/image.actions"
 
 export async function GET() {
   try {
@@ -11,7 +14,9 @@ export async function GET() {
     // Leer el archivo JSON
     try {
       const fileData = fs.readFileSync(filePath, "utf-8")
-      const imagesData: ImageDataResponse[] = JSON.parse(fileData)
+      const imagesFile: ImageDataResponse[] = JSON.parse(fileData)
+
+      const imagesData = await getImagesByAuthorAction(1);
 
       // Devolver los datos de las imágenes
       return NextResponse.json(imagesData)

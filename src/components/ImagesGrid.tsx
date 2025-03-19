@@ -20,11 +20,11 @@ export default function ImagesGrid() {
       setLoading(true)
       const response = await fetch("/api/images/list")
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`)
-      }
-
       const data = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(data.message)
+      }
 
       // Si la respuesta es un objeto con un mensaje de error, mostrar el error
       if (data.message && !Array.isArray(data)) {
@@ -34,9 +34,8 @@ export default function ImagesGrid() {
         setImages(data)
         setError(null)
       }
-    } catch (error) {
-      console.error("Error al obtener imágenes:", error)
-      setError(error instanceof Error ? error.message : "Error desconocido")
+    } catch (error: any) {
+      setError(error)
     } finally {
       setLoading(false)
     }
@@ -53,17 +52,17 @@ export default function ImagesGrid() {
         },
       })
 
+      const data = await response.json()
       
       if (!response.ok) {
-        throw new Error(`${response.status}`)
+        throw new Error(data.message)
       }
 
       // Eliminar la imagen del estado
       setImages((prevImages) => prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId))
-      toast.success("Imagen eliminada correctamente")
-    } catch (error) {
-      console.error(error)
-      toast.error(error instanceof Error ? error.message : "Error desconocido")
+      toast.success(data.message)
+    } catch (error: any) {
+      toast.error(error)
     }
   }
 

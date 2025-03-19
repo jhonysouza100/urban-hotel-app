@@ -27,24 +27,25 @@ export async function POST(request: NextRequest) {
 
     // Validar que se proporcionaron email y password
     if (!email || !password) {
-      return NextResponse.json({ error: "Email y contraseña son requeridos" }, { status: 400 })
+      return NextResponse.json({ message: "Email y contraseña son requeridos" }, { status: 400 })
     }
-
+    
     // Buscar el usuario en la "base de datos"
     const user = await getAdminByEmailAction(email);
 
     // Verificar si el usuario existe y la contraseña es correcta
     const checkdPassword = await compare(password, user?.password as string );
     if (!user || !checkdPassword) {
-      return NextResponse.json({ error: "Credenciales inválidas" }, { status: 401 })
+      return NextResponse.json({ message: "Credenciales inválidas" }, { status: 403 })
     }
 
     // Crear el token JWT
     const token = await createToken({
       id: user.id.toString(),
+      picture: user.picture as string,
       email: user.email,
       role: user.role,
-      name: user.username,
+      name: user.name,
     })
 
     // Establecer el token en las cookies
@@ -55,13 +56,13 @@ export async function POST(request: NextRequest) {
       message: "Inicio de sesión exitoso",
       user: {
         id: user.id,
+        picture: user.picture,
         email: user.email,
-        name: user.username,
+        name: user.name,
         role: user.role,
       },
     })
   } catch (error) {
-    console.error("Error en inicio de sesión:", error)
-    return NextResponse.json({ error: "Error en el servidor" }, { status: 500 })
+    return NextResponse.json({ message: error instanceof Error ? error.message : "Inicio de sesión fallido" }, { status: 500 })
   }
 }

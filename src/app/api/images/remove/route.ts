@@ -4,6 +4,7 @@ import path from "path";
 
 import { v2 as cloudinary } from 'cloudinary';
 import ImageDataResponse from "@/interfaces/image_data_response.interface";
+import { removeImageAction } from "@/actions/image.actions";
 
 // Configuration
 cloudinary.config({ 
@@ -23,6 +24,8 @@ export async function POST(req: NextRequest) {
 
     // Eliminar la imagen de Cloudinary ↓↓↓
     await cloudinary.uploader.destroy(public_id);
+
+    await removeImageAction(public_id);
 
     // Ruta al archivo images_data.json en la carpeta 'public'
     const filePath = path.join(process.cwd(), "public/documents", "images_data.json");

@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server"
 // import { rateLimit } from "./lib/rateLimit"
 import { verifyToken } from "@/lib/jwt"
+import { error } from "console"
 
 // Tipos de archivos permitidos
 const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"]
@@ -41,7 +42,7 @@ export async function middleware(request: NextRequest) {
     if (!token) {
       // Si es una solicitud a la API, devolver error JSON
       if (pathname.startsWith("/api/")) {
-        return NextResponse.json({ error: "No autorizado. Inicie sesión para continuar." }, { status: 401 })
+        return NextResponse.json({ message: "No autorizado. Inicie sesión para continuar." }, { status: 401 })
       }
 
       // Si es una solicitud a una página, redirigir al login
@@ -54,7 +55,7 @@ export async function middleware(request: NextRequest) {
     if (!valid || !payload) {
       // Si el token no es válido, eliminar la cookie y redirigir al login
       const response = pathname.startsWith("/api/")
-        ? NextResponse.json({ error: "Sesión expirada o inválida." }, { status: 401 })
+        ? NextResponse.json({ message: "Sesión expirada o inválida." }, { status: 401 })
         : NextResponse.redirect(new URL("/login", request.url))
 
       response.cookies.delete("auth-token")
@@ -62,8 +63,8 @@ export async function middleware(request: NextRequest) {
     }
 
     // Verificar permisos específicos
-    if (pathname === "/api/images/remove" && payload.role !== "superadmin") {
-      return NextResponse.json({ error: "No tiene permisos para realizar esta acción." }, { status: 403 })
+    if (pathname === "/api/images/remove" && payload.role !== "admin") {
+      return NextResponse.json({message: "No tiene permisos para realizar esta acción."}, { status: 403 })
     }
   }
 
@@ -97,11 +98,11 @@ export async function middleware(request: NextRequest) {
 
   // 6. Limitar métodos HTTP para ciertas rutas
   if (pathname.startsWith("/api/images/list") && request.method !== "GET") {
-    return NextResponse.json({ error: "Método no permitido" }, { status: 405 })
+    return NextResponse.json({ message: "Método no permitido" }, { status: 405 })
   }
 
   if (pathname === "/api/images/remove" && request.method !== "POST") {
-    return NextResponse.json({ error: "Método no permitido" }, { status: 405 })
+    return NextResponse.json({ message: "Método no permitido" }, { status: 405 })
   }
 
   return response
