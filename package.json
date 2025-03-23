@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next-sitemap --config next-sitemap.config.js && next start",
+    "deploy": "prisma generate && next build && next-sitemap --config next-sitemap.config.js && next start",
     "prisma:setup": "prisma init --datasource-provider mysql && prisma db pull && prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
