@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
     // Subir cada archivo individualmente a Cloudinary
     for (const file of files) {
-      if (!(file instanceof File)) {
+      if (!(file instanceof Blob)) {
         return NextResponse.json({ message: "Uno de los archivos no es válido" }, { status: 400 })
       }
 
@@ -79,6 +79,8 @@ export async function POST(req: NextRequest) {
         }
 
         uploadedImages.push(imageData)
+
+        console.log(imageData)
 
         await createImageAction(imageData)
       } catch (error: UploadApiErrorResponse | any) {

@@ -256,7 +256,7 @@ export default function FileUpload() {
             <RiUploadCloudLine />
           </div>
         </div>
-        <p className="mb-1 text-sm text-gray-700">
+        <p className="mb-1 text-sm text-gray-700 text-center">
           Arrastra y suelta tus archivos aquí o{" "}
           <label className="cursor-pointer text-blue-600 hover:underline">
             <span>elige archivos</span>

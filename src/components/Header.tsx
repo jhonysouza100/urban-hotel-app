@@ -116,7 +116,7 @@ export default function Header() {
         </div>
         
         <div 
-          className="nav-open p-2 flex items-center justify-center text-background cursor-pointer lg:hidden"
+          className="nav-open p-2 flex items-center justify-center text-background [transition:color_.3s] cursor-pointer lg:hidden"
           id="nav-open">
           <RiMenuFill className="w-6 h-6" />
         </div>
