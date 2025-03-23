@@ -91,7 +91,7 @@ export default function Header() {
   
   return (
     // Para la animacion de isBlur, primero se establecen los valor por defecto de after:: y las [transiciones], despues, isBlur los modifica con !important
-    <header className='header fixed w-full top-0 left-0 z-50 after:[background-color:_hsla(0,0%,0%,0)] after:[border-bottom-width:_0px] after:backdrop-blur-0 after:[transition:background-color_.2s_ease-in-out,_backdrop-filter_.2s_ease-in-out,_border-bottom-width_.2s_ease-in-out]' id="header">
+    <header className='header fixed w-full top-0 left-0 z-50 after:[background-color:_hsla(0,0%,0%,0)] after:backdrop-blur-0 after:[transition:background-color_.2s_ease-in-out,_backdrop-filter_.2s_ease-in-out]' id="header">
       
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
         <Avatar className="nav-logo"

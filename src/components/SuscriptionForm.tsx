@@ -169,7 +169,7 @@ export default function SuscriptionForm() {
         {errors.email && <label className='footer-input-error text-red-600 text-xs absolute top-[-.75rem] right-6 translate-y-[-.5rem]' htmlFor='email'>{errors.email ? (errors.email as FieldError).message : ''}</label>}
 
         <Button 
-          className="move-right" type="submit" aria-label="Enviar formulario"
+          className="move-right bg-primary-2" type="submit" aria-label="Enviar formulario"
           text={TEXT.joinButtonText1}
           endIcon={<RiArrowRightLine className="w-5 h-5" />}
         />

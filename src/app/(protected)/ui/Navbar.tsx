@@ -72,8 +72,8 @@ export default function Navbar() {
                 </span>
               </Link>
 
-              <Link
-                href="/dashboard/gallery"
+              <span
+                // href="/dashboard/gallery"
                 className={`px-3 py-2 rounded-md text-sm font-medium ${
                   pathname === "/dashboard/gallery" ? "bg-blue-100 text-blue-700" : "text-gray-700 hover:bg-gray-100"
                 }`}
@@ -82,7 +82,7 @@ export default function Navbar() {
                   <RiImageLine className="mr-1" />
                   Galería
                 </span>
-              </Link>
+              </span>
             </nav>
           </div>
 

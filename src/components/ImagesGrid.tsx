@@ -1,6 +1,6 @@
 "use client"
 
-import type ImageDataResponse from "@/interfaces/image_data_response.interface"
+import ImageDataResponse from "@/interfaces/image_data_response.interface"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"

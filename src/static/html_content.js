@@ -1,6 +1,6 @@
 const htmlContent =
 `
-<html>
+<html lang="es">
   <body style="margin:0; padding:0; font-family: Arial, sans-serif;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="720" style="max-width:720px; background-color:#ffffff; border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius:8px; border-bottom-left-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); margin:20px auto;">
       <tr>

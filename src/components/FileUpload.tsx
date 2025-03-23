@@ -238,7 +238,9 @@ export default function FileUpload() {
         </div>
         <div>
           <h2 className="text-base font-medium text-gray-900">Upload Files</h2>
-          <p className="text-sm text-gray-500">Archivos adjuntos que se han subido como parte de este proyecto.</p>
+          <p className="text-sm text-gray-500">
+            A continuación se listan todos los archivos que has seleccionado para subir.
+          </p>
         </div>
       </div>
 
@@ -255,9 +257,9 @@ export default function FileUpload() {
           </div>
         </div>
         <p className="mb-1 text-sm text-gray-700">
-          Drag & drop your files here or{" "}
+          Arrastra y suelta tus archivos aquí o{" "}
           <label className="cursor-pointer text-blue-600 hover:underline">
-            <span>choose files</span>
+            <span>elige archivos</span>
             <input type="file" className="hidden" multiple onChange={handleFileChange} ref={fileInputRef} />
           </label>
         </p>

@@ -1,6 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server"
-import path from "path"
-import fs from "fs/promises"
 import { v2 as cloudinary } from "cloudinary"
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary"
 import type ImageDataResponse from "@/interfaces/image_data_response.interface"
@@ -40,7 +38,9 @@ export async function POST(req: NextRequest) {
       if (file.size > MAX_FILE_SIZE) {
         return NextResponse.json(
           {
-            message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${MAX_FILE_SIZE / (1024 * 1024)}MB`,
+            message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${
+              MAX_FILE_SIZE / (1024 * 1024)
+            }MB`,
           },
           { status: 400 },
         )
@@ -67,10 +67,10 @@ export async function POST(req: NextRequest) {
 
         // Obtener el token de las cookies
         const token = getTokenFromCookies()
-  
+
         // Verificar el token
         const { payload } = await verifyToken(token as string)
-    
+
         // Crear el objeto con los datos de la imagen
         const imageData: ImageDataResponse = {
           authorId: Number(payload?.id),
@@ -81,50 +81,19 @@ export async function POST(req: NextRequest) {
         uploadedImages.push(imageData)
 
         await createImageAction(imageData)
-
       } catch (error: UploadApiErrorResponse | any) {
         console.error(`${file.name}`, error)
         return NextResponse.json(
-          { 
-            message: `${error.message}: ${file.name}`,
-          }, {status: error.http_code}
-        );
+          { message: `${error.message}: ${file.name}` },
+          { status: error.http_code },
+        )
       }
     }
 
-    // Actualizar el archivo JSON con los nuevos datos
-    try {
-      // Ruta para el archivo JSON
-      const jsonFilePath = path.join(process.cwd(), "public/documents", "images_data.json")
-
-      // Leer el archivo JSON existente o crear uno nuevo
-      let existingData: ImageDataResponse[] = []
-      try {
-        const fileData = await fs.readFile(jsonFilePath, "utf-8")
-        existingData = JSON.parse(fileData)
-      } catch (error) {
-        // Si el archivo no existe o hay un error al leerlo, usamos un array vacío
-        console.log("No se encontró el archivo images_data.json o está vacío, creando uno nuevo")
-      }
-
-      // Agregar los nuevos datos de las imágenes
-      existingData.push(...uploadedImages)
-
-      // Escribir los datos actualizados en el archivo JSON
-      await fs.writeFile(jsonFilePath, JSON.stringify(existingData, null, 2))
-
-      return NextResponse.json({
-        message: "Archivos subidos y datos guardados",
-        data: uploadedImages,
-      })
-    } catch (fileError) {
-      console.error("Error al actualizar el archivo JSON:", fileError)
-      // Aún devolvemos los datos de las imágenes subidas aunque haya fallado la actualización del archivo
-      return NextResponse.json({
-        message: "Archivos subidos pero hubo un error al guardar los datos",
-        data: uploadedImages,
-      })
-    }
+    return NextResponse.json({
+      message: "Archivos subidos exitosamente.",
+      data: uploadedImages,
+    })
   } catch (error) {
     console.error("Error general en la carga de archivos:", error)
     return NextResponse.json(
