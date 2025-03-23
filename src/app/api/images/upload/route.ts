@@ -80,8 +80,6 @@ export async function POST(req: NextRequest) {
 
         uploadedImages.push(imageData)
 
-        console.log(imageData)
-
         await createImageAction(imageData)
       } catch (error: UploadApiErrorResponse | any) {
         console.error(`${file.name}`, error)
