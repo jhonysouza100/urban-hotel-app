@@ -4,13 +4,15 @@ import type React from "react"
 
 import { useState } from "react"
 import { useAuth } from "@/hooks/useAuth"
-import { RiMailLine, RiLockLine, RiLoginBoxLine } from "@remixicon/react"
+import { RiMailLine, RiLockLine, RiLoginBoxLine, RiCloseLine } from "@remixicon/react"
 import Button from "./ui/Button"
+import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { login, loading, error } = useAuth()
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -18,7 +20,17 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-sm">
+    <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-sm relative">
+      <button
+        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none"
+        type="button"
+        onClick={() => {
+          router.push("/");
+        }}
+      >
+        <RiCloseLine />
+      </button>
+
       <div className="flex items-center justify-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Iniciar Sesión</h1>
       </div>

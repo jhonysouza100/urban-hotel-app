@@ -4,6 +4,7 @@ import TEXT from "@/lang/es.json";;
 import ScrollUp from "@/components/ScrollUp";
 import Avatar from "@/components/ui/Avatar"
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Footer() {
   
@@ -94,7 +95,13 @@ export default async function Footer() {
         
       </div>
 
-      <span className="footer-copyright text-[0.7rem] xl:text-sm text-container-foreground block mt-24 text-center">{"© Copyright Iguazú Urban Hotel 2024. All rights reserved."}</span>
+      <div className="footer-copyright-container mx-auto text-center">
+        <Link href="/dashboard">
+          <span className="footer-copyright text-[0.7rem] xl:text-sm text-container-foreground inline-block mt-24 p-2">
+            {"© Copyright Iguazú Urban Hotel 2025. All rights reserved."}
+          </span>
+        </Link>
+      </div>
 
       <ScrollUp url={URL} />
       

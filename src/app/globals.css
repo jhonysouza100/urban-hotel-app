@@ -1,5 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,10 +34,10 @@
   }
 
   .isBlur {
-    @apply border-b after:content-[''] after:absolute after:w-full after:h-full after:bg-transparent-75 after:backdrop-blur-xl after:top-0 after:left-0 after:-z-10;
+    @apply after:!content-[''] after:!border-b after:!bg-transparent-75 after:!backdrop-blur-xl after:absolute after:w-full after:h-full after:top-0 after:left-0 after:-z-10;
   }
   .nav-link {
-      @apply after:content-[''] after:w-0 after:h-0.5 after:bg-foreground lg:after:bg-neutral-100 after:absolute after:left-0 after:-bottom-2 after:transition-[width] after:duration-500;
+      @apply after:content-[''] after:w-0 after:h-0.5 after:bg-foreground lg:after:bg-neutral-100 after:absolute after:left-0 after:-bottom-2 after:transition-[width,_background-color_.3s] after:duration-500;
   }
   .nav-link:hover::after {
     @apply w-3/4 /* las lineas tambien se mostraran in hover */

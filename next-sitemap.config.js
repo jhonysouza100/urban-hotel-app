@@ -6,7 +6,7 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
-  exclude: ['/login', '/verify', '/register'],
+  exclude: ['/login', '/verify', '/register', '/dashboard', '/dashboard/**'],
   alternateRefs: [
     {
       href: 'https://www.iguazuurbanhotel.com/pt',
@@ -20,7 +20,7 @@ module.exports = {
   // Default transformation function
   transform: async (config, path) => {
     return {
-      loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
+      loc: path, // Se exportará como http(s)://<config.siteUrl>/<path>
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
@@ -35,10 +35,7 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-      },
-      {
-        userAgent: '*',
-        disallow: ['/login', '/verify', '/register'],
+        disallow: ['/login', '/verify', '/register', '/dashboard', '/dashboard/**'],
       },
     ],
   },

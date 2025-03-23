@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Footer from "@/components/Footer";
 // import AdSenseScript from "@/providers/AdSenseScript";
 import "./globals.css";
 import { AuthProvider } from "@/hooks/useAuth"

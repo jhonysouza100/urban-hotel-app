@@ -25,8 +25,9 @@ const config: Config = {
       },
       colors: {
         'primary-1': 'hsl(84, 36%, 42%)',
-        'primary-2': 'rgb(25, 114, 92)',
+        'primary-2': 'rgb(78, 98, 60)',
         'primary-3': 'rgb(23, 204, 87)',
+        'whatsapp': 'rgb(25, 114, 92)',
         'secondary': 'hsl(34, 44%, 65%)',
         'secondary-muted': 'hsl(34, 44%, 65%, 0.3)',
         'background': 'hsl(0, 0%, 95%)',
@@ -44,7 +45,7 @@ const config: Config = {
         'alert': 'rgb(154, 91, 19)',
         'alert-soft': 'rgb(253, 240, 225, .3)',
         'transparent': 'hsla(0, 0%, 100%, .2)',
-        'transparent-75': 'hsla(0, 0%, 100%, .75)',
+        'transparent-75': 'hsla(0, 0%, 100%, .75)', // white
       },
       
       fontFamily: {

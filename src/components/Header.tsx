@@ -90,7 +90,8 @@ export default function Header() {
   
   
   return (
-    <header className='header fixed w-full top-0 left-0 z-50' id="header">
+    // Para la animacion de isBlur, primero se establecen los valor por defecto de after:: y las [transiciones], despues, isBlur los modifica con !important
+    <header className='header fixed w-full top-0 left-0 z-50 after:[background-color:_hsla(0,0%,0%,0)] after:[border-bottom-width:_0px] after:backdrop-blur-0 after:[transition:background-color_.2s_ease-in-out,_backdrop-filter_.2s_ease-in-out,_border-bottom-width_.2s_ease-in-out]' id="header">
       
       <nav className="nav section-container h-14 flex justify-between items-center xl:h-20">
         <Avatar className="nav-logo"
@@ -100,12 +101,12 @@ export default function Header() {
 
         <div className='nav-menu z-50 fixed w-full min-h-max -top-full left-0 py-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
             <ul className="nav-list text-center flex flex-col items-center px-4 gap-x-[4.5rem] gap-y-10 lg:flex-row">
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Inicio</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Alojamiento</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Reseñas</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Ubicación</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#explore" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Excursiones</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Contacto</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link [transition:color_.3s] section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Inicio</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Alojamiento</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Reseñas</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Ubicación</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#explore" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Excursiones</a></li>
+              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Contacto</a></li>
             </ul>
             <div 
               className="nav-close p-2 flex items-center justify-center text-foreground cursor-pointer absolute top-4 right-6 lg:hidden"
