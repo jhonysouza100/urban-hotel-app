@@ -1,6 +1,6 @@
 import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import { getAllStaticUrls } from "@/hooks/useStaticUrls";
-import TEXT from "@/lang/es.json";;
+import TEXT from "@/lang/es.json";
 import ScrollUp from "@/components/ScrollUp";
 import Avatar from "@/components/ui/Avatar"
 import Image from "next/image";
@@ -63,7 +63,7 @@ export default async function Footer() {
           </div>
          
           <div className="footer-data md:col-start-2 xl:row-start-1 xl:col-start-3">
-            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.footerTitle3}</h3>
+            <h3 className="footer-title text-background text-base mb-4 xl:text-xl xl:mb-6">{TEXT.contacto}</h3>
             <ul className="footer-list grid gap-y-3">
               <li className="footer-info"><RiPhoneLine /><a target="_blank" rel="noreferrer" href={`${URL.whatsapp}`}> {TEXT.footerInfoPhone}</a></li>
               <li className="footer-info"><RiMailLine /><a target="_blank" rel="noreferrer" href={`mailto:${URL.email}`}> {TEXT.footerInfoEmail}</a></li>

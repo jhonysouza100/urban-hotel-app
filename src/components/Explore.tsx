@@ -1,4 +1,4 @@
-import TEXT from "@/lang/es.json";;
+import TEXT from "@/lang/es.json";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
@@ -14,7 +14,7 @@ export default function Explore() {
             <Link href={`/explore`} className=" shadow-md absolute top-1/2 right-1/2 translate-x-1/2 md:-translate-y-1/2 z-10">
               <Button 
                 className="rounded-md move-right bg-primary-2"
-                text={TEXT.moreButtonText1}
+                text={TEXT.atractivos}
                 endIcon={<RiArrowRightLine className="w-5 h-5" />}
               />
             </Link>

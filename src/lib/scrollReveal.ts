@@ -10,9 +10,9 @@ export function scrollAnimation() {
     reset: false,
   });
   
-  sr.reveal(`.explore-data, .explore-user, .footer-image`);
+  sr.reveal(`.explore-data, .explore-user, .gallery-text, .footer-image`);
   sr.reveal(`.home-card`, { delay: 350, distance: '100px', interval: 100 });
-  sr.reveal(`.testimonials-data, .home-social`, { origin: 'left' });
+  sr.reveal(`.testimonials-data, .home-social, .gallery-nothing`, { origin: 'left' });
   sr.reveal(`.footer-content`, { delay: 350 });
   // COORREGIR ESTOS BUGS
   // sr.reveal(`.explore-data, .explore-user, .footer-content`);

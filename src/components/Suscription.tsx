@@ -1,4 +1,4 @@
-import TEXT from "@/lang/es.json";;
+import TEXT from "@/lang/es.json";
 import SuscriptionForm from "@/components/SuscriptionForm";
 import Image from "next/image";
 

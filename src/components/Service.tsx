@@ -96,7 +96,7 @@ export default function Service() {
   }, []);
 
   return (
-    <section className="services section" id="gallery">
+    <section className="services section" id="place">
       <div className="services-section section-container">
 
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2">
@@ -106,7 +106,7 @@ export default function Service() {
             <h2 className="section-title text-4xl text-start lg:text-5xl">{TEXT.brandName1}</h2>
             <p className="text-base text-muted-foreground mb-5 text-start">{TEXT.servicesDescription1}</p>
 
-            <div className="grid grid-cols-2 text-start gap-y-2 gap-x-2 sm:p-3 lg:p-0">
+            <div className="section-data grid grid-cols-2 text-start gap-y-2 gap-x-2">
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiHotelBedLine /><span className="font-medium">{TEXT.serviceTextGroup1[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.serviceTextGroup1[1]}</span></div>
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiWifiLine /><span className="font-medium">{TEXT.serviceTextGroup2[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.serviceTextGroup2[1]}</span></div>
               <div className="grid grid-cols-max2 items-center gap-x-2 text-muted-foreground"><RiCupLine /><span className="font-medium">{TEXT.serviceTextGroup3[0]}</span><span className="col-start-2 text-sm text-primary-1 font-medium">{TEXT.serviceTextGroup3[1]}</span></div>

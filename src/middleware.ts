@@ -10,7 +10,7 @@ const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 
 // Rutas protegidas que requieren autenticación
-const PROTECTED_ROUTES = ["/api/images/upload", "/api/images/remove", "/api/images/list", "/dashboard"]
+const PROTECTED_ROUTES = ["/api/images/upload", "/api/images/remove", "/dashboard"]
 
 // Rutas públicas que no requieren autenticación
 const PUBLIC_ROUTES = ["/", "/login", "/api/auth/login", "/api/auth/logout"]

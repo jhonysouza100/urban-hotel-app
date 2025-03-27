@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 // import AdSenseBanner from "@/providers/AdSenseBanner";
 import ScrollRevealLoader from "@/providers/ScrollRevealLoader";
 import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
   ssr: true,
@@ -24,8 +25,9 @@ export default function HomePage() {
       <Main />
       <Service />
         {/* <AdSenseBanner className="w-full h-[90px]" dataAdSlot="7100349173" dataAdFormat="auto" dataFullWidthResponsive="true" /> */}
-      <Testimonials />
       <Location />
+      <Testimonials />
+      <Gallery />
         {/* <AdSenseBanner className="adsense_banner w-full h-[90px]" dataAdSlot="1603817205" dataAdFormat="auto" dataFullWidthResponsive="true" /> */}
       <Explore />
       <Suscription />

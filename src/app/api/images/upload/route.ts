@@ -12,8 +12,8 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
-// Definir el tamaño máximo de archivo (10MB en bytes)
-const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+// Definir el tamaño máximo de archivo (50MB en bytes)
+const MAX_FILE_SIZE = 50 * 1024 * 1024 // 50MB
 
 export async function POST(req: NextRequest) {
   try {
@@ -34,13 +34,16 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ message: "Uno de los archivos no es válido" }, { status: 400 })
       }
 
+      // Verificar que el archivo sea una imagen
+      if (!file.type.startsWith("image/")) {
+        return NextResponse.json({ message: "Solo se permiten formatos de imagen" }, { status: 400 })
+      }
+
       // Verificar el tamaño del archivo
       if (file.size > MAX_FILE_SIZE) {
         return NextResponse.json(
           {
-            message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${
-              MAX_FILE_SIZE / (1024 * 1024)
-            }MB`,
+            message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${MAX_FILE_SIZE / (1024 * 1024)}MB`,
           },
           { status: 400 },
         )

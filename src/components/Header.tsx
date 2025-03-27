@@ -6,10 +6,7 @@ import { RiCloseLine, RiMenuFill } from "@remixicon/react";
 import Avatar from "./ui/Avatar";
 // import AdSenseBanner from "@/providers/AdSenseBanner";
 
-interface DataViews {
-  views: number;
-}
-
+import TEXT from "@/lang/es.json";
 
 export default function Header() {
 
@@ -87,6 +84,16 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
     }
   }, [])
+
+  const nalLinks = [
+    { href: "#home", text: TEXT.inicio },
+    { href: "#place", text: TEXT.alojamiento },
+    { href: "#location", text: TEXT.ubicacion },
+    { href: "#testimonials", text: TEXT.resenhas },
+    { href: "#gallery", text: TEXT.novedades },
+    { href: "#explore", text: TEXT.excursiones },
+    { href: "#suscription", text: TEXT.contacto }
+  ]
   
   
   return (
@@ -100,13 +107,17 @@ export default function Header() {
         />
 
         <div className='nav-menu z-50 fixed w-full min-h-max -top-full left-0 py-16 bg-transparent-75 backdrop-blur-xl transition-all duration-500 lg:static lg:top-0 lg:w-max lg:bg-inherit lg:p-0 lg:backdrop-blur-none' id="nav-menu">
-            <ul className="nav-list text-center flex flex-col items-center px-4 gap-x-[4.5rem] gap-y-10 lg:flex-row">
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#home" className="nav-link [transition:color_.3s] section-active after:w-3/4 relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Inicio</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#gallery" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Alojamiento</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#testimonials" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Reseñas</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#location" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Ubicación</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#explore" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Excursiones</a></li>
-              <li className="nav-item"><a onClick={() => handleClick(false)} href="#suscription" className="nav-link [transition:color_.3s] relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16">Contacto</a></li>
+            <ul className="nav-list text-center flex flex-col items-center px-4 gap-y-10 gap-x-10 lg:flex-row">
+              {nalLinks.map((el, index) => (
+                <li key={index} className="nav-item">
+                    <a 
+                    onClick={() => handleClick(false)} 
+                    href={el.href} 
+                    className={`nav-link [transition:color_.3s] ${index === 0 ? 'section-active after:w-3/4' : ''} relative text-foreground lg:text-background font-montserrat font-semibold lg:flex-row lg:gap-x-16`}>
+                    {el.text}
+                    </a>
+                </li>
+              ))}
             </ul>
             <div 
               className="nav-close p-2 flex items-center justify-center text-foreground cursor-pointer absolute top-4 right-6 lg:hidden"

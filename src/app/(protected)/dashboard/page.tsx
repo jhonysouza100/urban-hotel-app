@@ -1,9 +1,9 @@
-function DashboardPage() {
+function page() {
   return (
     <div>
-      Dashboard Page
+      Dashboard home
     </div>
   );
 }
 
-export default DashboardPage;
+export default page;
