@@ -37,7 +37,7 @@ export function useAuth() {
 // Proveedor de autenticación
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
@@ -107,7 +107,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         setUser(data.user)
-        router.push("/dashboard/uploads") // Redirigir a la página de uploads después del login
+        router.push("/dashboard") // Redirigir a la página de uploads después del login
       } else {
         setError(data.error || "Error al iniciar sesión")
       }
