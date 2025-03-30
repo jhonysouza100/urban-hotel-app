@@ -4,9 +4,9 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
-import { RiAdminLine, RiDashboardLine, RiImageLine, RiUploadCloudLine } from "@remixicon/react";
+import { RiDashboardLine, RiImageLine, RiUploadCloudLine } from "@remixicon/react";
 import Image from "next/image";
-// import SidebarFooterAccount from "../ui/SidebarFooterAccount";
+import SidebarFooterAccount from "../ui/SidebarFooterAccount";
 
 export const NAVIGATION = [
   // ...
@@ -14,11 +14,6 @@ export const NAVIGATION = [
     segment: "dashboard/",
     title: "Home",
     icon: <RiDashboardLine />,
-  },
-  {
-    segment: "dashboard/profile",
-    title: "Profile",
-    icon: <RiAdminLine />,
   },
   {
     segment: "dashboard/uploads",
@@ -50,7 +45,7 @@ export default function RootLayout({
         }}
         >
           <DashboardLayout 
-            // slots={{ toolbarAccount: () => null, sidebarFooter: SidebarFooterAccount }}
+            slots={{ sidebarFooter: SidebarFooterAccount }}
           >
             <PageContainer>{children}</PageContainer>
           </DashboardLayout>
