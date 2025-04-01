@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createToken, setTokenCookie } from "@/lib/jwt"
-import { getAdminByEmailAction } from "@/actions/admin.actions"
+import { getAdminByUsernameAction } from "@/actions/admin.actions"
 import { compare } from "bcrypt"
 
 // Simulación de base de datos de usuarios (en producción, usa una base de datos real)
@@ -23,15 +23,15 @@ const USERS = [
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password } = await request.json()
+    const { username, password } = await request.json()
 
-    // Validar que se proporcionaron email y password
-    if (!email || !password) {
-      return NextResponse.json({ message: "Email y contraseña son requeridos" }, { status: 400 })
+    // Validar que se proporcionaron username y password
+    if (!username || !password) {
+      return NextResponse.json({ message: "Nombre de usuario y contraseña son requeridos" }, { status: 400 })
     }
     
     // Buscar el usuario en la "base de datos"
-    const user = await getAdminByEmailAction(email);
+    const user = await getAdminByUsernameAction(username);
 
     // Verificar si el usuario existe y la contraseña es correcta
     const checkdPassword = await compare(password, user?.password as string );

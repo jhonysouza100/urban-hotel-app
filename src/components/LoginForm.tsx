@@ -9,14 +9,14 @@ import Button from "./ui/Button"
 import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const { login, loading, error } = useAuth()
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    await login(email, password)
+    await login(username, password)
   }
 
   return (
@@ -39,21 +39,21 @@ export default function LoginForm() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Correo Electrónico
+          <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+            Nombre de usuario
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <RiMailLine className="h-5 w-5 text-gray-400" />
             </div>
             <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
               className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-              placeholder="ejemplo@correo.com"
+              placeholder="Username"
             />
           </div>
         </div>

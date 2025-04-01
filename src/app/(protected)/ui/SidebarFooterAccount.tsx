@@ -3,6 +3,7 @@
 import Avatar from "@/components/ui/Avatar";
 import { useAuth } from "@/hooks/useAuth";
 import { RiLogoutBoxLine } from "@remixicon/react";
+import { Account } from "@toolpad/core/Account";
 import Link from "next/link";
 
 function SidebarFooterAccount() {
@@ -27,7 +28,8 @@ function SidebarFooterAccount() {
 
   return (
     <>
-      <div className="flex items-center space-x-4">
+    <Account  className="bg-white shadow-sm" />
+      <div className="flex items-center space-x-4 p-4">
         <div className="flex items-center space-x-2 text-sm text-gray-700">
           <Avatar
             className="border"

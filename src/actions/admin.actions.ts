@@ -10,16 +10,16 @@ export async function getAllAdminsAction() {
   }
 }
 
-// Función para obtener un usuario por email
-export async function getAdminByEmailAction(email: string) {
+// Función para obtener un usuario específico por su nombre de usuario (username)
+export async function getAdminByUsernameAction(username: string) {
   try {
     return await prisma.users.findFirst({
       where: {
-        email: email,
+        name: username,
       },
     });
   } catch (error) {
-    console.error(`Error al obtener el usuario por email ${email}:`, error);
-    throw new Error(error instanceof Error ? error.message : "Fallo al obtener el usuario por email");
+    console.error(`Error al obtener el usuario ${username}:`, error);
+    throw new Error(error instanceof Error ? error.message : "Fallo al obtener el usuario");
   }
 }

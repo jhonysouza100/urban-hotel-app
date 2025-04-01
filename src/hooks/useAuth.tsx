@@ -43,28 +43,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Verificar autenticación al cargar
   useEffect(() => {
-    const initAuth = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-
-        const response = await fetch("/api/auth/me")
-
-        if (response.ok) {
-          const data = await response.json()
-          setUser(data.user)
-        } else {
-          setUser(null)
-        }
-      } catch (err) {
-        console.error("Error al verificar autenticación:", err)
-        setUser(null)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    initAuth()
+    checkAuth()
   }, [])
 
   // Función para verificar si el usuario está autenticado
@@ -73,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setLoading(true)
       setError(null)
 
-      const response = await fetch("/api/auth/me")
+      const response = await fetch("/api/auth/verify")
 
       if (response.ok) {
         const data = await response.json()
@@ -90,7 +69,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   // Función para iniciar sesión
-  const login = async (email: string, password: string) => {
+  const login = async (username: string, password: string) => {
     try {
       setLoading(true)
       setError(null)
@@ -100,7 +79,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       })
 
       const data = await response.json()

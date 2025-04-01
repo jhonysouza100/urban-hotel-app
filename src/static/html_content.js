@@ -1,5 +1,11 @@
-const htmlContent =
-`
+const htmlContent = `
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta httpt-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
   <table align="center" border="0" cellpadding="0" cellspacing="0" width="720" style="max-width:720px; background-color:#ffffff; border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius:8px; border-bottom-left-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); margin:20px auto;">
     <tr>
       <td style="padding:0;">          
@@ -31,7 +37,7 @@ const htmlContent =
     </tr>
     <tr>
       <td style="padding:20px;">
-        <img src="https://www.iguazuurbanhotel.com/_next/image?url=%2Fimages%2Fgallery-img-8.jpg&w=640&q=100" alt="Vista de las Cataratas del Iguazú" style="width:100%; max-width:520px; display:block; margin:0 auto 20px auto; border-radius:8px;">
+        <img src="https://www.iguazuurbanhotel.com/_next/image?url=%2Fimages%2Fgallery-img-8.jpg&w=640&q=100" alt="Foto de la habitacion" style="width:100%; max-width:520px; display:block; margin:0 auto 20px auto; border-radius:8px;">
         <h2 style="color:#0067b8; margin-top:0;">Nuestras Habitaciones</h2>
         <p style="font-size:16px; line-height:1.6; color:#333; margin:0 0 15px 0;">🛎 El Hotel Iguazú Urban Express, cuenta con habitaciones confortables singles, dobles y triples, (puede ser con cama matrimonial y una soltero o 3 solteros) aire acondicionado, TV por cable y baño privado, ropa de cama y toallas.</p>
         <p style="font-size:16px; line-height:1.6; color:#333; margin:0 0 15px 0;">🅿️ Estacionamiento sobre la calle, contamos con cámaras de seguridad.</p>
@@ -67,6 +73,8 @@ const htmlContent =
       </td>
     </tr>
   </table>
+  </body>
+</html>
 `;
 
 export default htmlContent;
