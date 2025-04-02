@@ -2,7 +2,7 @@
 
 import Avatar from "@/components/ui/Avatar";
 import { useAuth } from "@/hooks/useAuth";
-import { RiLogoutBoxLine } from "@remixicon/react";
+import { RiLogoutBoxLine, RiLogoutBoxRLine } from "@remixicon/react";
 import { Account } from "@toolpad/core/Account";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ function SidebarFooterAccount() {
           onClick={() => logout()}
           className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-50"
         >
-          <RiLogoutBoxLine className="mr-1" />
+          <RiLogoutBoxRLine className="mr-1" />
           Logout
         </button>
     </div>

@@ -9,7 +9,8 @@ import Header from "@/components/Header";
 // import AdSenseBanner from "@/providers/AdSenseBanner";
 import ScrollRevealLoader from "@/providers/ScrollRevealLoader";
 import Footer from "@/components/Footer";
-import Gallery from "@/components/Gallery";
+
+const Gallery = dynamic(() => import('@/components/Gallery'), { ssr: false });
 
 const Suscription = dynamic(() => import("@/components/Suscription"), {
   ssr: true,

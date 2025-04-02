@@ -90,7 +90,7 @@ export default function Header() {
     { href: "#place", text: TEXT.alojamiento },
     { href: "#location", text: TEXT.ubicacion },
     { href: "#testimonials", text: TEXT.resenhas },
-    { href: "#gallery", text: TEXT.novedades },
+    { href: "#news", text: TEXT.novedades },
     { href: "#explore", text: TEXT.excursiones },
     { href: "#suscription", text: TEXT.contacto }
   ]

@@ -6,19 +6,11 @@ import { compare } from "bcrypt"
 // Simulación de base de datos de usuarios (en producción, usa una base de datos real)
 const USERS = [
   {
-    id: "1",
-    email: "admin@gmail.com",
-    password: "admin123", // En producción, usa contraseñas hasheadas
-    name: "Administrador",
-    role: "admin",
-  },
-  {
-    id: "2",
-    email: "user@gmail.com",
-    password: "user123",
-    name: "Usuario Normal",
-    role: "user",
-  },
+    // id: 1,
+    // name: "admin",
+    // password: "123456",
+    // image: "https//image.jpeg"
+  }
 ]
 
 export async function POST(request: NextRequest) {
@@ -47,7 +39,6 @@ export async function POST(request: NextRequest) {
       role: user.role,
       name: user.name,
     })
-
     // Establecer el token en las cookies
     setTokenCookie(token)
 

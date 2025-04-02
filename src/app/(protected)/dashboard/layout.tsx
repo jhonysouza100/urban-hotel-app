@@ -6,7 +6,7 @@ import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
 import { RiDashboardLine, RiImageLine, RiUploadCloudLine } from "@remixicon/react";
 import Image from "next/image";
-import SidebarFooterAccount from "../ui/SidebarFooterAccount";
+import UserCard from "../ui/UserCard";
 
 export const NAVIGATION = [
   // ...
@@ -39,13 +39,14 @@ export default function RootLayout({
         <NextAppProvider 
         navigation={NAVIGATION}
         branding={{
-          logo: <Image src="https://www.iguazuurbanhotel.com/android-chrome-192x192.png" alt="Urban Hotel logo" width={200} height={200} />,
+          logo: '',
+          // logo: <Image className="p-4" src="https://www.iguazuurbanhotel.com/android-chrome-192x192.png" alt="Urban Hotel logo" width={200} height={200} />,
           title: '',
           homeUrl: '/',
         }}
         >
-          <DashboardLayout 
-            slots={{ sidebarFooter: SidebarFooterAccount }}
+          <DashboardLayout
+            slots={{ toolbarActions: UserCard }}
           >
             <PageContainer>{children}</PageContainer>
           </DashboardLayout>

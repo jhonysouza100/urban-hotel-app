@@ -5,10 +5,6 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
-interface ResObjtType {
-  message: string
-}
-
 export default function ImagesGrid() {
   const [images, setImages] = useState<ImageDataResponse[]>([])
   const [loading, setLoading] = useState(true)
@@ -19,14 +15,12 @@ export default function ImagesGrid() {
     try {
       setLoading(true)
       const response = await fetch("/api/images/list")
-
       const data = await response.json()
       
       if (!response.ok) {
         throw new Error(data.message)
       }
 
-      // Si la respuesta es un objeto con un mensaje de error, mostrar el error
       if (data.message && !Array.isArray(data)) {
         setError(data.message)
         setImages([])
@@ -35,7 +29,7 @@ export default function ImagesGrid() {
         setError(null)
       }
     } catch (error: any) {
-      setError(error)
+      setError(error?.message || "Error inesperado")
     } finally {
       setLoading(false)
     }
@@ -58,26 +52,24 @@ export default function ImagesGrid() {
         throw new Error(data.message)
       }
 
-      // Eliminar la imagen del estado
-      setImages((prevImages) => prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId))
+      setImages((prevImages) =>
+        prevImages.filter((image: ImageDataResponse) => image.public_id !== publicId)
+      )
       toast.success(data.message)
     } catch (error: any) {
-      toast.error(error)
+      toast.error(error?.message || "Error inesperado")
     }
   }
 
   useEffect(() => {
     getImages()
 
-    // Suscribirse a eventos de actualización de imágenes
     const handleStorageChange = () => {
       getImages()
     }
 
-    // Escuchar cambios en localStorage (para desarrollo)
     window.addEventListener("storage", handleStorageChange)
 
-    // Limpiar el event listener
     return () => {
       window.removeEventListener("storage", handleStorageChange)
     }

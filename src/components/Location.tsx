@@ -25,7 +25,7 @@ export default async function Location() {
           </div>
         </div>
         <div className="location-image shadow-md rounded-lg overflow-hidden w-full h-full lg:-order-1">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d756.439296249307!2d-54.56812382158762!3d-25.59654208367118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6923382135a49%3A0x4c03b72e6c337200!2sIguazu%20Urban%20Hotel!5e0!3m2!1ses!2sar!4v1724418857965!5m2!1ses!2sar"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.240768312228!2d-54.570990725369235!3d-25.596914508197827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6923382135a49%3A0x4c03b72e6c337200!2sIguazu%20Urban%20Hotel!5e0!3m2!1ses-419!2sar!4v1743578725334!5m2!1ses-419!2sar"
           className="w-full h-full min-h-[300px] object-cover" loading="lazy" title="Fray Luiz Beltran 290"></iframe>
         </div>
       </div>
