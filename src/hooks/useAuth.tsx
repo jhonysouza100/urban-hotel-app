@@ -86,7 +86,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         setUser(data.user)
-        router.push("/dashboard") // Redirigir a la página de uploads después del login
       } else {
         setError(data.error || "Error al iniciar sesión")
       }
@@ -95,6 +94,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setError("Error al conectar con el servidor")
     } finally {
       setLoading(false)
+      router.push("/dashboard") // Redirigir a la página de dashboard después del login
     }
   }
 

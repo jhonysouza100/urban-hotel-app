@@ -78,7 +78,7 @@ export default function Gallery() {
         <div className="section-container">
           <div className="gallery-text relative mb-10 mt-12 xl:mt-0">
             <h2 className="section-title text-4xl text-center lg:text-5xl">{TEXT.novedades}</h2>
-            <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 lg:left-[270px]">
+            <span className="absolute top-0 left-[270px] translate-x-1/2 -translate-y-1/2 lg:right-0">
               <span className="relative inline-flex w-6 h-6 items-center justify-center rounded-full bg-primary-1 opacity-75 text-white text-xs">
                 {images.length}
               </span>
