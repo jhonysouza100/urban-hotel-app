@@ -104,12 +104,12 @@ export default function Gallery() {
 
         <div className="gallery-text relative mb-10 mt-12 xl:mt-0">
           <h2 className="section-title text-4xl text-end lg:text-center lg:text-5xl">{TEXT.novedades}</h2>
-          <span className="absolute top-0 left-[270px] translate-x-1/2 -translate-y-1/2 lg:right-0">
+          {/* <span className="absolute top-0 left-[270px] translate-x-1/2 -translate-y-1/2 lg:right-0">
             <span className="absolute inline-flex h-6 w-6 rounded-full bg-primary-1 opacity-75 animate-ping"></span>
             <span className="relative inline-flex w-6 h-6 items-center justify-center rounded-full bg-primary-1 text-white text-xs">
               {images.length}
             </span>
-          </span>
+          </span> */}
           <p className="text-base text-muted-foreground mb-5 text-end lg:text-center">
             {TEXT.descubreNovedades}
           </p>

@@ -14,16 +14,18 @@ export default function Suscription() {
         </div>
 
         <div className="join-image -order-1 w-full h-auto grid justify-items-center overflow-hidden">
-          <div className="aspect-square w-[300px] xl:w-full">
-            <Image
-              className="join-img transition-transform duration-500 w-full h-full object-cover" alt="Imagen de la habitación"
-              src="/images/join-image.jpg" 
-              width={380}
-              height={380}
-              sizes="(max-with: 425px) 75vw, (max-width: 768px) 50vw, (max-width: 1200px) 45vw, 33vw"
-              loading="lazy"
-            />
-          </div>
+            <div className="aspect-square w-[300px] xl:w-full relative">
+              <Image
+                className="join-img transition-transform duration-500 w-full h-full object-cover"
+                alt="Imagen de la habitación"
+                src="/images/join-image.jpg" 
+                width={380}
+                height={380}
+                sizes="(max-with: 425px) 75vw, (max-width: 768px) 50vw, (max-width: 1200px) 45vw, 33vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(0deg,hsla(0,0%,10%,0)_50%,hsl(0,0%,10%)_92%)] pointer-events-none"></div>
+            </div>
           {/* <div className="shading"></div> */}
         </div>
       </div>

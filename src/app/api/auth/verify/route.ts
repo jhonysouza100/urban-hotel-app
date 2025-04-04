@@ -32,5 +32,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("Error al obtener información del usuario:", error)
     return NextResponse.json({ message: "Error en el servidor" }, { status: 500 })
+  } finally {
+    NextResponse.next()
   }
 }

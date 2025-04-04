@@ -16,7 +16,7 @@ import { compare } from "bcrypt"
 
 export async function POST(request: NextRequest) {
   try {
-    const { username, password } = await request.json()
+    const { username, password }: {username: string, password: string} = await request.json()
 
     // Validar que se proporcionaron username y password
     if (!username || !password) {

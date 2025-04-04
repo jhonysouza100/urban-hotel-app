@@ -11,7 +11,7 @@ export default function Explore() {
     <section className="explore section pt-0 mt-10 xl:mt-28 relative bg-container" id="explore">
       <div className="explore-container">
           <div className="explore-image absolute overflow-hidden">
-            <Link href={`/explore`} className=" shadow-md absolute top-1/2 right-1/2 translate-x-1/2 md:-translate-y-1/2 z-10">
+            <Link href={`/explore`} className="shadow-md absolute top-1/2 right-1/2 translate-x-1/2 md:-translate-y-1/2 z-10">
               <Button 
                 className="rounded-md move-right bg-primary-2"
                 text={TEXT.atractivos}
