@@ -19,7 +19,7 @@ interface AuthContextType {
   error: string | null
   login: (email: string, password: string) => Promise<void>
   logout: () => Promise<void>
-  checkAuth: () => Promise<void>
+  verify: () => Promise<void>
 }
 
 // Crear el contexto de autenticación
@@ -43,11 +43,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Verificar autenticación al cargar
   useEffect(() => {
-    checkAuth()
-  }, [])
+    verify()
+  }, [router])
 
   // Función para verificar si el usuario está autenticado
-  const checkAuth = async () => {
+  const verify = async () => {
     try {
       setLoading(true)
       setError(null)
@@ -86,6 +86,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         setUser(data.user)
+        router.refresh() // Refrescar la página para obtener el usuario actualizado
+        // Esperar un momento antes de redirigir para asegurar que las cookies se hayan establecido
+        setTimeout(() => {
+          router.push("/dashboard") // Redirigir a la página de dashboard después del login
+        }, 100)
       } else {
         setError(data.error || "Error al iniciar sesión")
       }
@@ -94,7 +99,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setError("Error al conectar con el servidor")
     } finally {
       setLoading(false)
-      router.push("/dashboard") // Redirigir a la página de dashboard después del login
     }
   }
 
@@ -123,7 +127,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     error,
     login,
     logout,
-    checkAuth,
+    verify,
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

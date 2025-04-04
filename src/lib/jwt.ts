@@ -50,7 +50,7 @@ export function setTokenCookie(token: string) {
     value: token,
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: "lax", // Cambiado de "strict" a "lax" para permitir redirecciones
     maxAge: 60 * 60 * 24, // 24 horas en segundos
     path: "/",
   })

@@ -38,6 +38,10 @@ export async function middleware(request: NextRequest) {
     // Obtener el token de las cookies
     const token = request.cookies.get("auth-token")?.value
 
+    // Log para depuración
+    console.log(`Verificando acceso a ruta protegida: ${pathname}`)
+    console.log(`Token presente: ${!!token}`)
+
     if (!token) {
       // Si es una solicitud a la API, devolver error JSON
       if (pathname.startsWith("/api/")) {

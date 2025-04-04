@@ -2,11 +2,10 @@
 
 import Avatar from "@/components/ui/Avatar";
 import { useAuth } from "@/hooks/useAuth";
-import { RiLogoutBoxLine, RiLogoutBoxRLine } from "@remixicon/react";
-import { Account } from "@toolpad/core/Account";
+import { RiLogoutBoxRLine } from "@remixicon/react";
 import Link from "next/link";
 
-function SidebarFooterAccount() {
+function UserCard() {
   const { user, logout } = useAuth();
 
   if (!user) {
@@ -17,18 +16,20 @@ function SidebarFooterAccount() {
             <Link href="/" className="text-xl font-bold text-gray-900">
               IPanel
             </Link>
-            <Link href="/login" className="px-3 py-2 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-50">
+            <Link
+              href="/login"
+              className="px-3 py-2 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-50"
+            >
               Iniciar sesión
             </Link>
           </div>
         </div>
       </header>
-    )
+    );
   }
 
   return (
     <>
-    <Account  className="bg-white shadow-sm" />
       <div className="flex items-center space-x-4 p-4">
         <div className="flex items-center space-x-2 text-sm text-gray-700">
           <Avatar
@@ -53,9 +54,9 @@ function SidebarFooterAccount() {
           <RiLogoutBoxRLine className="mr-1" />
           Logout
         </button>
-    </div>
+      </div>
     </>
   );
 }
 
-export default SidebarFooterAccount;
+export default UserCard;

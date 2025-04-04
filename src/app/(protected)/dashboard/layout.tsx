@@ -5,8 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
 import { RiDashboardLine, RiImageLine, RiUploadCloudLine } from "@remixicon/react";
-import Image from "next/image";
-import UserCard from "../ui/UserCard";
+import UserCard from "@/components/UserCard";
 
 export const NAVIGATION = [
   // ...
