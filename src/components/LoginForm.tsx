@@ -11,14 +11,14 @@ import { useRouter } from "next/navigation"
 export default function LoginForm() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const { login, loading, error } = useAuth()
+  const { login, loading, error, user } = useAuth()
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     await login(username, password)
   }
-
+  
   return (
     <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-sm relative">
       <button

@@ -45,6 +45,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     verify()
   }, [router])
+  
+  useEffect(() => {
+    console.log('effect, user:', user)
+      if(user) {
+        // Redirigir a la página de dashboard después de iniciar sesión
+        router.push("/dashboard")
+      }
+  }, [router, user])
+
+  useEffect(() => {
+    if (user) {
+    }
+  }, [user, router])
 
   // Función para verificar si el usuario está autenticado
   const verify = async () => {
@@ -86,11 +99,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok) {
         setUser(data.user)
-        router.refresh() // Refrescar la página para obtener el usuario actualizado
-        // Esperar un momento antes de redirigir para asegurar que las cookies se hayan establecido
-        setTimeout(() => {
-          router.push("/dashboard") // Redirigir a la página de dashboard después del login
-        }, 100)
       } else {
         setError(data.error || "Error al iniciar sesión")
       }
@@ -99,6 +107,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setError("Error al conectar con el servidor")
     } finally {
       setLoading(false)
+      router.refresh() // Refrescar la página para obtener el estado actualizado del usuario
     }
   }
 
@@ -106,7 +115,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = async () => {
     try {
       setLoading(true)
-
+      
       await fetch("/api/auth/logout", {
         method: "POST",
       })

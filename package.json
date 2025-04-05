@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "prisma generate && next build && next-sitemap --config next-sitemap.config.js && next start",
+    "test": "next build && next start",
     "prisma:setup": "prisma init --datasource-provider mysql && prisma db pull && prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",

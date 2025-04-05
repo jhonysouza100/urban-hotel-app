@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server"
 // import { rateLimit } from "./lib/rateLimit"
 import { verifyToken } from "@/lib/jwt"
+import { revalidatePath } from "next/cache"
 
 // Tipos de archivos permitidos
 const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml"]
@@ -22,7 +23,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // 1. Logging de solicitudes
-  console.log(`middleware [${new Date().toISOString()}] ${request.method} ${pathname} - IP: ${request.ip || "unknown"}`)
+  console.log(`middleware [${new Date().toISOString()}] ${request.method} ${pathname}`)
 
   // 2. Aplicar límites de velocidad según la ruta
   if (pathname === "/api/images/upload") {
@@ -39,7 +40,6 @@ export async function middleware(request: NextRequest) {
     const token = request.cookies.get("auth-token")?.value
 
     // Log para depuración
-    console.log(`Verificando acceso a ruta protegida: ${pathname}`)
     console.log(`Token presente: ${!!token}`)
 
     if (!token) {
