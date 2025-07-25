@@ -37,11 +37,11 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "scrollreveal": "^4.0.9",
+    "swiper": "^11.1.9",
     "sharp": "^0.33.5",
     "socket.io-client": "^4.7.5",
     "sonner": "^1.4.41",
     "styled-components": "^6.1.12",
-    "swiper": "^11.1.9",
     "yet-another-react-lightbox": "^3.21.8",
     "zod": "^3.23.8",
     "zustand": "^4.5.4"

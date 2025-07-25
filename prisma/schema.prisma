@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  // url      = env("DATABASE_URL")
+  url      = "mysql://root:29022024@64.227.14.144:3306/cloudinary_db"
 }
 
 model images {

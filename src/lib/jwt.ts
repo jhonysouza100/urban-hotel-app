@@ -1,5 +1,6 @@
 import { SignJWT, jwtVerify } from "jose"
 import { cookies } from "next/headers"
+import config from "@/config"
 
 // Interfaz para el payload del token
 export interface UserJwtPayload {
@@ -12,11 +13,11 @@ export interface UserJwtPayload {
 
 // Función para crear un token JWT
 export async function createToken(payload: UserJwtPayload) {
-  if (!process.env.JWT_SECRET) {
+  if (!config.JWT_SECRET) {
     throw new Error("JWT_SECRET no está configurado en las variables de entorno")
   }
 
-  const secretKey = new TextEncoder().encode(process.env.JWT_SECRET)
+  const secretKey = new TextEncoder().encode(config.JWT_SECRET)
 
   const token = await new SignJWT({ ...payload })
     .setProtectedHeader({ alg: "HS256" })
@@ -29,11 +30,11 @@ export async function createToken(payload: UserJwtPayload) {
 
 // Función para verificar un token JWT
 export async function verifyToken(token: string) {
-  if (!process.env.JWT_SECRET) {
+  if (!config.JWT_SECRET) {
     throw new Error("JWT_SECRET no está configurado en las variables de entorno")
   }
 
-  const secretKey = new TextEncoder().encode(process.env.JWT_SECRET)
+  const secretKey = new TextEncoder().encode(config.JWT_SECRET)
 
   try {
     const { payload } = await jwtVerify<UserJwtPayload>(token, secretKey)
@@ -49,7 +50,7 @@ export function setTokenCookie(token: string) {
     name: "auth-token",
     value: token,
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: config.NODE_ENV === "production",
     sameSite: "lax", // Cambiado de "strict" a "lax" para permitir redirecciones
     maxAge: 60 * 60 * 24, // 24 horas en segundos
     path: "/",

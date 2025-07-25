@@ -1,19 +1,20 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { v2 as cloudinary } from "cloudinary"
 import type { UploadApiResponse, UploadApiErrorResponse } from "cloudinary"
-import type ImageDataResponse from "@/interfaces/image_data_response.interface"
-import { createImageAction } from "@/actions/image.actions"
-import { getTokenFromCookies, verifyToken } from "@/lib/jwt"
+import config from "@/config"
+
+export default interface ImageDataResponse {
+  public_id: string
+  secure_url: string
+}
 
 // Configuración de Cloudinary
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: config.CLOUDINARY_CLOUD_NAME,
+  api_key: config.CLOUDINARY_API_KEY,
+  api_secret: config.CLOUDINARY_API_SECRET,
 })
 
-// Definir el tamaño máximo de archivo (50MB en bytes)
-const MAX_FILE_SIZE = 50 * 1024 * 1024 // 50MB
 
 export async function POST(req: NextRequest) {
   try {
@@ -39,16 +40,6 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ message: "Solo se permiten formatos de imagen" }, { status: 400 })
       }
 
-      // Verificar el tamaño del archivo
-      if (file.size > MAX_FILE_SIZE) {
-        return NextResponse.json(
-          {
-            message: `El tamaño de la imagen ${file.name} excede el límite permitido de ${MAX_FILE_SIZE / (1024 * 1024)}MB`,
-          },
-          { status: 400 },
-        )
-      }
-
       const bytes = await file.arrayBuffer()
       const buffer = Buffer.from(bytes)
 
@@ -68,22 +59,14 @@ export async function POST(req: NextRequest) {
             .end(buffer)
         })
 
-        // Obtener el token de las cookies
-        const token = getTokenFromCookies()
-
-        // Verificar el token
-        const { payload } = await verifyToken(token as string)
-
         // Crear el objeto con los datos de la imagen
         const imageData: ImageDataResponse = {
-          authorId: Number(payload?.id),
           public_id: uploadResult.public_id,
           secure_url: uploadResult.secure_url,
         }
 
         uploadedImages.push(imageData)
 
-        await createImageAction(imageData)
       } catch (error: UploadApiErrorResponse | any) {
         console.error(`${file.name}`, error)
         return NextResponse.json(

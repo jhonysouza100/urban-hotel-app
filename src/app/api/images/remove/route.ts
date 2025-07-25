@@ -1,12 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { v2 as cloudinary } from 'cloudinary';
 import { removeImageAction } from "@/actions/image.actions";
+import config from "@/config";
 
 // Configuration
 cloudinary.config({ 
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-  api_key: process.env.CLOUDINARY_API_KEY, 
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: config.CLOUDINARY_CLOUD_NAME, 
+  api_key: config.CLOUDINARY_API_KEY, 
+  api_secret: config.CLOUDINARY_API_SECRET,
 });
 
 export async function POST(req: NextRequest) {
