@@ -13,7 +13,7 @@ RUN npm install && npm cache clean --force
 
 COPY . .
 
-RUN npm run build && npm run postbuild
+RUN npm run prisma:generate && npm run build && npm run postbuild
 
 # Define las variables de entorno
 ENV NODE_ENV=production
