@@ -7,7 +7,7 @@ import { PageContainer } from "@toolpad/core/PageContainer";
 import { RiDashboardLine, RiImageLine, RiUploadCloudLine } from "@remixicon/react";
 import UserCard from "@/components/UserCard";
 
-export const NAVIGATION = [
+const NAVIGATION = [
   // ...
   {
     segment: "dashboard/",
